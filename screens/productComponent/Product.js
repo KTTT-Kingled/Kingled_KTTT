@@ -1,10 +1,9 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar,Image,TextInput,ScrollView, } from "react-native";
-import LineCart from '../component/activity/ProgressLine/LineCart.js'
-import Icon from "react-native-vector-icons/FontAwesome5";
-import ModalFilter from '../modal/modalFilter.js'
+import { Image, ScrollView, SectionList, StatusBar, StyleSheet, Text, View } from "react-native";
+import LineCart from '../component/activity/ProgressLine/LineCart.js';
+import HeaderComponent from '../component/headerComponent.js';
+import ModalFilter from '../modal/modalFilter.js';
 import ModalUp from "../modal/modalUp.js";
-import HeaderComponent from '../component/headerComponent.js'
 
 
 const DATA = [
@@ -191,8 +190,8 @@ const Product = ({ navigation }) => {
                     <SectionList
                         sections={DATA}
                         keyExtractor={(item, index) => item + index}
-                        renderItem={({ item }) => <View style={{borderColor:"#425C59",borderWidth:1, 
-                            marginVertical: 8,borderRadius: 4,
+                        renderItem={({ item }) => <View style={{backgroundColor: "white", 
+                            marginVertical: 8,borderRadius: 4, elevation: 3,
                         }}>
                         <Item title={item}></Item>
                         <View style={{flexDirection:"row",marginLeft:"37%",paddingBottom:12}}>
@@ -219,7 +218,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: "center",
-      backgroundColor:"#E9E9E9",
+      backgroundColor:"#F8F8F8",
       paddingBottom:50
     },
     progress:{

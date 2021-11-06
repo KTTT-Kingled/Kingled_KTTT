@@ -1,7 +1,7 @@
 import React from "react";
-import { View , Text , Button,StyleSheet,TextInput,Image,ScrollView } from "react-native"
+import { Image, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
-import logo from "../../assets/images/logo.png"
+import logo from "../../assets/images/logo.png";
 
 const Login =  ({navigation}) => {
     return (
@@ -33,7 +33,7 @@ const Login =  ({navigation}) => {
                     </View>
                 </View>
                 <View style={{width:"100%",marginTop:8}}>
-                    <Text style={{color:"black",left:"66%"}}>Quên mật khẩu ?</Text>
+                    <Text style={{color:"black",left:"66%"}}>Quên mật khẩu?</Text>
                 </View>
                 <View style={styles.loginBtn} onStartShouldSetResponder={
               () => ('OnPress', navigation.navigate('HomeScreen'))
@@ -79,13 +79,14 @@ const styles = StyleSheet.create({
         width:"100%",
         height:"76%",
         borderTopLeftRadius: 90,
-        backgroundColor:"#F5F5F5",alignItems:"center",
+        backgroundColor:"#F8F8F8",
+        alignItems:"center",
         justifyContent:"center",
     },
     login:{
         width:"84%",
         height:"80%",
-        // backgroundColor:"red",
+        //backgroundColor:"red",
         position:"absolute",
         top: "10%",
         alignItems:"center",
@@ -95,14 +96,14 @@ const styles = StyleSheet.create({
     phone:{
         width:"100%",
         height:"20%",
-        // backgroundColor:"blue",
+        backgroundColor:"white",
         paddingLeft: 10,
         paddingTop:12,
-        borderRadius:14,
-        boxShadow:"22 22 10 22  #15ad9b",
+        borderRadius:10,
+        elevation: 3,
         marginTop:22,
-        borderColor: "#425C59",
-        borderWidth: 0.5,
+        //borderColor: "#425C59",
+        //borderWidth: 0.5,
         borderRadius: 10
 
     },
@@ -142,7 +143,7 @@ const styles = StyleSheet.create({
     },
     elevation: {
         // elevation: 10,
-        shadowColor: '#52006A',
+        shadowColor: '#656565',
         
       },
 })

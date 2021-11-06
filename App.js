@@ -4,18 +4,19 @@
  
 
 
-import Ionicons from "react-native-vector-icons/FontAwesome5";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
+import React, { Component } from 'react';
+import {
+  Image, Platform, StyleSheet, Text, View
+} from 'react-native';
+import Ionicons from "react-native-vector-icons/FontAwesome5";
+import logo from "./assets/images/logo.png";
+import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
+import LoginScreen from './screens/LoginScreen';
 import ProductScreen from './screens/ProductScreen';
 import QrScreen from './screens/QrScreen';
-import CartScreen from './screens/CartScreen';
-import LoginScreen from './screens/LoginScreen';
-import React, { Component } from 'react';  
- import { Platform, StyleSheet, View, Text,  
- Image, TouchableOpacity, Alert } from 'react-native'; 
-import logo from "./assets/images/logo.png"; 
 
 
 const Tab = createBottomTabNavigator();
@@ -72,7 +73,7 @@ const Tab = createBottomTabNavigator();
                   iconName = focused ? 'sign-in-alt' : 'sign-in-alt';
                 }else if (route.name === 'Tra bảo hành') {
                   iconName = focused ? 'qrcode' : 'qrcode';
-                  return <Ionicons name={iconName} size={size=32} color={color} style={{}}
+                  return <Ionicons name={iconName} size={size=30} color={color} style={{}}
                   />
                 }else if (route.name === 'Giỏ hàng') {
                   iconName = focused ? 'cart-arrow-down' : 'cart-arrow-down';
@@ -81,13 +82,13 @@ const Tab = createBottomTabNavigator();
                 }
     
                 // You can return any component that you like here!
-                return <Ionicons name={iconName} size={size=18} color={color} style={{}}
+                return <Ionicons name={iconName} size={size=25} color={color} style={{}}
                 />;
               },
               
     
               tabBarActiveTintColor: '#FFD461',
-              tabBarInactiveTintColor: '#FFFFFF',
+              tabBarInactiveTintColor: '#FFF',
               tabBarActiveBackgroundColor:"#425C59",
               tabBarInactiveBackgroundColor:"#425C59",
               headerShown: false

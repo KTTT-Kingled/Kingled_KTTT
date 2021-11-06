@@ -1,16 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Image,
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  Text,
-  TextInput,
-  View,
+  Text, View
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import HeaderComponent from '../screens/component/headerComponent.js';
 import Slider from '../screens/component/Slider.js';
-import HeaderComponent from '../screens/component/headerComponent.js'
 
 const images = [
   'https://images.pexels.com/photos/189187/pexels-photo-189187.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
@@ -65,9 +63,6 @@ export default class HomeScreen extends Component {
                 source={require('../assets/images/banner-web-2.png')}
                 style={styles.banner}
               />
-            </View>
-            <View>
-              <View style={styles.triangleCorner} />
             </View>
             <View style={styles.TextPRzone}>
               <View style={styles.Text1}>
@@ -266,7 +261,7 @@ const styles = StyleSheet.create({
   },
   session3: {
     flex: 1,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: '#FBFBFB',
     alignItems: 'center',
   },
   header: {
@@ -309,7 +304,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 10,
     borderWidth: 1,
-    borderColor: '#bfbfbf',
+    borderColor: '#F8F8F8',
     paddingLeft: 5,
     paddingRight: 5,
   },
@@ -339,7 +334,7 @@ const styles = StyleSheet.create({
     height: 50,
   },
   frames: {
-    width: '89%',
+    width: '91%',
     height: 76,
     borderWidth: 1,
     borderRadius: 5,
@@ -367,7 +362,7 @@ const styles = StyleSheet.create({
   },
   textdesc: {
     color: '#BCBCBC',
-    fontSize: 10,
+    fontSize: 9,
   },
   line: {
     justifyContent: 'center',
@@ -403,19 +398,6 @@ const styles = StyleSheet.create({
     width: '92%',
     resizeMode: 'contain',
     borderRadius: 5,
-  },
-  
-  triangleCorner: {
-    width: 0,
-    height: 0,
-    backgroundColor: 'transparent',
-    borderStyle: 'solid',
-    borderRightWidth: 25,
-    borderTopWidth: 25,
-    borderRightColor: 'transparent',
-    borderTopColor: '#FFD461',
-    marginTop: '-41.8%',
-    marginLeft: '-46%',
   },
   TextPRzone: {
     flex: 1,

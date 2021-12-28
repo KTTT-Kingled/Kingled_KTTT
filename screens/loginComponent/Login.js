@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     },
     textPhone:{
         color:"black",
-        fontSize:22,
+        fontSize:20,
     },
     input:{
         // backgroundColor:"black",
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
         // justifyContent:"center",
     },
     loginBtnText:{
-        fontSize:18,
+        fontSize:16,
         top:"20%",
         color:"white",
     },

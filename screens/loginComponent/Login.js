@@ -6,6 +6,7 @@ import logo from "../../assets/images/logo.png";
 const Login =  ({navigation}) => {
     return (
         <ScrollView>
+            {/* scrollView */}
         <View style={styles.container}>
         <View style={styles.Logo}>
             <Image source={logo} style={{width: "60%",height: "60%",resizeMode: 'contain'}}/>

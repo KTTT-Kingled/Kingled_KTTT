@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
         // justifyContent:"center",
     },
     loginBtnText:{
-        fontSize:16,
+        fontSize:18,
         top:"20%",
         color:"white",
     },

@@ -12,7 +12,6 @@ import LoginScreen from './screens/LoginScreen';
 import ProductScreen from './screens/ProductScreen';
 import QrScreen from './screens/QrScreen';
 
-
 const Tab = createBottomTabNavigator();
  export default class Myapp extends Component
 {
@@ -27,14 +26,12 @@ const Tab = createBottomTabNavigator();
       isVisible : false,
     });
   }
-
   componentDidMount(){
     var that = this;
     setTimeout(function(){
       that.Hide_Splash_Screen();
     }, 3000);
    }
-
     render()
     {
         let Splash_Screen = (
@@ -49,10 +46,7 @@ const Tab = createBottomTabNavigator();
              );
          return (
           <NavigationContainer>
-
           <Tab.Navigator
-
-
             screenOptions={({ route }) => ({
               tabBarStyle: { position: 'absolute',backgroundColor: '#425C59',height:60,bottom:0,paddingBottom:4},
 
@@ -74,12 +68,10 @@ const Tab = createBottomTabNavigator();
                 } else if (route.name === 'Sản phẩm') {
                   iconName = focused ? 'lightbulb' : 'lightbulb';
                 }
-
                 // You can return any component that you like here!
                 return <Ionicons name={iconName} size={size = 25} color={color} style={{}}
                 />;
               },
-
 
               tabBarActiveTintColor: '#FFD461',
               tabBarInactiveTintColor: '#FFF',

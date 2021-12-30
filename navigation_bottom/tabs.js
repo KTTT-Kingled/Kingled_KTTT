@@ -7,7 +7,6 @@ import ProductScreen from "../screens/ProductScreen";
 import QrScreen from "../screens/QrScreen";
 import CartScreen from "../screens/CartScreen";
 
-
 const Tab= createBottomTabNavigator();
 const Tabs= ()=>{
     return (

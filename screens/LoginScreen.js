@@ -5,5 +5,5 @@ const LoginScreen = () => {
     <LoginStack/>
   );
 };
-
+// login
 export default LoginScreen;

@@ -15,7 +15,7 @@ const Tabs= ()=>{
             
         >
             <Tab.Screen name="Trang chủ" component={HomeScreen} >
-{/* navi */}
+{/* navigation */}
             </Tab.Screen>
             <Tab.Screen name="Sản phẩm" component={ProductScreen} />
             <Tab.Screen name="Tra bảo hành" component={QrScreen} />

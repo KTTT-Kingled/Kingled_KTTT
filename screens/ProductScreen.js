@@ -5,5 +5,5 @@ const ProductScreen = () => {
     <ProductStack/>
   );
 };
-
+// product
 export default ProductScreen;

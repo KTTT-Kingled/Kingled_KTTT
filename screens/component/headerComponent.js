@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
 import {
   Image,
-  SafeAreaView,
-  ScrollView,
   StyleSheet,
-  Text,
   TextInput,
   View,
 } from 'react-native';

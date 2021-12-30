@@ -32,7 +32,7 @@ export default class HomeScreen extends Component {
             <View style={styles.frames}>
               <View style={styles.frame1}>
                 <View style={styles.bar}>
-                  <Icon name="gift" color="#FFB127" size={18} />
+                  <Icon name="gift" color="#FFB128" size={18} />
                   <Text style={styles.texticon}>Đổi quà</Text>
                 </View>
                 <Text style={styles.textdesc}>Xem các phần quà</Text>

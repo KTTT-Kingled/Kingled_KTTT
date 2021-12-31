@@ -1,5 +1,5 @@
 import React from "react";
-import { View , Text , Button,StyleSheet,Image ,TextInput,ScrollView} from "react-native"
+import { View , Text, StyleSheet,Image ,TextInput,ScrollView} from "react-native"
 
 const Register =  ({navigation}) => {
     return (

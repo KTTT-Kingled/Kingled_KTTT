@@ -5,7 +5,6 @@ import HeaderComponent from '../component/headerComponent.js';
 import ModalFilter from '../modal/modalFilter.js';
 import ModalUp from "../modal/modalUp.js";
 
-
 const DATA = [
     {
       title: "Thành list",
@@ -113,8 +112,6 @@ const DATA_Horizon = [
     
   ];
 
-
-
 const Item = ({ title }) => (
     
     <View style={styles.item}>
@@ -148,8 +145,6 @@ const Item2 = ({ title }) => (
     </View>
   );
 
-
-
 const Product = ({ navigation }) => {
     return (
         <ScrollView>
@@ -178,12 +173,10 @@ const Product = ({ navigation }) => {
                     </View>}
                     />
                 </View>
-                {/* end flat */}
-               
-
+                {/* end flat */}          
                     <View style={{width:"100%",height:50,marginTop:12}} >
-                          <ModalFilter/>
-                      </View>
+                      <ModalFilter/>
+                    </View>
                 <LineCart ></LineCart>
                 {/* sectionList */}
                 <View style={{marginTop:12,marginBottom:12}}>
@@ -211,7 +204,6 @@ const Product = ({ navigation }) => {
             </View>
         </View> 
         </ScrollView>       
-    
 )
   };
 const styles = StyleSheet.create({

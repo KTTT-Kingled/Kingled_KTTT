@@ -6,7 +6,6 @@ import Ionicons from "react-native-vector-icons/FontAwesome5";
 import ModalBuyProduct from '../modal/modalBuyProduct.js'
 import HeaderComponent from '../component/headerComponent.js'
 
-
 const DetailProduct =  ({navigation}) => {
     return (
         <ScrollView>

@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { View, StyleSheet, Text ,ScrollView,Button,Image } from 'react-native';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Col, Grid, Row } from 'react-native-easy-grid';
 import Ionicons from "react-native-vector-icons/FontAwesome5";
-import ModalBuyProduct from '../modal/modalBuyProduct.js'
-import HeaderComponent from '../component/headerComponent.js'
+import HeaderComponent from '../component/headerComponent.js';
+import ModalBuyProduct from '../modal/modalBuyProduct.js';
 
 const DetailProduct =  ({navigation}) => {
     return (
@@ -19,7 +19,7 @@ const DetailProduct =  ({navigation}) => {
           <View style={styles.seen}>
               <Ionicons
                 name="chevron-right"
-                color="#FF792E"
+                color="#FF7954"
                 size={14}
                 style={{marginRight:0,top:2}}
               />

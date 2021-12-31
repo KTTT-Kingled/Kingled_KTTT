@@ -19,7 +19,7 @@ const DetailProduct =  ({navigation}) => {
           <View style={styles.seen}>
               <Ionicons
                 name="chevron-right"
-                color="#FF7954"
+                color="#FF792E"
                 size={14}
                 style={{marginRight:0,top:2}}
               />

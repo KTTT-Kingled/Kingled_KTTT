@@ -6,7 +6,7 @@ import {
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-
+// headerComponent
 export default class HeaderComponent extends Component {
   render() {
     return (

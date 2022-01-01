@@ -31,7 +31,6 @@ const Register =  ({navigation}) => {
                         <TextInput style={styles.input} placeholder="Nhập lại mật khẩu"   placeholderTextColor="#D7D7D7"/>  
                     </View>
                     
-                   
                     <View style={styles.loginBtn}>
                         <Text style={styles.loginBtnText}>Đăng ký</Text>
                     </View>

@@ -30,7 +30,6 @@ const Login =  ({navigation}) => {
                         size={25}
                         style={{right:14}}
                         />
-
                     </View>
                 </View>
                 <View style={{width:"100%",marginTop:8}}>

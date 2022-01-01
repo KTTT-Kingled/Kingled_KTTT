@@ -11,14 +11,12 @@ export default function CheckBoxs(props) {
                 value={isSelected}
                 onValueChange={setSelection}
                 tintColors={{ true: '#425C59', false: '#425C59' }}
-
             />
         </View>
         <Text style={styles.label}>{props.nameCheckBox}</Text>
   </View>
   );
 }
-
 const styles = StyleSheet.create({
     checkboxContainer:{
       flexDirection: "row",

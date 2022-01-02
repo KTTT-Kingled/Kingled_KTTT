@@ -11,5 +11,5 @@ const User = () => {
     </View>
   );
 };
-  
+// user
 export default User;

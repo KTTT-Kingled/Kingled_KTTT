@@ -81,7 +81,7 @@ const Tab = createBottomTabNavigator();
 
             })}
           >
-            <Tab.Screen name="Tran chủ" component={HomeScreen} />
+            <Tab.Screen name="Trang chủ" component={HomeScreen} />
             <Tab.Screen name="Sản phẩm" component={ProductScreen} />
             <Tab.Screen name="Tra bảo hành" component={QrScreen} />
             <Tab.Screen name="Giỏ hàng" component={CartScreen} />

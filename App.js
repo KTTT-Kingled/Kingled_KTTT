@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import React, { Component } from 'react';
 import {
-  Image, Platform, StyleSheet, Text, View,
+  Image, Platform, StyleSheet, Text, View
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/FontAwesome5';
 import logo from './assets/images/logo.png';
@@ -81,7 +81,7 @@ const Tab = createBottomTabNavigator();
 
             })}
           >
-            <Tab.Screen name="Trang chủ" component={HomeScreen} />
+            <Tab.Screen name="Tran chủ" component={HomeScreen} />
             <Tab.Screen name="Sản phẩm" component={ProductScreen} />
             <Tab.Screen name="Tra bảo hành" component={QrScreen} />
             <Tab.Screen name="Giỏ hàng" component={CartScreen} />

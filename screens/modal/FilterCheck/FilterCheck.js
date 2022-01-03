@@ -36,6 +36,5 @@ const styles = StyleSheet.create({
         marginRight: 10,
         marginLeft: 3,
         marginTop: 5
- 
     },
 });

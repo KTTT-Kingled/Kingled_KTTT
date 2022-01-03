@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
         borderRadius:10,
         elevation: 3,
         marginTop:22,
+        paddingBottom: 12,
         //borderColor: "#425C59",
         //borderWidth: 0.5,
         borderRadius: 10
@@ -111,7 +112,7 @@ const styles = StyleSheet.create({
     },
     textPhone:{
         color:"black",
-        fontSize:20,
+        fontSize:15,
     },
     input:{
         // backgroundColor:"black",

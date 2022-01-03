@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import React, { Component } from 'react';
 import {
-  Image, Platform, StyleSheet, Text, View,
+  Image, Platform, StyleSheet, Text, View
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/FontAwesome5';
 import logo from './assets/images/logo.png';

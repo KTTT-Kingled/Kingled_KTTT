@@ -164,7 +164,7 @@ const Product = ({ navigation }) => {
                             <View style={{}}>
                                 <View 
                                     onStartShouldSetResponder={
-                                        () => ('OnClick', navigation.navigate('Category'))
+                                        () => ('OnClick', navigation.navigate('Detail'))
                                         }
                                 >
                                 <Item2 title={item}></Item2>

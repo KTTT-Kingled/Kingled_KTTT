@@ -20,9 +20,9 @@ const Login =  ({navigation}) => {
                 </View>
                 <View style={[styles.phone,styles.elevation]}>
 
-                    <Text style={styles.textPhone}>Mật khẩu</Text>
+                    <Text style={styles.textPhone}>Nhập mật khẩu mới</Text>
                     <View style={{flexDirection:"row",alignItems:"center"}}>
-                        <TextInput style={styles.input} placeholder="Nhập mật khẩu"  placeholderTextColor="#D7D7D7"/>  
+                        <TextInput style={styles.input} placeholder="Nhập mật khẩu mới"  placeholderTextColor="#D7D7D7"/>  
                         
                         <Icon
                         name="eye-off"
@@ -32,11 +32,20 @@ const Login =  ({navigation}) => {
                         />
                     </View>
                 </View>
-                <View style={{width:"100%",marginTop:8}} onStartShouldSetResponder={
-              () => ('OnPress', navigation.navigate('ForgetPassword'))
-            }>
-                    <Text style={{color:"black",left:"66%"}}>Quên mật khẩu?</Text>
-                </View>
+                <View style={[styles.phone,styles.elevation]}>
+
+<Text style={styles.textPhone}>Nhập lại mật khẩu</Text>
+            <View style={{flexDirection:"row",alignItems:"center"}}>
+                <TextInput style={styles.input} placeholder="Nhập lại mật khẩu"  placeholderTextColor="#D7D7D7"/>  
+                
+                <Icon
+                name="eye-off"
+                color="#425C59"
+                size={25}
+                style={{right:14}}
+                />
+            </View>
+</View>
                 <View style={styles.loginBtn} onStartShouldSetResponder={
               () => ('OnPress', navigation.navigate('HomeScreen'))
             }>

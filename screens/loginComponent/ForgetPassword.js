@@ -14,7 +14,6 @@ const Login =  ({navigation}) => {
         <View style={styles.loginscreen}>
             <View style={styles.login}>
                 <View style={[styles.phone,styles.elevation]}>
-
                     <Text style={styles.textPhone}>Số điện thoại</Text>
                     <TextInput style={styles.input} placeholder="Nhập số điện thoại của bạn"  keyboardType="numeric" placeholderTextColor="#D7D7D7"/>  
                 </View>
@@ -22,8 +21,7 @@ const Login =  ({navigation}) => {
 
                     <Text style={styles.textPhone}>Nhập mật khẩu mới</Text>
                     <View style={{flexDirection:"row",alignItems:"center"}}>
-                        <TextInput style={styles.input} placeholder="Nhập mật khẩu mới"  placeholderTextColor="#D7D7D7"/>  
-                        
+                        <TextInput style={styles.input} placeholder="Nhập mật khẩu mới"  placeholderTextColor="#D7D7D7"/>                        
                         <Icon
                         name="eye-off"
                         color="#425C59"

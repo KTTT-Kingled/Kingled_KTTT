@@ -1,5 +1,5 @@
 import React from "react";
-import { View , Text, StyleSheet,Image ,TextInput,ScrollView} from "react-native"
+import { Image, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
 
 const Register =  ({navigation}) => {
     return (
@@ -34,7 +34,6 @@ const Register =  ({navigation}) => {
                     <View style={styles.loginBtn}>
                         <Text style={styles.loginBtnText}>Đăng ký</Text>
                     </View>
-
                 </View>
             </View>
         </View>
@@ -49,7 +48,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         backgroundColor:"#425C59",
-        height:900,
+        height:800,
     },
     Logo:{
         width:"100%",
@@ -63,38 +62,39 @@ const styles = StyleSheet.create({
         position:"absolute",
         bottom:0,
         width:"100%",
-        height:746,
+        height:"80%",
         borderTopLeftRadius: 90,
-        backgroundColor:"#F5F5F5",alignItems:"center",
+        backgroundColor:"#F8F8F8",
+        alignItems:"center",
         justifyContent:"center",
     },
     login:{
         width:"84%",
-        height:"64%",
-        // backgroundColor:"red",
+        height:"65%",
+        //backgroundColor:"red",
         position:"absolute",
-        top: "4%",
+        top: "10%",
         alignItems:"center",
         // justifyContent:"center",
         
     },
     phone:{
         width:"100%",
-        height:"18%",
-        // backgroundColor:"blue",
+        height:"20%",
+        backgroundColor:"white",
         paddingLeft: 10,
-        paddingTop:4,
-        borderRadius:14,
-        boxShadow:"22 22 10 22  #15ad9b",
-        marginTop:14,
-        borderColor: "#425C59",
-        borderWidth: 0.5,
-        borderRadius: 10
+        paddingTop:12,
+        borderRadius:10,
+        elevation: 3,
+        marginTop:22,
+        paddingBottom: 12,
+        //borderColor: "#425C59",
+        //borderWidth: 0.5,
 
     },
     textPhone:{
         color:"black",
-        fontSize:22,
+        fontSize:15,
     },
     input:{
         // backgroundColor:"black",

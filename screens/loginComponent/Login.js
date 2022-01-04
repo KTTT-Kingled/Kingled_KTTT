@@ -107,7 +107,6 @@ const styles = StyleSheet.create({
         paddingBottom: 12,
         //borderColor: "#425C59",
         //borderWidth: 0.5,
-        borderRadius: 10
 
     },
     textPhone:{
@@ -138,7 +137,7 @@ const styles = StyleSheet.create({
         flexDirection: "row"
     },
     noAccText:{
-        color:"#425C59",
+        color:"#000",
     },
     textRegister:{
         color:"#425C59",

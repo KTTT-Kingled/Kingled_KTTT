@@ -75,7 +75,7 @@ export default class Product extends React.Component {
          stickyHeaderIndices: []
       };
    }
-   
+
    renderItem = ({ item }) => {return (
           <View style={styles.item}>
                 <View style={styles.image}>
@@ -130,9 +130,6 @@ export default class Product extends React.Component {
                     </View>
                 </View>
             </View>);};
-
-
-
     state = {
       modalVisible: false
     };

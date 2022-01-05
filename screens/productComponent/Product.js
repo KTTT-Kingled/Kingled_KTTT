@@ -13,12 +13,12 @@ const DATA = [
         id: 1,
         deleteProduct: "Bỏ khỏi giỏ hàng",
         name:"ĐÈN ÂM TRẦN DIAMOND 10W ĐƠN SẮC",
-        cost:"220.000",
+        cost:"266.000",
         code:"DDL-10SS-T120",
         barrel:"50",
         ones:"2.200",
         amount: 5,
-        uri: "https://product.hstatic.net/1000254381/product/led2_master.jpg"
+        uri: "https://i.imgur.com/rmoEi0P.jpg"
         
       },
       {

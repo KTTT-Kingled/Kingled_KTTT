@@ -46,7 +46,6 @@ class ModalUp extends Component {
             
             <TouchableHighlight onPress = {() => {this.toggleModal(true)}} 
                             underlayColor="white"
-
             >
                     <View style={[styles.btnProduct]}>
                         <Text style={styles.btnText}>Mua hàng</Text>

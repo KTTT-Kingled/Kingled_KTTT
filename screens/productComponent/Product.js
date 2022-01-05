@@ -68,22 +68,21 @@ const DATA_Horizon = [
       data: [
       {
         id: 1,
-        uri: "https://th.bing.com/th/id/R.13f35afb73b386293bdfc53dd9bdd4e4?rik=mA0PH9i3%2fijWgA&riu=http%3a%2f%2fnoithatsct.com%2fwp-content%2fuploads%2f2020%2f07%2fDen-LED-ong-bo-COB-gan-noi-tran-anh01.jpg&ehk=ImuutcZwkUiFgxBlOH8XgOQfT4jzQZjvFanOS9ZQSfs%3d&risl=&pid=ImgRaw&r=0"
-        
+        uri: "https://i.imgur.com/kum3g7t.png"
       },
+      
       {
           id: 2,
-          uri: "https://th.bing.com/th/id/OIP.Ba7H0ZDjZZV75lUwYx5HiwHaHa?pid=ImgDet&rs=1"
-    
-        },
-        {
-          id: 3,
-          uri: "https://product.hstatic.net/1000254381/product/led2_master.jpg"
-          
-        },
+          uri: "https://i.imgur.com/6m6dAOa.png"
+      },
+
+      {
+        id: 3,
+        uri: "https://i.imgur.com/KTAqOg1.png"
+      },
         {
           id: 4,
-          uri: "https://th.bing.com/th/id/OIP.2NjBlRu-kiyTZVOySkOmPQHaHa?pid=ImgDet&rs=1"
+          uri: "https://i.imgur.com/xgkW9Rd.png"
     
         },
         {

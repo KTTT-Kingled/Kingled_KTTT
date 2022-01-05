@@ -80,31 +80,67 @@ const DATA_Horizon = [
         id: 3,
         uri: "https://i.imgur.com/KTAqOg1.png"
       },
-        {
-          id: 4,
-          uri: "https://i.imgur.com/xgkW9Rd.png"
-    
-        },
-        {
-            id: 1,
-            uri: "https://tangthienlac.com/wp-content/uploads/2020/09/den-led-day.jpg"
-            
-          },
-          {
-              id: 2,
-              uri: "https://nguonled.vn/timthumb.php?src=upload/product/285810185794.jpg&w=800&h=800&q=100&zc=2"
-        
-            },
-            {
-              id: 3,
-              uri: "https://bizweb.dktcdn.net/thumb/1024x1024/100/308/159/products/led-sd-d08a5e31-8e77-408a-88e3-092befdb094e.jpg?v=1533229343560"
-              
-            },
-            {
-              id: 4,
-              uri: "https://th.bing.com/th/id/R.82d5eefa8cced9e0673926939c363b7a?rik=I3jM45E9T5Z7%2bA&pid=ImgRaw&r=0"
-        
-            },
+      {
+        id: 4,
+        uri: "https://i.imgur.com/xgkW9Rd.png"
+      },
+
+      {
+        id: 5,
+        uri: "https://i.imgur.com/fNFPALr.png"
+      },
+      
+      {
+        id: 6,
+        uri: "https://i.imgur.com/6m6dAOa.png"
+      },
+
+      {
+        id: 7,
+        uri: "https://i.imgur.com/KTAqOg1.png"
+      },
+      {
+        id: 8,
+        uri: "https://i.imgur.com/xgkW9Rd.png"
+      },
+
+      {
+        id: 9,
+        uri: "https://i.imgur.com/kum3g7t.png"
+      },
+      
+      {
+        id: 10,
+        uri: "https://i.imgur.com/6m6dAOa.png"
+      },
+
+      {
+        id: 11,
+        uri: "https://i.imgur.com/KTAqOg1.png"
+      },
+      {
+        id: 12,
+        uri: "https://i.imgur.com/xgkW9Rd.png"
+      },
+
+      {
+        id: 13,
+        uri: "https://i.imgur.com/kum3g7t.png"
+      },
+      
+      {
+        id: 14,
+        uri: "https://i.imgur.com/6m6dAOa.png"
+      },
+
+      {
+        id: 15,
+        uri: "https://i.imgur.com/KTAqOg1.png"
+      },
+      {
+        id: 16,
+        uri: "https://i.imgur.com/xgkW9Rd.png"
+      },
   
   ]
     },

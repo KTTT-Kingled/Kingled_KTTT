@@ -1,12 +1,43 @@
 
-import React from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import React , {useState}from 'react';
+import { Image, ScrollView, StyleSheet, Text, View ,Modal,TouchableOpacity,SafeAreaView} from 'react-native';
 import { Col, Grid, Row } from 'react-native-easy-grid';
 import Ionicons from "react-native-vector-icons/FontAwesome5";
 import HeaderComponent from '../component/headerComponent.js';
 import ModalBuyProduct from '../modal/modalBuyProduct.js';
+import {ModalPicker} from '../modal/Modalimage'
+import {ModalPickerImage2} from '../modal/Modalimage2.js'
+import {ModalPickerImage3} from '../modal/Modalimage3'
+
 
 const DetailProduct =  ({navigation}) => {
+    const [chooseData,setchooseData] = useState('Tỉnh/Thành phố');
+    const [isModalVisible,setisModalVisible] = useState(false);
+    const changeModalVisibility = (bool) => {
+        setisModalVisible(bool)
+    }
+    const setData = (option) => {
+        setchooseData(option)
+    }
+
+    const [chooseData1,setchooseData1] = useState('Quận/Huyện');
+    const [isModalVisible1,setisModalVisible1] = useState(false);
+    const changeModalVisibility1 = (bool) => {
+        setisModalVisible1(bool)
+    }
+    const setData1 = (option) => {
+        setchooseData1(option)
+    }
+
+    const [chooseData2,setchooseData2] = useState('Xã/Phường');
+    const [isModalVisible2,setisModalVisible2] = useState(false);
+    const changeModalVisibility2 = (bool) => {
+        setisModalVisible2(bool)
+    }
+    const setData2 = (option) => {
+        setchooseData2(option)
+    }
+
     return (
         <ScrollView>
           <HeaderComponent/>
@@ -28,17 +59,75 @@ const DetailProduct =  ({navigation}) => {
               </Text>
           </View>
           <View style={styles.containerImg}>
+              {/*  */}
+              
+              {/*  */}
               <View style={styles.img}>
-                    <Image source={{uri: 'https://th.bing.com/th/id/R.3c99f118e6f0ce6d2fb1dedd3d09436a?rik=m439jeY7yAZwDg&riu=http%3a%2f%2fg02.a.alicdn.com%2fkf%2fHTB17mPtJFXXXXbDXpXXq6xXFXXXj%2fPOSSBAY-DIY-Decoration-12V-Auto-Car-Interior-LED-EL-Wire-Rope-Tube-Neon-Light-Line-10.jpg&ehk=P1kk5g4mrQNWth2dHPwLDK0P2yhcARh83tBVRPHi7AU%3d&risl=&pid=ImgRaw&r=0'}} 
-                    style={{width: "100%", height: "100%"}} />
+                          <SafeAreaView style={styles.container1}>
+                                <TouchableOpacity
+                                    onPress={()=>changeModalVisibility(true)}
+                                    style={styles.touchableOpacity}
+                                >
+                                    <Image source={{uri: 'https://th.bing.com/th/id/R.3c99f118e6f0ce6d2fb1dedd3d09436a?rik=m439jeY7yAZwDg&riu=http%3a%2f%2fg02.a.alicdn.com%2fkf%2fHTB17mPtJFXXXXbDXpXXq6xXFXXXj%2fPOSSBAY-DIY-Decoration-12V-Auto-Car-Interior-LED-EL-Wire-Rope-Tube-Neon-Light-Line-10.jpg&ehk=P1kk5g4mrQNWth2dHPwLDK0P2yhcARh83tBVRPHi7AU%3d&risl=&pid=ImgRaw&r=0'}} 
+                                     style={{width: "100%", height: "100%"}} />
+                                </TouchableOpacity>
+                                <Modal
+                                    transparent= {true}
+                                    animationType="fade"
+                                    visible={isModalVisible}
+                                    nRequestClose={()=>changeModalVisibility(false)}
+                                >
+                                    <ModalPicker
+                                        changeModalVisibility={changeModalVisibility}
+                                        setData = {setData}
+                                    />
+                                </Modal>
+                            </SafeAreaView>
+                    
               </View>
               <View style={styles.img,styles.imgMargin}>
-                    <Image source={{uri: 'https://bizweb.dktcdn.net/thumb/1024x1024/100/308/159/products/led-sd-d08a5e31-8e77-408a-88e3-092befdb094e.jpg?v=1533229343560'}} 
+                      <SafeAreaView style={styles.container1}>
+                                        <TouchableOpacity
+                                            onPress={()=>changeModalVisibility1(true)}
+                                            style={styles.touchableOpacity}
+                                        >
+                                             <Image source={{uri: 'https://bizweb.dktcdn.net/thumb/1024x1024/100/308/159/products/led-sd-d08a5e31-8e77-408a-88e3-092befdb094e.jpg?v=1533229343560'}} 
                     style={{width: "100%", height: "100%"}} />
+                                        </TouchableOpacity>
+                                        <Modal
+                                            transparent= {true}
+                                            animationType="fade"
+                                            visible={isModalVisible1}
+                                            nRequestClose={()=>changeModalVisibility1(false)}
+                                        >
+                                            <ModalPickerImage2
+                                                changeModalVisibility={changeModalVisibility1}
+                                                setData = {setData1}
+                                            />
+                                        </Modal>
+                            </SafeAreaView>
               </View>
               <View style={styles.img}>
-                    <Image source={{uri: 'https://cf.shopee.vn/file/82d5eefa8cced9e0673926939c363b7a'}} 
+              <SafeAreaView style={styles.container1}>
+                                        <TouchableOpacity
+                                            onPress={()=>changeModalVisibility2(true)}
+                                            style={styles.touchableOpacity}
+                                        >
+                                             <Image source={{uri: 'https://cf.shopee.vn/file/82d5eefa8cced9e0673926939c363b7a'}}
                     style={{width: "100%", height: "100%"}} />
+                                        </TouchableOpacity>
+                                        <Modal
+                                            transparent= {true}
+                                            animationType="fade"
+                                            visible={isModalVisible2}
+                                            nRequestClose={()=>changeModalVisibility2(false)}
+                                        >
+                                            <ModalPickerImage3
+                                                changeModalVisibility={changeModalVisibility2}
+                                                setData = {setData2}
+                                            />
+                                        </Modal>
+                            </SafeAreaView>
               </View>
           </View>
           <Text style={{color: '#FF792E',padding:8,paddingLeft:0,fontSize:16}}>

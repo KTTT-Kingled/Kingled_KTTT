@@ -1,14 +1,14 @@
 import React from "react";
-import { View , Text , Button,StyleSheet,TextInput,Image } from "react-native"
-import Icon from "react-native-vector-icons/Ionicons";
-import Register from "./Register"
-import logo from "../assets/images/logo.png"
+import { Image, StyleSheet, Text, View } from "react-native";
+import QRCodeimg from "../assets/images/QRCodeimg.png";
+import HeaderComponent from '../screens/component/headerComponent.js';
 
 const LoginScreen =  ({navigation}) => {
     return (
         <View style={styles.container}>
+            <HeaderComponent/>
             <View style={styles.Logo}>
-                <Image source={logo} style={{width: "80%",height: "80%",resizeMode: 'contain'}}/>
+                <Image source={QRCodeimg} style={{width: "100%",height: "100%",resizeMode: 'contain'}}/>
             </View>
             <View style={{top: "86%"}}>
                 <Text style={{fontSize: 16,color:"white"}}>Kingled.vn</Text>
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     },
     Logo:{
         width:"100%",
-        height:"22%",
+        height:"40%",
         alignItems:"center",
         justifyContent:"center",
         position:"absolute",

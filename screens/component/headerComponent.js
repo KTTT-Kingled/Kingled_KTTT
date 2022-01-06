@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   Image,
   StyleSheet,
   TextInput,
-  View,
+  View
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 // headerComponent
@@ -22,9 +22,9 @@ export default class HeaderComponent extends Component {
           <View style={styles.hang3}>
             <View style={styles.iconzone}>
               <View style={styles.icons}>
-                <Icon name="notifications" color="white" size={26} />
+                <Icon name="notifications" color="white" size={24} />
               </View>
-              <Icon name="cart" color="white" size={26} style={{left:10}}/>
+              <Icon name="cart" color="white" size={24} style={{left:4}}/>
             </View>
           </View>
         </View>

@@ -99,7 +99,6 @@ const Register =  ({navigation}) => {
                             </SafeAreaView>
                         </View>
                         <View style={[styles.phone1,styles.elevation]}>
-                        <View style={{flexDirection:"row",alignItems:"center"}}></View>
                         <SafeAreaView style={styles.container1}>
                             <TouchableOpacity
                                 onPress={()=>changeModalVisibility1(true)}

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Text, TouchableHighlight, View, StyleSheet}
-
-from 'react-native'
+import { Modal, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import Icon from "react-native-vector-icons/FontAwesome5";
 import CheckBoxs from './FilterCheck/FilterCheck.js';
 
@@ -139,8 +137,10 @@ const styles = StyleSheet.create ({
   filter:{
     height:36,
     width:90,
-    borderWidth:2,
+    borderWidth:1,
+    backgroundColor:"white",
     borderColor:"#425C59",
+    //elevation: 3,
     position:"absolute",
     right:"0%",
     borderRadius:4,
@@ -151,7 +151,7 @@ const styles = StyleSheet.create ({
    textTieude:{
       color: "#425C59",
       // marginLeft: "5%",
-      fontSize: 16,
+      fontSize: 14,
       // marginTop: "6%",
       fontWeight:"500",
       // marginBottom: "2%"

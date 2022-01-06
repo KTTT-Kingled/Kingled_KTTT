@@ -194,8 +194,8 @@ const Item = ({ title }) => (
                   <Text style={styles.name}>{title.name}</Text>
                   <Text style={styles.cost}>{title.cost} VNĐ</Text>
                   <Text style={styles.codeText}>Mã SP: {title.code}</Text>
-                  <Text style={styles.codeText}>Quy cách: {title.barrel} chiếc/thùng</Text>
-                  <Text style={styles.codeText}>Tích lũy: {title.ones} / chiếc</Text>
+                  <Text style={styles.codeText}>Quy cách: {title.barrel} chiếc / thùng</Text>
+                  <Text style={styles.codeText}>Tích lũy: {title.ones} VNĐ / chiếc</Text>
                   
               </View>
               
@@ -258,13 +258,13 @@ const Product = ({ navigation }) => {
                             marginVertical: 8,borderRadius: 4, elevation: 3,
                         }}>
                         <Item title={item}></Item>
-                        <View style={{flexDirection:"row",marginLeft:"37%",paddingBottom:12}}>
-                            <View style={styles.btnProduct} 
+                        <View style={{flexDirection:"row",marginLeft:"37%", paddingBottom:12}}>
+                            <View style={styles.btnProduct2} 
                                 onStartShouldSetResponder={
                                     () => ('OnPress', navigation.navigate('Detail'))
                                     }
                             >
-                            <Text style={styles.btnText}>Xem chi tiết</Text>
+                            <Text style={styles.btnText2}>Xem chi tiết</Text>
                         </View>
                       <ModalUp/>
                   </View>
@@ -415,6 +415,20 @@ const styles = StyleSheet.create({
           paddingRight:10,
           marginRight: 8
         },
+
+        btnProduct2:{
+          //backgroundColor:"#FF792E",
+          padding:0,
+          //width:"44%",
+          borderRadius:4,
+          borderWidth: 0.5,
+          borderColor: "#FF792E",
+          paddingBottom:6,
+          paddingTop:6,
+          paddingLeft:10,
+          paddingRight:10,
+          marginRight: 8
+        },
         btnBuy:{
             marginLeft:8,
             paddingLeft:16,
@@ -423,6 +437,9 @@ const styles = StyleSheet.create({
         btnText:{
             color:"white"
         },
+        btnText2:{
+          color:"#FF792E"
+      },
         
   });
   

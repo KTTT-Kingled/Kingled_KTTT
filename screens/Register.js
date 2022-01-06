@@ -1,17 +1,8 @@
-import React , {useState}from "react";
-import { View , Text, StyleSheet,Image ,TextInput,ScrollView,Modal,TouchableOpacity,SafeAreaView} from "react-native"
-import DropdownMenu from 'react-native-dropdown-menu';
-import {ModalPicker} from './modal/ModalPicker.js'
-import {ModalPickerProvince} from './modal/ModalPickerProvin.js'
-import {ModalPickerVillage} from './modal/ModalPickerVillage.js'
-import {
-    Combobox,
-    ComboboxInput,
-    ComboboxPopover,
-    ComboboxList,
-    ComboboxOption,
-    ComboboxOptionText,
-  } from "@reach/combobox";
+import React, { useState } from "react";
+import { Image, Modal, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { ModalPicker } from './modal/ModalPicker.js';
+import { ModalPickerProvince } from './modal/ModalPickerProvin.js';
+import { ModalPickerVillage } from './modal/ModalPickerVillage.js';
 //   import "@reach/combobox/styles.css";
 const Register =  ({navigation}) => {
     const [chooseData,setchooseData] = useState('Tỉnh/Thành phố');
@@ -160,11 +151,11 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         backgroundColor:"#425C59",
-        height:980,
+        height:800,
     },
     Logo:{
         width:"100%",
-        height:154,
+        height:"22%",
         alignItems:"center",
         justifyContent:"center",
         position:"absolute",
@@ -174,38 +165,39 @@ const styles = StyleSheet.create({
         position:"absolute",
         bottom:0,
         width:"100%",
-        height:826,
+        height:"76%",
         borderTopLeftRadius: 90,
         backgroundColor:"#F5F5F5",alignItems:"center",
         justifyContent:"center",
     },
     login:{
         width:"84%",
-        height:"64%",
+        height:"76%",
         // backgroundColor:"red",
         position:"absolute",
-        top: "4%",
+        top: "10%",
         alignItems:"center",
         // justifyContent:"center",
         
     },
     phone:{
         width:"100%",
-        height:"18%",
-        // backgroundColor:"blue",
+        height:"20%",
+        backgroundColor:"white",
         paddingLeft: 10,
         paddingTop:4,
         borderRadius:14,
         boxShadow:"22 22 10 22  #15ad9b",
         marginTop:14,
-        borderColor: "#425C59",
-        borderWidth: 0.5,
+        elevation: 3,
+        //borderColor: "#425C59",
+        //borderWidth: 0.5,
         borderRadius: 10
 
     },
     textPhone:{
         color:"black",
-        fontSize:22,
+        fontSize:15,
     },
     input:{
         // backgroundColor:"black",

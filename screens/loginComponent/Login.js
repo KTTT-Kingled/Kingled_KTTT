@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         backgroundColor:"#425C59",
-        height:700,
+        height:800,
     },
     Logo:{
         width:"100%",
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     },
     login:{
         width:"84%",
-        height:"80%",
+        height:"76%",
         //backgroundColor:"red",
         position:"absolute",
         top: "10%",

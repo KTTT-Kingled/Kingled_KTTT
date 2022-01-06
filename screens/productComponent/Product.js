@@ -24,8 +24,8 @@ const DATA = [
       {
           id: 2,
           deleteProduct: "Bỏ khỏi giỏ hàng",
-          name:"ĐÈN ÂM TRẦN DIAMOND 10W ĐƠN SẮC",
-          cost:"220.000",
+          name:"ĐÈN ÂM TRẦN DIAMOND 10W MẶT CONG, ĐƠN SẮC",
+          cost:"268.000",
           code:"DDL-10SS-T120",
           barrel:"50",
           amount: 55,
@@ -158,7 +158,7 @@ const Item = ({ title }) => (
                   <Text style={styles.name}>{title.name}</Text>
                   <Text style={styles.cost}>{title.cost} VNĐ</Text>
                   <Text style={styles.codeText}>Mã SP: {title.code}</Text>
-                  <Text style={styles.codeText}>Quy cách: {title.barrel} chiêc/thùng</Text>
+                  <Text style={styles.codeText}>Quy cách: {title.barrel} chiếc/thùng</Text>
                   <Text style={styles.codeText}>Tích lũy: {title.ones} / chiếc</Text>
                   
               </View>

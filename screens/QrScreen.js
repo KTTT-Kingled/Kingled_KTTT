@@ -9,8 +9,9 @@ const LoginScreen =  ({navigation}) => {
         <View style={styles.container}>
             <HeaderComponent/>
             <View style={styles.Logo}>
-                <Image source={QRCodeimg} style={{width: "100%",height: "100%",resizeMode: 'contain', position:"absolute",}}/>
+                <Image source={QRCodeimg} style={{width: "100%",height: "100%",resizeMode: 'contain',}}/>
             </View>
+            <Text style={styles.text1}>Đặt mã QR trong vùng quét</Text>
             <View style={{top: "60%"}}>
                 <View style={{flexDirection:"row",alignItems:"center"}}>
                     <View style={{flexDirection:"column", alignItems:"center"}}>
@@ -62,5 +63,10 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         marginLeft: 20,
         marginRight: 20,
+    },
+    text1: {
+        top: "43%",
+        color: "white",
+        fontSize: 11,
     },
 })

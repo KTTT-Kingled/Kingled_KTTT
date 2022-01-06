@@ -123,7 +123,7 @@ const Item = ({ title }) => (
                   <Text style={styles.name}>{title.name}</Text>
                   <Text style={styles.cost}>{title.cost} VNĐ</Text>
                   <Text style={styles.codeText}>Mã SP: {title.code}</Text>
-                  <Text style={styles.codeText}>Quy cách: {title.barrel} chiêc/thùng</Text>
+                  <Text style={styles.codeText}>Quy cách: {title.barrel} chiếc/thùng</Text>
                   <Text style={styles.codeText}>Tích lũy: {title.ones} / chiếc</Text>
                   
               </View>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Image, Modal, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 import { ModalPicker } from './modal/ModalPicker.js';
 import { ModalPickerProvince } from './modal/ModalPickerProvin.js';
 import { ModalPickerVillage } from './modal/ModalPickerVillage.js';
@@ -49,14 +50,31 @@ const Register =  ({navigation}) => {
                         <TextInput style={styles.input} placeholder="Nhập số điện thoại của bạn"  keyboardType="numeric" placeholderTextColor="#D7D7D7"/>  
                     </View>
                     <View style={[styles.phone,styles.elevation]}>
-
                         <Text style={styles.textPhone}>Mật khẩu</Text>
-                        <TextInput style={styles.input} placeholder="Nhập mật khẩu"   placeholderTextColor="#D7D7D7"/>  
+                        <View style={{flexDirection:"row",alignItems:"center"}}>
+                            <TextInput style={styles.input} placeholder="Nhập mật khẩu"  placeholderTextColor="#D7D7D7"/>  
+                        
+                            <Icon
+                            name="eye-off"
+                            color="#425C59"
+                            size={25}
+                            style={{right:14}}
+                            />
+                        </View>
                     </View>
-                    <View style={[styles.phone,styles.elevation]}>
 
+                    <View style={[styles.phone,styles.elevation]}>
                         <Text style={styles.textPhone}>Nhập lại mật khẩu</Text>
-                        <TextInput style={styles.input} placeholder="Nhập lại mật khẩu"   placeholderTextColor="#D7D7D7"/>  
+                        <View style={{flexDirection:"row",alignItems:"center"}}>
+                            <TextInput style={styles.input} placeholder="Nhập lại mật khẩu"  placeholderTextColor="#D7D7D7"/>  
+                        
+                            <Icon
+                            name="eye-off"
+                            color="#425C59"
+                            size={25}
+                            style={{right:14}}
+                            />
+                        </View>
                     </View>
                     {/*  */}
                         <View style={[styles.phone1,styles.elevation]} >
@@ -81,6 +99,7 @@ const Register =  ({navigation}) => {
                             </SafeAreaView>
                         </View>
                         <View style={[styles.phone1,styles.elevation]}>
+                        <View style={{flexDirection:"row",alignItems:"center"}}></View>
                         <SafeAreaView style={styles.container1}>
                             <TouchableOpacity
                                 onPress={()=>changeModalVisibility1(true)}
@@ -124,8 +143,10 @@ const Register =  ({navigation}) => {
                         </SafeAreaView>
                         </View>
                     {/*  */}
-                    <View style={[styles.phone2,styles.elevation]}>
-                        <TextInput style={styles.input} placeholder="Địa chỉ nhà..."   placeholderTextColor="black"/>  
+                    <View style={[styles.phone,styles.elevation]}>
+
+                        <Text style={styles.textPhone}>Địa chỉ nhà</Text>
+                        <TextInput style={styles.input} placeholder="Địa chỉ nhà"   placeholderTextColor="#D7D7D7"/>  
                     </View>
                     <View style={styles.loginBtn}>
                         <Text style={styles.loginBtnText}>Đăng ký</Text>
@@ -151,11 +172,11 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"center",
         backgroundColor:"#425C59",
-        height:800,
+        height:1180,
     },
     Logo:{
         width:"100%",
-        height:"22%",
+        height:"19%",
         alignItems:"center",
         justifyContent:"center",
         position:"absolute",
@@ -165,34 +186,34 @@ const styles = StyleSheet.create({
         position:"absolute",
         bottom:0,
         width:"100%",
-        height:"76%",
+        height:"81%",
         borderTopLeftRadius: 90,
         backgroundColor:"#F5F5F5",alignItems:"center",
         justifyContent:"center",
     },
     login:{
         width:"84%",
-        height:"76%",
+        height:"70%",
         // backgroundColor:"red",
         position:"absolute",
-        top: "10%",
+        top: "8%",
         alignItems:"center",
         // justifyContent:"center",
         
     },
     phone:{
         width:"100%",
-        height:"20%",
+        height:"13%",
         backgroundColor:"white",
         paddingLeft: 10,
-        paddingTop:4,
-        borderRadius:14,
+        paddingTop:12,
+        borderRadius:10,
         boxShadow:"22 22 10 22  #15ad9b",
-        marginTop:14,
+        marginTop:15,
         elevation: 3,
         //borderColor: "#425C59",
         //borderWidth: 0.5,
-        borderRadius: 10
+        paddingBottom: 12,
 
     },
     textPhone:{
@@ -231,29 +252,28 @@ const styles = StyleSheet.create({
     phone1:{
         width:"100%",
         height:"7%",
-        // backgroundColor:"blue",
-        paddingLeft: 10,
-        paddingTop:4,
-        borderRadius:14,
+        backgroundColor:"white",
+        elevation: 3,
+        paddingLeft: 5,
+        paddingTop:12,
+        borderRadius:10,
         boxShadow:"22 22 10 22  #15ad9b",
         marginTop:14,
-        borderColor: "#425C59",
-        borderWidth: 0.5,
-        borderRadius: 10
+        //borderColor: "#425C59",
+        //borderWidth: 0.5,
 
     },
     phone2:{
         width:"100%",
         height:"9%",
-        // backgroundColor:"blue",
+        backgroundColor:"white",
+        elevation: 3,
         paddingLeft: 10,
-        paddingTop:4,
-        borderRadius:14,
+        paddingTop:8,
+        borderRadius:10,
         boxShadow:"22 22 10 22  #15ad9b",
         marginTop:14,
-        borderColor: "#425C59",
-        borderWidth: 0.5,
-        borderRadius: 10
-
+        //borderColor: "#425C59",
+        //borderWidth: 0.5,
     },
 })

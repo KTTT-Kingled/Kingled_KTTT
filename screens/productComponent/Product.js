@@ -26,35 +26,71 @@ const DATA = [
           deleteProduct: "Bỏ khỏi giỏ hàng",
           name:"ĐÈN ÂM TRẦN DIAMOND 10W MẶT CONG, ĐƠN SẮC",
           cost:"268.000",
-          code:"DDL-10SS-T120",
+          code:"DDL-10SS-T120-DM-CV/CB",
           barrel:"50",
           amount: 55,
-          ones:"2.200",
-          uri: "https://i.pinimg.com/originals/bf/8f/61/bf8f61fd78483a90eff9ef6a87e7bcf6.jpg"
+          ones:"2.700",
+          uri: "https://i.imgur.com/XW6rGiK.jpg"
     
         },
         {
           id: 3,
           deleteProduct: "Bỏ khỏi giỏ hàng",
-          name:"ĐÈN ÂM TRẦN DIAMOND 10W ĐƠN SẮC",
-          cost:"220.000",
-          code:"DDL-10SS-T120",
+          name:"ĐÈN ÂM TRẦN DIAMOND 10W MẶT PHẲNG, ĐƠN SẮC",
+          cost:"268.000",
+          code:"DDL-10SS-T120-PV/PB",
           barrel:"50",
           amount: 214,
-          ones:"2.200",
-          uri: "https://th.bing.com/th/id/R.3c99f118e6f0ce6d2fb1dedd3d09436a?rik=m439jeY7yAZwDg&riu=http%3a%2f%2fg02.a.alicdn.com%2fkf%2fHTB17mPtJFXXXXbDXpXXq6xXFXXXj%2fPOSSBAY-DIY-Decoration-12V-Auto-Car-Interior-LED-EL-Wire-Rope-Tube-Neon-Light-Line-10.jpg&ehk=P1kk5g4mrQNWth2dHPwLDK0P2yhcARh83tBVRPHi7AU%3d&risl=&pid=ImgRaw&r=0"
+          ones:"2.700",
+          uri: "https://i.imgur.com/XW6rGiK.jpg"
           
         },
         {
           id: 4,
           deleteProduct: "Bỏ khỏi giỏ hàng",
-          name:"ĐÈN ÂM TRẦN DIAMOND 10W ĐƠN SẮC",
-          cost:"220.000",
-          code:"DDL-10SS-T120",
+          name:"ĐÈN ÂM TRẦN DIAMOND 15W ĐỔI MÀU",
+          cost:"372.000",
+          code:"DDL-15SS-T140-DM",
           barrel:"50",
-          amount: 16,
+          amount: 72,
+          ones:"2.900",
+          uri: "https://i.imgur.com/rmoEi0P.jpg"
+    
+        },
+        {
+          id: 5,
+          deleteProduct: "Bỏ khỏi giỏ hàng",
+          name:"ĐÈN ÂM TRẦN RUBY 06W ĐỔI MÀU",
+          cost:"208.000",
+          code:"DL-6SS-T100-DM",
+          barrel:"50",
+          amount: 100,
           ones:"2.200",
-          uri: "https://th.bing.com/th/id/R.13f35afb73b386293bdfc53dd9bdd4e4?rik=mA0PH9i3%2fijWgA&riu=http%3a%2f%2fnoithatsct.com%2fwp-content%2fuploads%2f2020%2f07%2fDen-LED-ong-bo-COB-gan-noi-tran-anh01.jpg&ehk=ImuutcZwkUiFgxBlOH8XgOQfT4jzQZjvFanOS9ZQSfs%3d&risl=&pid=ImgRaw&r=0"
+          uri: "https://i.imgur.com/rmoEi0P.jpg"
+    
+        },
+        {
+          id: 6,
+          deleteProduct: "Bỏ khỏi giỏ hàng",
+          name:"ĐÈN ÂM TRẦN RUBY 08W ĐỔI MÀU",
+          cost:"225.000",
+          code:"DL-8SS-T120-DM",
+          barrel:"50",
+          amount: 210,
+          ones:"2.200",
+          uri: "https://i.imgur.com/rmoEi0P.jpg"
+    
+        },
+        {
+          id: 7,
+          deleteProduct: "Bỏ khỏi giỏ hàng",
+          name:"ĐÈN ÂM TRẦN RUBY 12W ĐỔI MÀU",
+          cost:"288.000",
+          code:"DL-12SS-T140-DM",
+          barrel:"50",
+          amount: 100,
+          ones:"2.200",
+          uri: "https://i.imgur.com/rmoEi0P.jpg"
     
         },
   

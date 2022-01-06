@@ -66,46 +66,81 @@ const DATA_Horizon = [
     {
       title: "Thành list",
       data: [
-      {
-        id: 1,
-        uri: "https://th.bing.com/th/id/R.13f35afb73b386293bdfc53dd9bdd4e4?rik=mA0PH9i3%2fijWgA&riu=http%3a%2f%2fnoithatsct.com%2fwp-content%2fuploads%2f2020%2f07%2fDen-LED-ong-bo-COB-gan-noi-tran-anh01.jpg&ehk=ImuutcZwkUiFgxBlOH8XgOQfT4jzQZjvFanOS9ZQSfs%3d&risl=&pid=ImgRaw&r=0"
-        
-      },
-      {
-          id: 2,
-          uri: "https://th.bing.com/th/id/OIP.Ba7H0ZDjZZV75lUwYx5HiwHaHa?pid=ImgDet&rs=1"
-    
+        {
+          id: 1,
+          uri: "https://i.imgur.com/kum3g7t.png"
         },
+        
+        {
+            id: 2,
+            uri: "https://i.imgur.com/6m6dAOa.png"
+        },
+  
         {
           id: 3,
-          uri: "https://product.hstatic.net/1000254381/product/led2_master.jpg"
-          
+          uri: "https://i.imgur.com/KTAqOg1.png"
         },
         {
           id: 4,
-          uri: "https://th.bing.com/th/id/OIP.2NjBlRu-kiyTZVOySkOmPQHaHa?pid=ImgDet&rs=1"
-    
+          uri: "https://i.imgur.com/xgkW9Rd.png"
+        },
+  
+        {
+          id: 5,
+          uri: "https://i.imgur.com/fNFPALr.png"
+        },
+        
+        {
+          id: 6,
+          uri: "https://i.imgur.com/aLVZHpZ.png"
+        },
+  
+        {
+          id: 7,
+          uri: "https://i.imgur.com/Pb6CtZh.png"
         },
         {
-            id: 1,
-            uri: "https://tangthienlac.com/wp-content/uploads/2020/09/den-led-day.jpg"
-            
-          },
-          {
-              id: 2,
-              uri: "https://nguonled.vn/timthumb.php?src=upload/product/285810185794.jpg&w=800&h=800&q=100&zc=2"
+          id: 8,
+          uri: "https://i.imgur.com/9rRTkPZ.png"
+        },
+  
+        {
+          id: 9,
+          uri: "https://i.imgur.com/o07xR8q.png"
+        },
         
-            },
-            {
-              id: 3,
-              uri: "https://bizweb.dktcdn.net/thumb/1024x1024/100/308/159/products/led-sd-d08a5e31-8e77-408a-88e3-092befdb094e.jpg?v=1533229343560"
-              
-            },
-            {
-              id: 4,
-              uri: "https://th.bing.com/th/id/R.82d5eefa8cced9e0673926939c363b7a?rik=I3jM45E9T5Z7%2bA&pid=ImgRaw&r=0"
+        {
+          id: 10,
+          uri: "https://i.imgur.com/oK7OPYJ.png"
+        },
+  
+        {
+          id: 11,
+          uri: "https://i.imgur.com/6I1bL3i.png"
+        },
+        {
+          id: 12,
+          uri: "https://i.imgur.com/fF9EAll.png"
+        },
+  
+        {
+          id: 13,
+          uri: "https://i.imgur.com/MU4i2X2.png"
+        },
         
-            },
+        {
+          id: 14,
+          uri: "https://i.imgur.com/W757A2w.png"
+        },
+  
+        {
+          id: 15,
+          uri: "https://i.imgur.com/IhgoGB1.png"
+        },
+        {
+          id: 16,
+          uri: "https://i.imgur.com/lDxy6sy.png"
+        },
   
   ]
     },

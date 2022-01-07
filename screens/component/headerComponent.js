@@ -3,7 +3,7 @@ import {
   Image,
   StyleSheet,
   TextInput,
-  View
+  View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 // headerComponent
@@ -36,7 +36,7 @@ export default class HeaderComponent extends Component {
             <View style={styles.IPText}>
               <TextInput
                 style={styles.inputzone}
-                placeholder="Bạn muốn tìm gì"
+                placeholder="Bạn muốn tìm gì?"
                 placeholderTextColor="#BCBCBC"
               />
             </View>
@@ -49,7 +49,7 @@ export default class HeaderComponent extends Component {
 
 const styles = StyleSheet.create({
     session1: {
-        width:"100%",
+        width:'100%',
         backgroundColor: '#425C59',
         paddingBottom: 4,
         height: 126,
@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 0
+        marginTop: 0,
       },
       sectionStyle: {
         flexDirection: 'row',

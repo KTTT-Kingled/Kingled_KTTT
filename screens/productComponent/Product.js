@@ -10,7 +10,6 @@ import {
 import numberWithCommas from '../../utils/thousandSeperator.js';
 import LineCart from '../component/activity/ProgressLine/LineCart.js';
 import HeaderComponent from '../component/headerComponent.js';
-import ModalFilter from '../modal/modalFilter.js';
 import ModalUp from '../modal/modalUp.js';
 
 const ProductCard = ({title}) => (
@@ -32,7 +31,7 @@ const ProductCard = ({title}) => (
   </View>
 );
 const CategoryCard = ({title}) => (
-  <View style={styles.item}>
+  <View>
     <View style={styles.itemInformation}>
       <View style={{}}>
         <Image source={{uri: title.img}} style={styles.images2} />
@@ -52,9 +51,9 @@ const Product = ({navigation}) => {
     fetchCategory();
   }, []);
 
-  async function fetchProduct(url) {
+  async function fetchProduct(category_name) {
     //fetch data from url and return array
-    const fullUrl = `https://kingled-kttt.herokuapp.com/api/products/search?code=&name=&category=${url}`;
+    const fullUrl = `https://kingled-kttt.herokuapp.com/api/products/search?code=&name=&category=${category_name}`;
     await fetch(fullUrl).then(async response => {
       // convert response to array of objects
       const data = await response.json();
@@ -105,9 +104,6 @@ const Product = ({navigation}) => {
             />
           </View>
           {/* end flat */}
-          <View style={{width: '100%', height: 50, marginTop: 12}}>
-            <ModalFilter />
-          </View>
           <LineCart />
           {/* sectionList */}
           <View style={{flex:1, marginTop: 12, marginBottom: 12}}>
@@ -203,18 +199,6 @@ const styles = StyleSheet.create({
     color: '#FF2E2E',
     fontSize: 15,
   },
-  filter: {
-    height: 36,
-    width: 90,
-    borderWidth: 2,
-    borderColor: '#425C59',
-    position: 'absolute',
-    right: '0%',
-    borderRadius: 4,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-  },
   containers: {
     flex: 1,
     paddingTop: StatusBar.currentHeight,
@@ -307,7 +291,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: 100,
     height: 100,
-    marginRight: 30,
+    marginRight: 10,
   },
   categoryItemPressed: {
     marginVertical: 0,

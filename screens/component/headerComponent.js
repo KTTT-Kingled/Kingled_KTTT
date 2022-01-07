@@ -3,7 +3,7 @@ import {
   Image,
   StyleSheet,
   TextInput,
-  View,
+  View
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 // headerComponent
@@ -22,9 +22,9 @@ export default class HeaderComponent extends Component {
           <View style={styles.hang3}>
             <View style={styles.iconzone}>
               <View style={styles.icons}>
-                <Icon name="notifications" color="white" size={24} />
+                <Icon name="notifications" color="white" size={22} />
               </View>
-              <Icon name="cart" color="white" size={24} style={{left:4}}/>
+              <Icon name="cart" color="white" size={22} style={{left:4}}/>
             </View>
           </View>
         </View>
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#fff',
         borderWidth: 0.5,
-        borderColor: '#000',
+        //borderColor: '#000',
         height: 44,
         width: '80%',
         borderRadius: 5,
@@ -115,6 +115,6 @@ const styles = StyleSheet.create({
         height: 50,
       },
       inputzone: {
-          width: 220,
+          width: 285,
       },
 });

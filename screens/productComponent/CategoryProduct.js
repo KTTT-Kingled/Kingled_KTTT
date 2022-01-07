@@ -288,18 +288,6 @@ const styles = StyleSheet.create({
         color:'#FF2E2E',
         fontSize:15,
     },
-    filter:{
-        height:36,
-        width:90,
-        borderWidth:2,
-        borderColor:'#425C59',
-        position:'absolute',
-        right:'0%',
-        borderRadius:4,
-        alignItems:'center',
-        justifyContent:'center',
-        flexDirection: 'row',
-       },
        containers: {
         flex: 1,
         paddingTop: StatusBar.currentHeight,

@@ -5,7 +5,7 @@ import {
   Pressable, SafeAreaView, SectionList,
   StatusBar,
   StyleSheet, Text,
-  View,
+  View
 } from 'react-native';
 import numberWithCommas from '../../utils/thousandSeperator.js';
 import LineCart from '../component/activity/ProgressLine/LineCart.js';
@@ -89,7 +89,7 @@ const Product = ({navigation}) => {
       <View style={styles.container}>
         <View style={styles.containerList}>
           {/* flat */}
-          <View style={{marginTop: 12, marginBottom: 12}}>
+          <View style={{marginTop: -4, marginBottom: 12}}>
             <SectionList
               horizontal={true}
               sections={CategoryList}
@@ -114,9 +114,9 @@ const Product = ({navigation}) => {
                 <View
                   style={{
                     backgroundColor: 'white',
-                    marginVertical: 8,
+                    marginVertical: 3,
                     borderRadius: 4,
-                    elevation: 3,
+                    elevation: 0,
                   }}>
                   <ProductCard title={item} />
                   <View
@@ -268,7 +268,7 @@ const styles = StyleSheet.create({
     color: '#818181',
   },
   btnProduct: {
-    backgroundColor: '#FF792E',
+    //backgroundColor: '#FF792E',
     padding: 0,
     //   width:"44%",
     borderRadius: 4,
@@ -277,6 +277,8 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10,
     marginRight: 8,
+    borderWidth: 0.5,
+    borderColor: '#FF792E',
   },
   btnBuy: {
     marginLeft: 8,
@@ -284,7 +286,7 @@ const styles = StyleSheet.create({
     paddingRight: 16,
   },
   btnText: {
-    color: 'white',
+    color: '#FF792E',
   },
   categoryItem: {
     marginVertical: 0,

@@ -7,7 +7,7 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from 'react-native';
 import { Col, Grid, Row } from 'react-native-easy-grid';
 import numberWithCommas from '../../utils/thousandSeperator.js';
@@ -240,7 +240,7 @@ const styles = StyleSheet.create({
   },
   containerImg: {
     width: '100%',
-    height: 110,
+    height: 120,
     // backgroundColor:"red",
     borderColor: '#425C59',
     flexDirection: 'row',
@@ -251,18 +251,19 @@ const styles = StyleSheet.create({
     paddingRight: 0,
   },
   imgMargin: {
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: 5,
+    marginRight: 5,
     flex: 1,
     height: '100%',
-    borderWidth: 1,
-    borderColor: '#425C59',
+    //borderWidth: 1,
+    //borderColor: '#425C59',
   },
   img: {
     flex: 1,
     height: '100%',
-    borderWidth: 1,
-    borderColor: '#425C59',
+    //borderWidth: 1,
+    //borderColor: '#425C59',
+    borderRadius: 4,
   },
   seen: {
     flexDirection: 'row-reverse',

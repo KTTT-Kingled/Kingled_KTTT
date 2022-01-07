@@ -13,7 +13,7 @@ const CartProduct = ({navigation}) => {
       <HeaderComponent />
       <View style={styles.container}>
         <View style={{alignItems: 'center', marginTop: 8, marginBottom: 8}}>
-          <Text style={{color: '#425C59', fontSize: 24}}>
+          <Text style={{color: '#425C59', fontSize: 24, fontWeight: 'bold'}}>
             THÔNG TIN GIỎ HÀNG
           </Text>
         </View>
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   totalAmountText: {
-    color: '#FF2E2E',
+    color: '#F32E2E',
     fontSize: 15,
   },
 });

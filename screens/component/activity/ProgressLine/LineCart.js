@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {Button,Text,View,StyleSheet} from 'react-native'
+import { StyleSheet, View } from 'react-native';
 
 
 
@@ -18,7 +16,7 @@ const styles = StyleSheet.create({
         backgroundColor:"white",
         width: "100%",
         borderColor:"#425C59",
-        borderBottomWidth:2
+        borderBottomWidth:0.5,
     },
   });
   export default LineCart;

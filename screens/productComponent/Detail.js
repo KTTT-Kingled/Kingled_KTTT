@@ -1,61 +1,32 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Image,
-  Modal,
-  SafeAreaView,
+  Pressable,
   ScrollView,
   StyleSheet,
   Text,
-  TouchableOpacity,
-  View
+  View,
 } from 'react-native';
 import { Col, Grid, Row } from 'react-native-easy-grid';
 import numberWithCommas from '../../utils/thousandSeperator.js';
 import HeaderComponent from '../component/headerComponent.js';
 import ModalBuyProduct from '../modal/modalBuyProduct.js';
-import { ModalPicker } from '../modal/Modalimage';
-import { ModalPickerImage2 } from '../modal/Modalimage2.js';
-import { ModalPickerImage3 } from '../modal/Modalimage3';
 
 const DetailProduct = ({navigation, route}) => {
-  const [chooseData, setchooseData] = useState('Tỉnh/Thành phố');
-  const [isModalVisible, setisModalVisible] = useState(false);
-  const changeModalVisibility = bool => {
-    setisModalVisible(bool);
-  };
-  const setData = option => {
-    setchooseData(option);
-  };
-
-  const [chooseData1, setchooseData1] = useState('Quận/Huyện');
-  const [isModalVisible1, setisModalVisible1] = useState(false);
-  const changeModalVisibility1 = bool => {
-    setisModalVisible1(bool);
-  };
-  const setData1 = option => {
-    setchooseData1(option);
-  };
-
-  const [chooseData2, setchooseData2] = useState('Xã/Phường');
-  const [isModalVisible2, setisModalVisible2] = useState(false);
-  const changeModalVisibility2 = bool => {
-    setisModalVisible2(bool);
-  };
-  const setData2 = option => {
-    setchooseData2(option);
-  };
-
   const {data} = route.params;
 
+  const [imgSelected, setImg] = useState(data.images[0]);
+
+  useEffect(() => {
+    setImg(data.images[0]);
+  }, []);
   return (
     <ScrollView>
       <HeaderComponent />
       <View style={styles.container}>
-        <View style={styles.imgProduct}>
+        <View style={styles.bigImg}>
           <Image
-            source={{
-              uri: 'https://i.ytimg.com/vi/51523kt-x-A/maxresdefault.jpg',
-            }}
+            source={{uri: imgSelected}}
             style={{width: '100%', height: '100%'}}
           />
         </View>
@@ -64,82 +35,22 @@ const DetailProduct = ({navigation, route}) => {
           {numberWithCommas(data.price) + ' VND'}
         </Text>
         <View style={styles.containerImg}>
-          {/*  */}
-
-          {/*  */}
-          <View style={styles.img}>
-            <SafeAreaView style={styles.container1}>
-              <TouchableOpacity
-                onPress={() => changeModalVisibility(true)}
-                style={styles.touchableOpacity}>
+          {data.images.map((item, index) => (
+            <View style={styles.img}>
+              <Pressable
+                onPress={() =>
+                  setImg(item)
+                } key={index}>
                 <Image
-                  source={{
-                    uri: 'https://th.bing.com/th/id/R.3c99f118e6f0ce6d2fb1dedd3d09436a?rik=m439jeY7yAZwDg&riu=http%3a%2f%2fg02.a.alicdn.com%2fkf%2fHTB17mPtJFXXXXbDXpXXq6xXFXXXj%2fPOSSBAY-DIY-Decoration-12V-Auto-Car-Interior-LED-EL-Wire-Rope-Tube-Neon-Light-Line-10.jpg&ehk=P1kk5g4mrQNWth2dHPwLDK0P2yhcARh83tBVRPHi7AU%3d&risl=&pid=ImgRaw&r=0',
-                  }}
+                  key={index}
+                  source={{uri: item}}
                   style={{width: '100%', height: '100%'}}
                 />
-              </TouchableOpacity>
-              <Modal
-                transparent={true}
-                animationType="fade"
-                visible={isModalVisible}
-                nRequestClose={() => changeModalVisibility(false)}>
-                <ModalPicker
-                  changeModalVisibility={changeModalVisibility}
-                  setData={setData}
-                />
-              </Modal>
-            </SafeAreaView>
-          </View>
-          <View style={(styles.img, styles.imgMargin)}>
-            <SafeAreaView style={styles.container1}>
-              <TouchableOpacity
-                onPress={() => changeModalVisibility1(true)}
-                style={styles.touchableOpacity}>
-                <Image
-                  source={{
-                    uri: 'https://bizweb.dktcdn.net/thumb/1024x1024/100/308/159/products/led-sd-d08a5e31-8e77-408a-88e3-092befdb094e.jpg?v=1533229343560',
-                  }}
-                  style={{width: '100%', height: '100%'}}
-                />
-              </TouchableOpacity>
-              <Modal
-                transparent={true}
-                animationType="fade"
-                visible={isModalVisible1}
-                nRequestClose={() => changeModalVisibility1(false)}>
-                <ModalPickerImage2
-                  changeModalVisibility={changeModalVisibility1}
-                  setData={setData1}
-                />
-              </Modal>
-            </SafeAreaView>
-          </View>
-          <View style={styles.img}>
-            <SafeAreaView style={styles.container1}>
-              <TouchableOpacity
-                onPress={() => changeModalVisibility2(true)}
-                style={styles.touchableOpacity}>
-                <Image
-                  source={{
-                    uri: 'https://cf.shopee.vn/file/82d5eefa8cced9e0673926939c363b7a',
-                  }}
-                  style={{width: '100%', height: '100%'}}
-                />
-              </TouchableOpacity>
-              <Modal
-                transparent={true}
-                animationType="fade"
-                visible={isModalVisible2}
-                nRequestClose={() => changeModalVisibility2(false)}>
-                <ModalPickerImage3
-                  changeModalVisibility={changeModalVisibility2}
-                  setData={setData2}
-                />
-              </Modal>
-            </SafeAreaView>
-          </View>
+              </Pressable>
+            </View>
+          ))}
         </View>
+
         <Text
           style={{color: '#FF792E', padding: 8, paddingLeft: 0, fontSize: 16}}>
           Thông số kĩ thuật
@@ -148,26 +59,29 @@ const DetailProduct = ({navigation, route}) => {
           <Col size={35}>
             {data.specification.map((item, index) => {
               if (item.value) {
-              return (
-                <Row styles={styles.cell}>
-                  <Text style={styles.textRow}>{item.name}</Text>
-                </Row>
-              );
+                return (
+                  <Row styles={styles.cell} key={index}>
+                    <Text style={styles.textRow}>{item.name}</Text>
+                  </Row>
+                );
               }
             })}
           </Col>
           <Col size={80}>
             {data.specification.map((item, index) => {
               if (item.value) {
-              return (
-                <Row styles={(styles.cell, styles.borderRight)}>
-                  {item.name === 'Ánh Sáng' || item.name === 'Nhiệt Độ Màu' ? (
-                    <Text style={styles.textRow}>{item.value.join(', ')}</Text>
-                  ) : (
-                    <Text style={styles.textRow}>{item.value}</Text>
-                  )}
-                </Row>
-              );
+                return (
+                  <Row styles={(styles.cell, styles.borderRight)} key={index}>
+                    {item.name === 'Ánh Sáng' ||
+                    item.name === 'Nhiệt Độ Màu' ? (
+                      <Text style={styles.textRow}>
+                        {item.value.join(', ')}
+                      </Text>
+                    ) : (
+                      <Text style={styles.textRow}>{item.value}</Text>
+                    )}
+                  </Row>
+                );
               }
             })}
           </Col>
@@ -240,8 +154,7 @@ const styles = StyleSheet.create({
   },
   containerImg: {
     width: '100%',
-    height: 120,
-    // backgroundColor:"red",
+    height: 100,
     borderColor: '#425C59',
     flexDirection: 'row',
     borderBottomWidth: 1,
@@ -250,20 +163,13 @@ const styles = StyleSheet.create({
     paddingTop: 12,
     paddingRight: 0,
   },
-  imgMargin: {
-    marginLeft: 5,
-    marginRight: 5,
-    flex: 1,
-    height: '100%',
-    //borderWidth: 1,
-    //borderColor: '#425C59',
-  },
   img: {
     flex: 1,
+    marginRight: 5,
     height: '100%',
-    //borderWidth: 1,
-    //borderColor: '#425C59',
-    borderRadius: 4,
+    width: '100%',
+    // borderWidth: 1,
+    // borderColor: '#425C59',
   },
   seen: {
     flexDirection: 'row-reverse',
@@ -276,7 +182,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginRight: 4,
   },
-  imgProduct: {
+  bigImg: {
     width: '100%',
     height: 200,
     justifyContent: 'center',

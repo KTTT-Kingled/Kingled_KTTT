@@ -1,22 +1,25 @@
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import {
+  Alert,
   Image,
-  Pressable, SafeAreaView, SectionList,
+  Pressable,
+  SafeAreaView,
+  SectionList,
   StatusBar,
-  StyleSheet, Text,
-  View
+  StyleSheet,
+  Text,
+  View,
 } from 'react-native';
 import numberWithCommas from '../../utils/thousandSeperator.js';
 import LineCart from '../component/activity/ProgressLine/LineCart.js';
 import HeaderComponent from '../component/headerComponent.js';
-import ModalUp from '../modal/modalUp.js';
 
 const ProductCard = ({title}) => (
   <View style={styles.item}>
     <View style={styles.itemInformation}>
       <View style={styles.imageContainer}>
-        <Image source={{uri: title.images[0]}} style={styles.images} />
+        <Image source={{uri: title.images[0]}} style={styles.productImg} />
       </View>
       <View style={styles.inforContainer}>
         <Text style={styles.name}>{title.name}</Text>
@@ -34,7 +37,7 @@ const CategoryCard = ({title}) => (
   <View>
     <View style={styles.itemInformation}>
       <View style={{}}>
-        <Image source={{uri: title.img}} style={styles.images2} />
+        <Image source={{uri: title.img}} style={styles.categoryImg} />
       </View>
     </View>
   </View>
@@ -78,13 +81,13 @@ const Product = ({navigation}) => {
     const detail = await fetch(fullUrl).then(async response => {
       // convert response to array of objects
       const data = await response.json();
-        return data;
+      return data;
     });
     return detail;
   }
 
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={{flex: 1}}>
       <HeaderComponent />
       <View style={styles.container}>
         <View style={styles.containerList}>
@@ -106,7 +109,7 @@ const Product = ({navigation}) => {
           {/* end flat */}
           <LineCart />
           {/* sectionList */}
-          <View style={{flex:1, marginTop: 12, marginBottom: 12}}>
+          <View style={{flex: 1, marginTop: 12, marginBottom: 12}}>
             <SectionList
               sections={productList}
               keyExtractor={(item, index) => item + index}
@@ -115,15 +118,16 @@ const Product = ({navigation}) => {
                   style={{
                     backgroundColor: 'white',
                     marginVertical: 3,
+                    marginBottom: 12,
                     borderRadius: 4,
-                    elevation: 0,
+                    elevation: 4,
                   }}>
                   <ProductCard title={item} />
                   <View
                     style={{
                       flexDirection: 'row',
                       marginLeft: '37%',
-                      paddingBottom: 12,
+                      paddingBottom: 16,
                     }}>
                     <Pressable
                       onPress={() => {
@@ -138,7 +142,24 @@ const Product = ({navigation}) => {
                         <Text style={styles.btnText}>Xem chi tiết</Text>
                       </View>
                     </Pressable>
-                    <ModalUp />
+                    <Pressable
+                      onPress={() => {
+                        Alert.alert('Bạn có muốn thêm sản phẩm vào giỏ hàng?', `Item name: ${item.name}\nItem code: ${item.code}  ` , [
+                          {
+                            text: 'Cancel',
+                            onPress: () => console.log('Cancel Pressed'),
+                            style: 'cancel',
+                          },
+                          {
+                            text: 'OK',
+                            onPress: () => console.log('Added ' + item.code),
+                          },
+                        ]);
+                      }}>
+                      <View style={[styles.btnBuy]}>
+                        <Text style={styles.btnBuyBtn}>Mua hàng</Text>
+                      </View>
+                    </Pressable>
                   </View>
                 </View>
               )}
@@ -156,48 +177,12 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     backgroundColor: '#F8F8F8',
-    paddingBottom: 50,
-  },
-  progress: {
-    marginTop: 15,
-    width: '100%',
-  },
-  circle: {
-    width: 22,
-    height: 22,
-    backgroundColor: '#E9E9E9',
-    borderRadius: 100,
-    marginTop: '-3.2%',
-    marginLeft: '16%',
-    borderColor: '#FF792E',
-    borderWidth: 2,
-  },
-  circle2: {
-    marginTop: '-6.2%',
-    marginLeft: '38%',
-  },
-  circle3: {
-    marginTop: '-6.2%',
-    marginLeft: '60%',
-  },
-  circle4: {
-    marginTop: '-6.2%',
-    marginLeft: '82%',
-  },
-  circleColor: {
-    backgroundColor: '#FF792E',
+    paddingBottom: 40,
   },
   containerList: {
     flex: 1,
     width: '100%',
     padding: 16,
-  },
-  totalAmountFlex: {
-    flex: 1,
-  },
-  totalAmountText: {
-    color: '#FF2E2E',
-    fontSize: 15,
   },
   containers: {
     flex: 1,
@@ -205,7 +190,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
   },
   item: {
-    // backgroundColor: "#f9c2ff",
+    // backgroundColor: '#f9c2ff',
     marginVertical: 8,
   },
   header: {
@@ -216,7 +201,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
   },
-  images: {
+  productImg: {
     height: 100,
     width: 100,
     resizeMode: 'contain',
@@ -225,7 +210,7 @@ const styles = StyleSheet.create({
 
     // right:10
   },
-  images2: {
+  categoryImg: {
     height: 100,
     width: 100,
     resizeMode: 'contain',
@@ -254,16 +239,6 @@ const styles = StyleSheet.create({
     color: '#FF792E',
     fontWeight: 'bold',
   },
-  amount: {
-    flexDirection: 'row',
-    padding: 4,
-  },
-  deleteProduct: {
-    fontSize: 15,
-    fontWeight: 'bold',
-    color: '#FF4646',
-  },
-
   codeText: {
     color: '#818181',
   },
@@ -274,16 +249,11 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     paddingBottom: 6,
     paddingTop: 6,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
     marginRight: 8,
     borderWidth: 0.5,
     borderColor: '#FF792E',
-  },
-  btnBuy: {
-    marginLeft: 8,
-    paddingLeft: 16,
-    paddingRight: 16,
   },
   btnText: {
     color: '#FF792E',
@@ -304,6 +274,19 @@ const styles = StyleSheet.create({
     borderStyle: 'solid',
     borderWidth: 1,
     borderColor: '#FF792E',
+  },
+  btnBuy: {
+    backgroundColor: '#FF792E',
+    padding: 0,
+    borderRadius: 4,
+    paddingBottom: 6,
+    paddingTop: 6,
+    paddingLeft: 20,
+    paddingRight: 20,
+    overflow: 'hidden',
+  },
+  btnBuyBtn: {
+    color: '#fff',
   },
 });
 

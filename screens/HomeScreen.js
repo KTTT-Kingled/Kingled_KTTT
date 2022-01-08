@@ -4,7 +4,7 @@ import {
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  Text, View
+  Text, View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import HeaderComponent from '../screens/component/headerComponent.js';
@@ -252,7 +252,7 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingBottom:60
+    paddingBottom:60,
   },
   session1: {
     flex: 1 / 4,
@@ -449,7 +449,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 5,
     marginTop: 5,
-    height: "auto",
+    height: 'auto',
     width: 100,
     backgroundColor: 'white',
     flexDirection: 'column',
@@ -460,7 +460,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 5,
     marginTop: 5,
-    height: "auto",
+    height: 'auto',
     width: 100,
     backgroundColor: 'white',
     flexDirection: 'column',
@@ -484,5 +484,5 @@ const styles = StyleSheet.create({
   rowtitle:{
     flex: 1,
     flexDirection: 'row',
-  }
+  },
 });

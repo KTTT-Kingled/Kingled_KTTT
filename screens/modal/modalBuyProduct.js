@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Text, TouchableHighlight, View, StyleSheet,Image}
-
-from 'react-native'
+import { Image, Modal, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import Icon from "react-native-vector-icons/FontAwesome5";
 class ModalBuyProduct extends Component {
    state = {

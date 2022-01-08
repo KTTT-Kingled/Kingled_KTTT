@@ -9,7 +9,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
-  View,
+  View
 } from 'react-native';
 import numberWithCommas from '../../utils/thousandSeperator.js';
 import LineCart from '../component/activity/ProgressLine/LineCart.js';
@@ -117,10 +117,10 @@ const Product = ({navigation}) => {
                 <View
                   style={{
                     backgroundColor: 'white',
-                    marginVertical: 3,
-                    marginBottom: 12,
+                    marginVertical: 0,
+                    marginBottom: 7,
                     borderRadius: 4,
-                    elevation: 4,
+                    //elevation: 4,
                   }}>
                   <ProductCard title={item} />
                   <View

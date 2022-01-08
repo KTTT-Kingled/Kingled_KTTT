@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import {
-    Image,
-    Pressable,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import logo from '../../assets/images/logo.png';
@@ -27,11 +27,11 @@ const Login = ({navigation}) => {
         <View style={styles.loginscreen}>
           <View style={styles.login}>
             <View style={[styles.phone, styles.elevation]}>
-              <Text style={styles.textPhone}>Số điện thoại</Text>
+              <Text style={styles.textPhone}>Mật khẩu hiện tại</Text>
               <TextInput
                 style={styles.input}
-                placeholder="Nhập số điện thoại của bạn"
-                keyboardType="numeric"
+                autoCapitalize="none"
+                placeholder="Nhập mật khẩu hiện tại của bạn"
                 placeholderTextColor="#D7D7D7"
               />
             </View>
@@ -40,6 +40,7 @@ const Login = ({navigation}) => {
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <TextInput
                   style={styles.input}
+                  autoCapitalize="none"
                   placeholder="Nhập mật khẩu mới"
                   placeholderTextColor="#D7D7D7"
                 />
@@ -56,6 +57,7 @@ const Login = ({navigation}) => {
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <TextInput
                   style={styles.input}
+                  autoCapitalize="none"
                   placeholder="Nhập lại mật khẩu"
                   placeholderTextColor="#D7D7D7"
                 />
@@ -71,7 +73,7 @@ const Login = ({navigation}) => {
             <Pressable
               style={styles.loginBtn}
               onPress={() => logout()}>
-              <Text style={styles.loginBtnText}>Đăng nhập</Text>
+              <Text style={styles.loginBtnText}>Đổi mật khẩu</Text>
             </Pressable>
           </View>
         </View>

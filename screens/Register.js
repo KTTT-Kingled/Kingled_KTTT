@@ -144,6 +144,7 @@ const Register = ({navigation}) => {
               <TextInput
                 style={styles.input}
                 placeholder="Nhập username của bạn"
+                autoCapitalize="none"
                 placeholderTextColor="#D7D7D7"
                 value={username}
                 onChangeText={
@@ -173,6 +174,7 @@ const Register = ({navigation}) => {
               <TextInput
                 style={styles.input}
                 placeholder="Nhập email của bạn"
+                autoCapitalize="none"
                 keyboardType="email-address"
                 placeholderTextColor="#D7D7D7"
                 value={email}
@@ -189,6 +191,7 @@ const Register = ({navigation}) => {
                 <TextInput
                   style={styles.input}
                   placeholder="Nhập mật khẩu"
+                  autoCapitalize="none"
                   placeholderTextColor="#D7D7D7"
                   secureTextEntry={true}
                   value={password}
@@ -213,6 +216,7 @@ const Register = ({navigation}) => {
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <TextInput
                   style={styles.input}
+                  autoCapitalize="none"
                   placeholder="Nhập lại mật khẩu"
                   placeholderTextColor="#D7D7D7"
                   secureTextEntry={true}

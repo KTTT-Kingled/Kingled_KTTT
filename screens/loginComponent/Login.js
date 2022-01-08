@@ -1,13 +1,13 @@
 import React, { useContext, useState } from 'react';
 import {
-    Alert,
-    Image,
-    Pressable,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    View,
+  Alert,
+  Image,
+  Pressable,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import logo from '../../assets/images/logo.png';
@@ -66,6 +66,7 @@ const Login = ({navigation}) => {
               <Text style={styles.textPhone}>Username</Text>
               <TextInput
                 style={styles.input}
+                autoCapitalize="none"
                 placeholder="Nhập username, email hoặc số điện thoại"
                 placeholderTextColor="#D7D7D7"
                 value={username}
@@ -77,6 +78,7 @@ const Login = ({navigation}) => {
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <TextInput
                   style={styles.input}
+                  autoCapitalize="none"
                   placeholder="Nhập mật khẩu"
                   placeholderTextColor="#D7D7D7"
                   secureTextEntry={true}

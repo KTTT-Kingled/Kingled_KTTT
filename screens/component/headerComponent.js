@@ -12,7 +12,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { OrderContext } from '../../contexts/orderContext';
 // headerComponent
 const HeaderComponent = () => {
-  const {isEmpty} = useContext(OrderContext);
+  const {isEmpty, total} = useContext(OrderContext);
 
   return (
     <View style={styles.session1}>
@@ -31,7 +31,7 @@ const HeaderComponent = () => {
             </View>
             <Pressable
               onPress={() => {
-                Alert.alert('Cart Pressed');
+                Alert.alert('Total price: ' + total);
               }}>
               <View style={styles.icons}>
                 {isEmpty ? (

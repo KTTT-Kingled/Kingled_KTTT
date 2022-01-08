@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {
   Alert,
   Image,
@@ -9,8 +9,9 @@ import {
   StatusBar,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
+import { OrderContext } from '../../contexts/orderContext';
 import numberWithCommas from '../../utils/thousandSeperator.js';
 import LineCart from '../component/activity/ProgressLine/LineCart.js';
 import HeaderComponent from '../component/headerComponent.js';
@@ -47,6 +48,8 @@ const Product = ({navigation}) => {
   const [productList, setProductList] = useState([]);
   const [CategoryList, setCategoryList] = useState([]);
   const [category, setCategory] = useState('');
+
+  const { addOrder } = useContext(OrderContext);
 
   // fetch json from url and convert to array
   useEffect(() => {
@@ -91,7 +94,7 @@ const Product = ({navigation}) => {
       <HeaderComponent />
       <View style={styles.container}>
         <View style={styles.containerList}>
-          {/* flat */}
+          {/* category */}
           <View style={{marginTop: -4, marginBottom: 12}}>
             <SectionList
               horizontal={true}
@@ -106,7 +109,7 @@ const Product = ({navigation}) => {
               )}
             />
           </View>
-          {/* end flat */}
+          {/* end category */}
           <LineCart />
           {/* sectionList */}
           <View style={{flex: 1, marginTop: 12, marginBottom: 12}}>
@@ -153,7 +156,14 @@ const Product = ({navigation}) => {
                           },
                           {
                             text: 'OK',
-                            onPress: () => console.log('Added ' + item.code),
+                            onPress: () => {
+                              addOrder({
+                                code: item.code,
+                                price: item.price,
+                                quantity: 1,
+                              });
+                              console.log('Added ' + item.code);
+                            },
                           },
                         ]);
                       }}>

@@ -118,13 +118,16 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
   },
   item: {
-    backgroundColor: "white",
-    marginVertical: 5,
+    //backgroundColor: "#fff",
+    marginVertical: 3,
     //borderColor:'#425C59',
     //borderWidth:1,
     paddingTop:10,
     paddingBottom:10,
     borderRadius: 4,
+    borderBottomWidth: 0.2,
+    borderBottomColor: "#c2c2c2",
+    //elevation: 3,
   },
   header: {
     fontSize: 32,

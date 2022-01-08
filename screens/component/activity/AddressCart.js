@@ -1,18 +1,14 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {Button,Text,View,StyleSheet,TextInput,ScrollView} from 'react-native'
-import Line from './ProgressLine/Line.js'
+import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import Circle2 from '../activity/ProgressLine/Circle2';
+import HeaderComponent from '../headerComponent.js';
+import Circle3Gr from './ProgressLine/Circle3Gr';
+import Circle4Gr from './ProgressLine/Circle4Gr';
 import CircleBackground from './ProgressLine/CircleBackground.js';
-import ProgressLine from './ProgressLine/ProgressLine.js'
-import LineCart from './ProgressLine/LineCart.js'
+import Line from './ProgressLine/Line.js';
+import LineCart from './ProgressLine/LineCart.js';
+import LineGray from './ProgressLine/LineGray';
 import SectionListAddress from './SectionList/SectionListAddress.js';
-import HeaderComponent from '../headerComponent.js'
-
-
-
-
-
 
 const AddressCart = ({ navigation }) => {
     const [text, onChangeText] = React.useState("Useless Text");
@@ -25,19 +21,26 @@ const AddressCart = ({ navigation }) => {
                 <Text style={{color:"#425C59",fontSize:24}}>THÔNG TIN NHẬN HÀNG</Text>
             </View>
             <View style={styles.progress}>
-                <Line></Line>
-                <CircleBackground></CircleBackground>
-                <View style={[styles.circle,styles.circle2,styles.circleColor]}></View>
-                <View style={[styles.circle,styles.circle3]}></View>
-                <View style={[styles.circle,styles.circle4]}></View>
+                <CircleBackground />
+                <Line />
+                <Circle2 />
+                <LineGray />
+                <Circle3Gr />
+                <LineGray />
+                <Circle4Gr />
             </View>
-            <ProgressLine></ProgressLine>
+            <View style={styles.progressTextContainer}>
+                <Text style={{marginLeft:'7%',color:'#4cb71a'}}>Giỏ hàng</Text>
+                <Text style={{marginLeft:'10%',color:'#4cb71a'}}>Địa chỉ</Text>
+                <Text style={{marginLeft:'8%',color:'#dddddd'}}>Thanh toán</Text>
+                <Text style={{marginLeft:'6%',color:'#dddddd'}}>Xác nhận</Text>
+            </View>
             <View style={styles.containerList}>
 
                 <LineCart ></LineCart>
                 
                 <Text style={{color:"#425C59",marginBottom:12,marginTop:12,fontSize:18,fontWeight:"bold"}}>
-                    Thông tin nhận hàng
+                     hàng
                 </Text>
 
                 <View style={{width:"100%",marginBottom:12}}>
@@ -162,13 +165,15 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: "center",
-      backgroundColor:"#E9E9E9",
+      backgroundColor:"#fff",
       paddingBottom:50,paddingTop: 10
 
     },
     progress:{
-        marginTop: 15,
-        width:"100%"
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
     circle:{
         width:22,
@@ -229,7 +234,14 @@ const styles = StyleSheet.create({
         borderRadius:4,
         paddingLeft:10,
         color:"#313131"
-    }
+    },
+    progressTextContainer:{
+        width:'100%',
+        // height:30,
+        // backgroundColor:"black",
+        marginBottom:0,
+        flexDirection:'row',
+    },
 
   });
   export default AddressCart;

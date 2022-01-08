@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {Button,Text,View,StyleSheet,ScrollView,TextInput} from 'react-native'
-import Line from './ProgressLine/Line.js'
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import HeaderComponent from '../headerComponent.js';
+import Circle3 from './ProgressLine/Circle3';
+import Circle4Gr from './ProgressLine/Circle4Gr';
 import CircleBackground from './ProgressLine/CircleBackground.js';
-import ProgressLine from './ProgressLine/ProgressLine.js'
-import LineCart from './ProgressLine/LineCart.js'
-import SectionListAbate from './SectionList/SectionListAbate.js'
-import HeaderComponent from '../headerComponent.js'
+import Line from './ProgressLine/Line.js';
+import LineCart from './ProgressLine/LineCart.js';
+import LineGray from './ProgressLine/LineGray';
+import SectionListAbate from './SectionList/SectionListAbate.js';
 
 
 
@@ -21,13 +21,20 @@ const AbateCart = ({ navigation }) => {
             <Text style={{color:"#425C59",fontSize:24}}>THÔNG TIN NHẬN HÀNG</Text>
         </View>
         <View style={styles.progress}>
-            <Line></Line>
-            <CircleBackground></CircleBackground>
-            <View style={[styles.circle,styles.circle2,styles.circleColor]}></View>
-            <View style={[styles.circle,styles.circle3,styles.circleColor]}></View>
-            <View style={[styles.circle,styles.circle4]}></View>
+            <CircleBackground />
+            <Line />
+            <CircleBackground />
+            <Line />
+            <Circle3 />
+            <LineGray />
+            <Circle4Gr />
         </View>
-        <ProgressLine></ProgressLine>
+        <View style={styles.progressTextContainer}>
+            <Text style={{marginLeft:'7%',color:'#4cb71a'}}>Giỏ hàng</Text>
+            <Text style={{marginLeft:'10%',color:'#4cb71a'}}>Địa chỉ</Text>
+            <Text style={{marginLeft:'8%',color:'#4cb71a'}}>Thanh toán</Text>
+            <Text style={{marginLeft:'6%',color:'#dddddd'}}>Xác nhận</Text>
+            </View>
         <View style={styles.containerList}>
 
             <LineCart ></LineCart>
@@ -76,38 +83,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
-        backgroundColor:"#E9E9E9",
+        backgroundColor:"white",
       paddingBottom:50,paddingTop: 10
 
       },
       progress:{
-          marginTop: 15,
-          width:"100%"
-      },
-      circle:{
-          width:22,
-          height:22,
-          backgroundColor:"#E9E9E9",
-          borderRadius:100,
-          marginTop:"-3.2%",
-          marginLeft:"16%",
-          borderColor:"#FF792E",
-          borderWidth:2
-      },
-      circle2:{
-          marginTop:"-6.2%",
-          marginLeft:"38%",
-      },
-      circle3:{
-          marginTop:"-6.2%",
-          marginLeft:"60%",
-      },
-      circle4:{
-          marginTop:"-6.2%",
-          marginLeft:"82%",
-      },
-      circleColor:{
-          backgroundColor:"#FF792E"
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
       },
       containerList:{
           width:"100%",
@@ -120,5 +104,10 @@ const styles = StyleSheet.create({
           color:"#FF2E2E",
           fontSize:15
       },
+      progressTextContainer:{
+        width:'100%',
+        marginBottom:0,
+        flexDirection:'row',
+    },
   });
   export default AbateCart;

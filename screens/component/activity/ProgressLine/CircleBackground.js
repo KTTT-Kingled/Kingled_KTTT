@@ -1,27 +1,33 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {Button,Text,View,StyleSheet} from 'react-native'
+import { StyleSheet, View } from "react-native";
+import Icon from "react-native-vector-icons/Ionicons";
 
 
 
 
 const CircleBackground = ({ navigation }) => {
     return (
-        <View style={[styles.circle]}></View>
+        <View style={[styles.circle]}>
+          <Icon
+            name="checkmark"
+            color="white"
+            size={17}
+            //style={{left: 1}}
+          />
+        </View>
 
     );
   };
 const styles = StyleSheet.create({
-    circle:{
-        width:22,
-        height:22,
-        backgroundColor:"#FF792E",
-        borderRadius:100,
-        marginTop:"-3.2%",
-        marginLeft:"16%",
-        borderColor:"#FF792E",
-        borderWidth:2
-    },
+  circle:{
+    width:25,
+    height:25,
+    backgroundColor:"#4cb71a",
+    borderRadius:100,
+    borderColor:"#4cb71a",
+    borderWidth:2,
+    alignItems: 'center',
+    justifyContent: 'center',
+},
   });
   export default CircleBackground;

@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import HeaderComponent from '../headerComponent.js';
-import CircleBackground from './ProgressLine/CircleBackground.js';
-import Line from './ProgressLine/Line.js';
+import Circle1 from './ProgressLine/Circle1';
+import Circle2Gr from './ProgressLine/Circle2Gr';
+import Circle3Gr from './ProgressLine/Circle3Gr';
+import Circle4Gr from './ProgressLine/Circle4Gr';
 import LineCart from './ProgressLine/LineCart.js';
+import LineGray from './ProgressLine/LineGray';
 import ProgressLine from './ProgressLine/ProgressLine.js';
 import SectionListCard from './SectionList/SectionListCart.js';
 
@@ -18,11 +21,13 @@ const CartProduct = ({navigation}) => {
           </Text>
         </View>
         <View style={styles.progress}>
-          <Line />
-          <CircleBackground />
-          <View style={[styles.circle, styles.circle2]} />
-          <View style={[styles.circle, styles.circle3]} />
-          <View style={[styles.circle, styles.circle4]} />
+          <Circle1 />
+          <LineGray />
+          <Circle2Gr />
+          <LineGray />
+          <Circle3Gr />
+          <LineGray />
+          <Circle4Gr />
         </View>
         <ProgressLine />
         <View style={styles.containerList}>
@@ -83,41 +88,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: '#E9E9E9',
+    backgroundColor: 'white',
     paddingBottom: 50,
     paddingTop: 10,
   },
   progress: {
-    marginTop: 15,
-    width: '100%',
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
-  circle: {
-    width: 22,
-    height: 22,
-    backgroundColor: '#E9E9E9',
-    borderRadius: 100,
-    marginTop: '-3.2%',
-    marginLeft: '16%',
-    borderColor: '#FF792E',
-    borderWidth: 2,
-  },
-  circle2: {
-    marginTop: '-6.2%',
-    marginLeft: '38%',
-  },
-  circle3: {
-    marginTop: '-6.2%',
-    marginLeft: '60%',
-  },
-  circle4: {
-    marginTop: '-6.2%',
-    marginLeft: '82%',
-  },
-  circleColor: {
-    backgroundColor: '#FF792E',
-  },
+
   containerList: {
-      flex: 1,
+    flex: 1,
     width: '100%',
     padding: 16,
   },
@@ -128,6 +111,7 @@ const styles = StyleSheet.create({
     color: '#F32E2E',
     fontSize: 15,
   },
+
 });
 
 export default CartProduct;

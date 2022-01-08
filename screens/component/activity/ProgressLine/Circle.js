@@ -12,14 +12,14 @@ const Circle = ({ navigation }) => {
   };
 const styles = StyleSheet.create({
     circle:{
-        width:22,
-        height:22,
+        width:30,
+        height:30,
         //backgroundColor:"#E9E9E9",
         borderRadius:100,
         marginTop:"-3.2%",
         marginLeft:"16%",
         borderColor:"#FF792E",
-        borderWidth:2
+        borderWidth:2,
     },
   });
   export default Circle;

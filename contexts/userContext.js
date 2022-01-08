@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Alert } from 'react-native';
-export const UserContext = React.createContext({name: '', auth: false});
+export const UserContext = React.createContext();
 
 export const UserProvider = ({children}) => {
   const [user, setUser] = useState({userLogged: {}, token: '', auth: false});

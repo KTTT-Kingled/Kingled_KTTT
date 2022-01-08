@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         borderRadius:100,
         //marginTop:"-3.2%",
         //marginLeft:"16%",
-        borderColor:"#4cb71a",
+        borderColor:"#ffba07",
         borderWidth:2,
         alignItems: 'center',
         justifyContent: 'center',
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     Text1: {
       fontSize: 12,
       fontWeight: 'bold',
-      color: "#4cb71a",
+      color: "#ffba07",
     },
   });
   export default CircleBackground;

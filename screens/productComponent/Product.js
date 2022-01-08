@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {
   Alert,
   Image,
@@ -9,8 +9,9 @@ import {
   StatusBar,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
+import { OrderContext } from '../../contexts/orderContext';
 import numberWithCommas from '../../utils/thousandSeperator.js';
 import LineCart from '../component/activity/ProgressLine/LineCart.js';
 import HeaderComponent from '../component/headerComponent.js';
@@ -47,6 +48,8 @@ const Product = ({navigation}) => {
   const [productList, setProductList] = useState([]);
   const [CategoryList, setCategoryList] = useState([]);
   const [category, setCategory] = useState('');
+
+  const { addOrder } = useContext(OrderContext);
 
   // fetch json from url and convert to array
   useEffect(() => {
@@ -91,7 +94,7 @@ const Product = ({navigation}) => {
       <HeaderComponent />
       <View style={styles.container}>
         <View style={styles.containerList}>
-          {/* flat */}
+          {/* category */}
           <View style={{marginTop: -4, marginBottom: 12}}>
             <SectionList
               horizontal={true}
@@ -106,7 +109,7 @@ const Product = ({navigation}) => {
               )}
             />
           </View>
-          {/* end flat */}
+          {/* end category */}
           <LineCart />
           {/* sectionList */}
           <View style={{flex: 1, marginTop: 12, marginBottom: 12}}>
@@ -153,7 +156,14 @@ const Product = ({navigation}) => {
                           },
                           {
                             text: 'OK',
-                            onPress: () => console.log('Added ' + item.code),
+                            onPress: () => {
+                              addOrder({
+                                code: item.code,
+                                price: item.price,
+                                quantity: 1,
+                              });
+                              console.log('Added ' + item.code);
+                            },
                           },
                         ]);
                       }}>
@@ -226,38 +236,42 @@ const styles = StyleSheet.create({
     flex: 7,
     marginLeft: 4,
     height: '100%',
+    paddingRight: 10,
   },
   itemInformation: {
     flexDirection: 'row',
   },
   name: {
     fontSize: 15,
-    color: '#425C59',
+    color: '#363636',
     fontWeight: 'bold',
+    textAlign: 'justify',
   },
   cost: {
-    fontSize: 15,
-    color: '#FF792E',
+    fontSize: 17,
+    color: '#e7a703',
     fontWeight: 'bold',
   },
   codeText: {
-    color: '#818181',
+    color: '#a1a1a1',
+    fontSize: 12,
   },
   btnProduct: {
-    //backgroundColor: '#FF792E',
+    backgroundColor: 'white',
     padding: 0,
     //   width:"44%",
     borderRadius: 4,
-    paddingBottom: 6,
-    paddingTop: 6,
-    paddingLeft: 15,
-    paddingRight: 15,
-    marginRight: 8,
-    borderWidth: 0.5,
-    borderColor: '#FF792E',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 15,
+    borderWidth: 1,
+    borderColor: '#417a76',
   },
   btnText: {
-    color: '#FF792E',
+    color: '#417a76',
+    padding: 12,
+    paddingTop: 7,
+    paddingBottom: 7,
   },
   categoryItem: {
     marginVertical: 0,
@@ -274,20 +288,23 @@ const styles = StyleSheet.create({
     marginRight: 30,
     borderStyle: 'solid',
     borderWidth: 1,
-    borderColor: '#FF792E',
+    borderColor: '#417a76',
   },
   btnBuy: {
-    backgroundColor: '#FF792E',
+    backgroundColor: '#417a76',
     padding: 0,
     borderRadius: 4,
-    paddingBottom: 6,
-    paddingTop: 6,
-    paddingLeft: 20,
-    paddingRight: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
     overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: '#417a76',
   },
   btnBuyBtn: {
     color: '#fff',
+    padding: 12,
+    paddingTop: 7,
+    paddingBottom: 7,
   },
 });
 

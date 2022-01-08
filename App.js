@@ -22,10 +22,9 @@ function TabNavigator() {
         screenOptions={({route}) => ({
           tabBarStyle: {
             position: 'absolute',
-            backgroundColor: '#425C59',
+            backgroundColor: '#ffba07',
             height: 60,
-            bottom: 0,
-            paddingBottom: 4,
+            marginBottom: 4,
           },
 
           tabBarIcon: ({focused, color, size}) => {

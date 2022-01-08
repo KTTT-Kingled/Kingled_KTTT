@@ -23,12 +23,12 @@ const AddressCart = ({ navigation }) => {
             <View style={styles.progress}>
                 <View style={styles.colProgress}>
                     <CircleBackground />
-                    <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Giỏ hàng</Text>
+                    <Text style={{color:'#ffba07', fontSize: 12,textAlign:'center',}}>Giỏ hàng</Text>
                 </View>
                 <Line />
                 <View style={styles.colProgress}>
                     <Circle2 />
-                    <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Địa chỉ</Text>
+                    <Text style={{color:'#ffba07', fontSize: 12,textAlign:'center',}}>Địa chỉ</Text>
                 </View>
                 <LineGray />
                 <View style={styles.colProgress}>
@@ -44,10 +44,6 @@ const AddressCart = ({ navigation }) => {
             <View style={styles.containerList}>
 
                 <LineCart ></LineCart>
-                
-                <Text style={{color:"#425C59",marginBottom:12,marginTop:12,fontSize:18,fontWeight:"bold"}}>
-                    hàng
-                </Text>
 
                 <View style={{width:"100%",marginBottom:12}}>
                     <View style={styles.nameAndInput}>

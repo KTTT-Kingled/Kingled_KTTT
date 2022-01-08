@@ -1,18 +1,18 @@
-import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import * as React from 'react';
+import HomeScreen from '../HomeScreen.js';
+import ForgetPassword from '../loginComponent/ChangePassword';
+import ComboBox from '../loginComponent/ComboBox';
 import Login from '../loginComponent/Login.js';
-import Register from '../Register.js'
-import HomeScreen from '../HomeScreen.js'
-import ForgetPassword from '../loginComponent/ForgetPassword'
-import ComboBox from '../loginComponent/ComboBox'
+import Register from '../Register.js';
 const Stack = createNativeStackNavigator();
 const LoginStack = () => {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator
           screenOptions={{
-            headerShown: false
+            headerShown: false,
           }}
       >
         <Stack.Screen

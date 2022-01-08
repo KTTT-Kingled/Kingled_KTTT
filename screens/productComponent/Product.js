@@ -12,6 +12,7 @@ import {
   View,
 } from 'react-native';
 import { OrderContext } from '../../contexts/orderContext';
+import { SearchContext } from '../../contexts/searchContext';
 import numberWithCommas from '../../utils/thousandSeperator.js';
 import LineCart from '../component/activity/ProgressLine/LineCart.js';
 import HeaderComponent from '../component/headerComponent.js';
@@ -50,12 +51,21 @@ const Product = ({navigation}) => {
   const [category, setCategory] = useState('');
 
   const { addOrder } = useContext(OrderContext);
+  const { isSearching, results, clearSearch } = useContext(SearchContext);
 
   // fetch json from url and convert to array
+
   useEffect(() => {
-    fetchProduct('am-tran-downlight');
     fetchCategory();
+      fetchProduct('am-tran-downlight');
+      console.log('fetch product');
   }, []);
+
+  useEffect(() => {
+    if (isSearching) {
+      setProductList(results);
+    }
+  }, [isSearching, results]);
 
   async function fetchProduct(category_name) {
     //fetch data from url and return array
@@ -102,7 +112,10 @@ const Product = ({navigation}) => {
               keyExtractor={(item, index) => item + index}
               renderItem={({item}) => (
                 <View style={styles.categoryItem}>
-                  <Pressable onPress={() => fetchProduct(item.slug)}>
+                  <Pressable onPress={() => {
+                    fetchProduct(item.slug);
+                    clearSearch();
+                    }}>
                     <CategoryCard title={item} />
                   </Pressable>
                 </View>

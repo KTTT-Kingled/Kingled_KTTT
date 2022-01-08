@@ -1,5 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigationContainerRef } from '@react-navigation/native';
 import React, { useContext, useEffect, useState } from 'react';
 import { Image, Platform, StyleSheet, Text, View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/FontAwesome5';
@@ -24,7 +24,7 @@ function TabNavigator() {
             position: 'absolute',
             backgroundColor: '#ffba07',
             height: 60,
-            marginBottom: 4,
+            paddingBottom: 6,
           },
 
           tabBarIcon: ({focused, color, size}) => {
@@ -100,6 +100,7 @@ function SplashScreen() {
 }
 
 const App = () => {
+  const navigationRef = useNavigationContainerRef();
   const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {

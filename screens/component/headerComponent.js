@@ -1,18 +1,42 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   Alert,
   Image,
   Pressable,
   StyleSheet,
   TextInput,
-  View
+  View,
 } from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { OrderContext } from '../../contexts/orderContext';
+import { SearchContext } from '../../contexts/searchContext';
 // headerComponent
+
+function onSearch(search, setSearchValue) {
+  if (search.length > 0) {
+    fetch(
+      `https://kingled-kttt.herokuapp.com/api/products/search?code=&category=&name=${search}`
+    )
+      .then(res => res.json())
+      .then(res => {
+        if (res[0].results > 0) {
+          Alert.alert('Thông báo', 'Tìm thấy ' + res[0].results + ' sản phẩm');
+          setSearchValue(search, res);
+        } else {
+          Alert.alert('Thông báo', 'Không tìm thấy sản phẩm nào');
+        }
+      });
+  } else {
+    Alert.alert('Thông báo', 'Vui lòng nhập tên sản phẩm');
+  }
+}
+
 const HeaderComponent = () => {
-  const {isEmpty, total} = useContext(OrderContext);
+  const {isEmpty, total, search} = useContext(OrderContext);
+  const {setSearchValue} = useContext(SearchContext);
+  const [searchValue, setSearch] = useState('');
+  // const navigation = useNavigation();
 
   return (
     <View style={styles.session1}>
@@ -70,8 +94,19 @@ const HeaderComponent = () => {
           <View style={styles.IPText}>
             <TextInput
               style={styles.inputzone}
+              value={searchValue}
               placeholder="Bạn muốn tìm gì?"
               placeholderTextColor="#BCBCBC"
+              onChangeText={text => setSearch(text)}
+              // when user press enter
+              onSubmitEditing={() => {
+                onSearch(searchValue, setSearchValue);
+                setSearch('');
+                // navigation.navigate(
+                //   'Sản phẩm',
+                //   {screen: 'Product'}
+                // );
+              }}
             />
           </View>
         </View>
@@ -149,5 +184,6 @@ const styles = StyleSheet.create({
   },
   inputzone: {
     width: 285,
+    color: '#425C59',
   },
 });

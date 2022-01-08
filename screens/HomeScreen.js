@@ -4,7 +4,7 @@ import {
   SafeAreaView,
   ScrollView,
   StyleSheet,
-  Text, View,
+  Text, View
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import HeaderComponent from '../screens/component/headerComponent.js';
@@ -361,7 +361,7 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 15,
     fontWeight: 'bold',
-    color: '#425C59',
+    color: '#363636',
   },
   textdesc: {
     color: '#BCBCBC',
@@ -374,7 +374,7 @@ const styles = StyleSheet.create({
   verticleLine: {
     height: '60%',
     width: 0.5,
-    backgroundColor: '#425C59',
+    backgroundColor: '#363636',
   },
   textsty: {
     marginLeft: 10,
@@ -407,6 +407,8 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: 'row',
     backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   Text1: {
     flex: 1,
@@ -461,6 +463,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginTop: 5,
     height: 'auto',
+    marginRight: 5,
     width: 100,
     backgroundColor: 'white',
     flexDirection: 'column',
@@ -479,7 +482,8 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 12,
     fontWeight: 'bold',
-    color: '#425C59',
+    color: '#2a2a2a',
+    textAlign: 'justify',
   },
   rowtitle:{
     flex: 1,

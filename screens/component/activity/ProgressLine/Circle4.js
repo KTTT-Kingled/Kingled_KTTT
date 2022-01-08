@@ -17,11 +17,11 @@ const styles = StyleSheet.create({
     circle:{
         width:25,
         height:25,
-        //backgroundColor:"#4cb71a",
+        //backgroundColor:"#ffba07",
         borderRadius:100,
         //marginTop:"-3.2%",
         //marginLeft:"16%",
-        borderColor:"#4cb71a",
+        borderColor:"#ffba07",
         borderWidth:2,
         alignItems: 'center',
         justifyContent: 'center',

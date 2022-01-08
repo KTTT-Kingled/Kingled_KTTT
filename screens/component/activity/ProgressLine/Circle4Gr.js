@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     circle:{
         width:25,
         height:25,
-        //backgroundColor:"#4cb71a",
+        //backgroundColor:"#ffba07",
         borderRadius:100,
         //marginTop:"-3.2%",
         //marginLeft:"16%",

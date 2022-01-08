@@ -13,7 +13,7 @@ const Line = ({ navigation }) => {
   };
 const styles = StyleSheet.create({
     line:{
-      backgroundColor:"#4cb71a",
+      backgroundColor:"#ffba07",
       width: 60,
       height: 7,
       //borderColor:"#6e5353",

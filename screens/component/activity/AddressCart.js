@@ -21,100 +21,106 @@ const AddressCart = ({ navigation }) => {
                 <Text style={{color:"#425C59",fontSize:24}}>THÔNG TIN NHẬN HÀNG</Text>
             </View>
             <View style={styles.progress}>
-                <CircleBackground />
+                <View style={styles.colProgress}>
+                    <CircleBackground />
+                    <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Giỏ hàng</Text>
+                </View>
                 <Line />
-                <Circle2 />
+                <View style={styles.colProgress}>
+                    <Circle2 />
+                    <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Địa chỉ</Text>
+                </View>
                 <LineGray />
-                <Circle3Gr />
+                <View style={styles.colProgress}>
+                    <Circle3Gr />
+                    <Text style={{color:'#ddd', textAlign:'center', fontSize: 12,}}>Thanh toán</Text>
+                </View>
                 <LineGray />
-                <Circle4Gr />
-            </View>
-            <View style={styles.progressTextContainer}>
-                <Text style={{marginLeft:'7%',color:'#4cb71a'}}>Giỏ hàng</Text>
-                <Text style={{marginLeft:'10%',color:'#4cb71a'}}>Địa chỉ</Text>
-                <Text style={{marginLeft:'8%',color:'#dddddd'}}>Thanh toán</Text>
-                <Text style={{marginLeft:'6%',color:'#dddddd'}}>Xác nhận</Text>
+                <View style={styles.colProgress}>
+                    <Circle4Gr />
+                    <Text style={{color:'#ddd', fontSize: 12,textAlign:'center',}}>Xác nhận</Text>
+                </View>
             </View>
             <View style={styles.containerList}>
 
                 <LineCart ></LineCart>
                 
                 <Text style={{color:"#425C59",marginBottom:12,marginTop:12,fontSize:18,fontWeight:"bold"}}>
-                     hàng
+                    hàng
                 </Text>
 
                 <View style={{width:"100%",marginBottom:12}}>
-                        <View style={styles.nameAndInput}>
-                                <View style={styles.nameView}>
-                                    <Text style={styles.nameText}>Họ tên</Text>
-                                </View>
-                                <TextInput
-                                style={styles.inputInfor}
-                                placeholder="Điền họ và tên..."
-                                placeholderTextColor="#313131"
-                                // keyboardType="numeric"
-                                 />
+                    <View style={styles.nameAndInput}>
+                        <View style={styles.nameView}>
+                            <Text style={styles.nameText}>Họ tên</Text>
                         </View>
-                        <View style={styles.nameAndInput}>
-                                <View style={styles.nameView}>
-                                    <Text style={styles.nameText}>Email</Text>
-                                </View>
-                                <TextInput
-                                style={styles.inputInfor}
-                                placeholder="Điền email..."
-                                placeholderTextColor="#313131"
-                                // keyboardType="numeric"
-                                 />
+                        <TextInput
+                            style={styles.inputInfor}
+                            placeholder="Điền họ và tên..."
+                            placeholderTextColor="#313131"
+                            // keyboardType="numeric"
+                        />
+                    </View>
+                    <View style={styles.nameAndInput}>
+                        <View style={styles.nameView}>
+                            <Text style={styles.nameText}>Email</Text>
                         </View>
+                        <TextInput
+                            style={styles.inputInfor}
+                            placeholder="Điền email..."
+                            placeholderTextColor="#313131"
+                            // keyboardType="numeric"
+                        />
+                    </View>
                         <View style={styles.nameAndInput}>
-                                <View style={styles.nameView}>
-                                    <Text style={styles.nameText}>Điện thoại</Text>
-                                </View>
-                                <TextInput
+                            <View style={styles.nameView}>
+                                <Text style={styles.nameText}>Điện thoại</Text>
+                            </View>
+                            <TextInput
                                 style={styles.inputInfor}
                                 placeholder="Điền số điện thoại..."
                                 placeholderTextColor="#313131"
                                 keyboardType="numeric"
-                                 />
+                            />
                         </View>
-                        <View style={styles.nameAndInput}>
-                                <View style={styles.nameView}>
-                                    <Text style={styles.nameText}>Ngày nhận</Text>
-                                </View>
-                                <TextInput
-                                style={styles.inputInfor}
-                                placeholder="Ghi rõ ngày nhận hàng..."
-                                placeholderTextColor="#313131"
-                                // keyboardType="numeric"
-                                 />
+                    <View style={styles.nameAndInput}>
+                        <View style={styles.nameView}>
+                            <Text style={styles.nameText}>Ngày nhận</Text>
                         </View>
-                        <View style={styles.nameAndInput}>
-                                <View style={styles.nameView}>
-                                    <Text style={styles.nameText}>Quận huyện</Text>
-                                </View>
-                                <TextInput
-                                style={styles.inputInfor}
-                                placeholder="Quận huyện nhận hàng..."
-                                placeholderTextColor="#313131"
-                                // keyboardType="numeric"
-                                 />
+                        <TextInput
+                            style={styles.inputInfor}
+                            placeholder="Ghi rõ ngày nhận hàng..."
+                            placeholderTextColor="#313131"
+                            // keyboardType="numeric"
+                            />
+                    </View>
+                    <View style={styles.nameAndInput}>
+                        <View style={styles.nameView}>
+                            <Text style={styles.nameText}>Quận huyện</Text>
                         </View>
-                        <View style={styles.nameAndInput}>
-                                <View style={styles.nameView}>
-                                    <Text style={styles.nameText}>Địa chỉ</Text>
-                                </View>
-                                <TextInput
-                                style={styles.inputInfor}
-                                placeholder="Địa chỉ nhận hàng..."
-                                placeholderTextColor="#313131"
-                                // keyboardType="numeric"
-                                 />
+                        <TextInput
+                            style={styles.inputInfor}
+                            placeholder="Quận huyện nhận hàng..."
+                            placeholderTextColor="#313131"
+                            // keyboardType="numeric"
+                        />
+                    </View>
+                    <View style={styles.nameAndInput}>
+                        <View style={styles.nameView}>
+                            <Text style={styles.nameText}>Địa chỉ</Text>
                         </View>
+                        <TextInput
+                            style={styles.inputInfor}
+                            placeholder="Địa chỉ nhận hàng..."
+                            placeholderTextColor="#313131"
+                            // keyboardType="numeric"
+                        />
+                    </View>
                         <View style={{flexDirection:"row"}}>
-                                <View style={{flex:1}}>
-                                    <Text style={styles.nameText}>Ghi chú</Text>
-                                </View>
-                                <TextInput
+                            <View style={{flex:1}}>
+                                <Text style={styles.nameText}>Ghi chú</Text>
+                            </View>
+                            <TextInput
                                 multiline
                                 numberOfLines={8}
                                 onChangeText={onChangeNumber}
@@ -123,7 +129,7 @@ const AddressCart = ({ navigation }) => {
                                 placeholder="Địa chỉ nhận hàng..."
                                 placeholderTextColor="#313131"
                                 // keyboardType="numeric"
-                                 />
+                                />
                         </View>
                 </View>
                 <LineCart ></LineCart>
@@ -160,45 +166,21 @@ const AddressCart = ({ navigation }) => {
         </ScrollView>
     
     )
-  };
+};
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      alignItems: "center",
-      backgroundColor:"#fff",
-      paddingBottom:50,paddingTop: 10
-
+        flex: 1,
+        alignItems: "center",
+        backgroundColor:"#fff",
+        paddingBottom:50,
+        paddingTop: 10,
     },
     progress:{
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    circle:{
-        width:22,
-        height:22,
-        backgroundColor:"#E9E9E9",
-        borderRadius:100,
-        marginTop:"-3.2%",
-        marginLeft:"16%",
-        borderColor:"#FF792E",
-        borderWidth:2
-    },
-    circle2:{
-        marginTop:"-6.2%",
-        marginLeft:"38%",
-    },
-    circle3:{
-        marginTop:"-6.2%",
-        marginLeft:"60%",
-    },
-    circle4:{
-        marginTop:"-6.2%",
-        marginLeft:"82%",
-    },
-    circleColor:{
-        backgroundColor:"#FF792E"
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        width: 65,
     },
     containerList:{
         width:"100%",
@@ -235,13 +217,13 @@ const styles = StyleSheet.create({
         paddingLeft:10,
         color:"#313131"
     },
-    progressTextContainer:{
-        width:'100%',
-        // height:30,
-        // backgroundColor:"black",
-        marginBottom:0,
-        flexDirection:'row',
+    colProgress:{
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        //marginRight: -10,
+        //marginLeft: -10,
     },
 
-  });
-  export default AddressCart;
+});
+export default AddressCart;

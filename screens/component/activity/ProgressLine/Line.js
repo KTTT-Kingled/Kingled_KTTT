@@ -14,13 +14,10 @@ const Line = ({ navigation }) => {
 const styles = StyleSheet.create({
     line:{
         backgroundColor:"#4cb71a",
-        width: 60,
+        width: 50,
         height: 4,
-        //borderColor:"#6e5353",
-        //borderWidth: 1,
         borderRadius: 10,
-        marginLeft: 5,
-        marginRight: 5,
+        marginTop: 12,
     },
   });
   export default Line;

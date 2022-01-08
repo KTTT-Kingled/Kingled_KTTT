@@ -15,8 +15,8 @@ const CircleBackground = ({ navigation }) => {
   };
 const styles = StyleSheet.create({
     circle:{
-        width:26,
-        height:26,
+        width:25,
+        height:25,
         //backgroundColor:"#4cb71a",
         borderRadius:100,
         //marginTop:"-3.2%",

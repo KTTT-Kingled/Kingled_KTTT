@@ -7,7 +7,6 @@ import Circle3Gr from './ProgressLine/Circle3Gr';
 import Circle4Gr from './ProgressLine/Circle4Gr';
 import LineCart from './ProgressLine/LineCart.js';
 import LineGray from './ProgressLine/LineGray';
-import ProgressLine from './ProgressLine/ProgressLine.js';
 import SectionListCard from './SectionList/SectionListCart.js';
 
 const CartProduct = ({navigation}) => {
@@ -21,15 +20,26 @@ const CartProduct = ({navigation}) => {
           </Text>
         </View>
         <View style={styles.progress}>
-          <Circle1 />
+          <View style={styles.colProgress}>
+            <Circle1 />
+            <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Giỏ hàng</Text>
+          </View>
           <LineGray />
-          <Circle2Gr />
+          <View style={styles.colProgress}>
+            <Circle2Gr />
+            <Text style={{color:'#ddd', fontSize: 12,textAlign:'center',}}>Địa chỉ</Text>
+          </View>
           <LineGray />
-          <Circle3Gr />
+          <View style={styles.colProgress}>
+            <Circle3Gr />
+            <Text style={{color:'#ddd', textAlign:'center', fontSize: 12,}}>Thanh toán</Text>
+          </View>
           <LineGray />
-          <Circle4Gr />
+          <View style={styles.colProgress}>
+            <Circle4Gr />
+            <Text style={{color:'#ddd', fontSize: 12,textAlign:'center',}}>Xác nhận</Text>
+          </View>
         </View>
-        <ProgressLine />
         <View style={styles.containerList}>
           <LineCart />
           <SectionListCard />
@@ -95,8 +105,9 @@ const styles = StyleSheet.create({
   progress: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    width: 65,
   },
 
   containerList: {
@@ -111,7 +122,14 @@ const styles = StyleSheet.create({
     color: '#F32E2E',
     fontSize: 15,
   },
+  colProgress:{
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    //marginRight: -10,
+    //marginLeft: -10,
 
+  },
 });
 
 export default CartProduct;

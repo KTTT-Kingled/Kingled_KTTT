@@ -15,19 +15,25 @@ const ConfirmCart = ({ navigation }) => {
             <Text style={{color:"#425C59",fontSize:24}}>THÔNG TIN NHẬN HÀNG</Text>
         </View>
         <View style={styles.progress}>
-            <CircleBackground />
+            <View style={styles.colProgress}>
+                <CircleBackground />
+                <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Giỏ hàng</Text>
+            </View>
             <Line />
-            <CircleBackground />
+            <View style={styles.colProgress}>
+                <CircleBackground />
+                <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Địa chỉ</Text>
+            </View>
             <Line />
-            <CircleBackground />
+            <View style={styles.colProgress}>
+                <CircleBackground />
+                <Text style={{color:'#4cb71a', textAlign:'center', fontSize: 12,}}>Thanh toán</Text>
+            </View>
             <Line />
-            <CircleBackground />
-        </View>
-        <View style={styles.progressTextContainer}>
-            <Text style={{marginLeft:'7%',color:'#4cb71a'}}>Giỏ hàng</Text>
-            <Text style={{marginLeft:'10%',color:'#4cb71a'}}>Địa chỉ</Text>
-            <Text style={{marginLeft:'8%',color:'#4cb71a'}}>Thanh toán</Text>
-            <Text style={{marginLeft:'6%',color:'#4cb71a'}}>Xác nhận</Text>
+            <View style={styles.colProgress}>
+                <CircleBackground />
+                <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Xác nhận</Text>
+            </View>
         </View>
         <View style={styles.containerList}>
 
@@ -58,57 +64,35 @@ const ConfirmCart = ({ navigation }) => {
     </ScrollView>
     
     )
-  };
-  const styles = StyleSheet.create({
+};
+const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
         backgroundColor:"white",
-      paddingBottom:50,paddingTop:10
-
-      },
-      progress:{
+        paddingBottom:50,
+        paddingTop:10
+    },
+    progress:{
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-      },
-      circle:{
-          width:22,
-          height:22,
-          backgroundColor:"#E9E9E9",
-          borderRadius:100,
-          marginTop:"-3.2%",
-          marginLeft:"16%",
-          borderColor:"#FF792E",
-          borderWidth:2
-      },
-      circle2:{
-          marginTop:"-6.2%",
-          marginLeft:"38%",
-      },
-      circle3:{
-          marginTop:"-6.2%",
-          marginLeft:"60%",
-      },
-      circle4:{
-          marginTop:"-6.2%",
-          marginLeft:"82%",
-      },
-      circleColor:{
-          backgroundColor:"#FF792E"
-      },
-      containerList:{
-          width:"100%",
-          padding:16
-      },
-      textConfirm:{
-          color:"#585757",
-      },
-      progressTextContainer:{
-        width:'100%',
-        marginBottom:0,
-        flexDirection:'row',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        width: 65,
     },
-  });
-  export default ConfirmCart;
+    containerList:{
+        width:"100%",
+        padding:16
+    },
+    textConfirm:{
+        color:"#585757",
+    },
+    colProgress:{
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        //marginRight: -10,
+        //marginLeft: -10,
+    },
+});
+export default ConfirmCart;

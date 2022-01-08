@@ -21,20 +21,26 @@ const AbateCart = ({ navigation }) => {
             <Text style={{color:"#425C59",fontSize:24}}>THÔNG TIN NHẬN HÀNG</Text>
         </View>
         <View style={styles.progress}>
-            <CircleBackground />
-            <Line />
-            <CircleBackground />
-            <Line />
-            <Circle3 />
-            <LineGray />
-            <Circle4Gr />
-        </View>
-        <View style={styles.progressTextContainer}>
-            <Text style={{marginLeft:'7%',color:'#4cb71a'}}>Giỏ hàng</Text>
-            <Text style={{marginLeft:'10%',color:'#4cb71a'}}>Địa chỉ</Text>
-            <Text style={{marginLeft:'8%',color:'#4cb71a'}}>Thanh toán</Text>
-            <Text style={{marginLeft:'6%',color:'#dddddd'}}>Xác nhận</Text>
+            <View style={styles.colProgress}>
+                <CircleBackground />
+                <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Giỏ hàng</Text>
             </View>
+            <Line />
+            <View style={styles.colProgress}>
+                <CircleBackground />
+                <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Địa chỉ</Text>
+            </View>
+            <Line />
+            <View style={styles.colProgress}>
+                <Circle3 />
+                <Text style={{color:'#4cb71a', textAlign:'center', fontSize: 12,}}>Thanh toán</Text>
+            </View>
+            <LineGray />
+            <View style={styles.colProgress}>
+                <Circle4Gr />
+                <Text style={{color:'#ddd', fontSize: 12,textAlign:'center',}}>Xác nhận</Text>
+            </View>
+        </View>
         <View style={styles.containerList}>
 
             <LineCart ></LineCart>
@@ -63,8 +69,6 @@ const AbateCart = ({ navigation }) => {
                 <Text style={styles.totalAmountText}>3,444,000</Text>
                 <Text style={styles.totalAmountText}> VNĐ</Text>
             </View>
-
-
             <View 
             style={{backgroundColor:"#FF792E",paddingTop:12,paddingBottom:12,width:"100%",alignItems:"center",borderRadius:2,marginTop:12,marginBottom:12}}
             onStartShouldSetResponder={
@@ -78,36 +82,39 @@ const AbateCart = ({ navigation }) => {
     </ScrollView>
     
     )
-  };
+};
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
         backgroundColor:"white",
-      paddingBottom:50,paddingTop: 10
-
-      },
-      progress:{
+        paddingBottom:
+        50,paddingTop: 10
+    },
+    progress:{
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-      },
-      containerList:{
-          width:"100%",
-          padding:16
-      },
-      totalAmountFlex:{
-          flex:1,
-      },
-      totalAmountText:{
-          color:"#FF2E2E",
-          fontSize:15
-      },
-      progressTextContainer:{
-        width:'100%',
-        marginBottom:0,
-        flexDirection:'row',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        width: 65,
     },
-  });
-  export default AbateCart;
+    containerList:{
+        width:"100%",
+        padding:16
+    },
+    totalAmountFlex:{
+        flex:1,
+    },
+    totalAmountText:{
+        color:"#FF2E2E",
+        fontSize:15
+    },
+    colProgress:{
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        //marginRight: -10,
+        //marginLeft: -10,
+    },
+});
+export default AbateCart;

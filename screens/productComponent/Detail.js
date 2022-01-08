@@ -5,7 +5,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 import { Col, Grid, Row } from 'react-native-easy-grid';
 import numberWithCommas from '../../utils/thousandSeperator.js';
@@ -36,7 +36,7 @@ const DetailProduct = ({navigation, route}) => {
         </Text>
         <View style={styles.containerImg}>
           {data.images.map((item, index) => (
-            <View style={styles.img}>
+            <View style={styles.img} key={index}>
               <Pressable
                 onPress={() =>
                   setImg(item)
@@ -93,7 +93,7 @@ const DetailProduct = ({navigation, route}) => {
         <Text style={{color: 'black', fontSize: 18}}>
           1. MẶT ĐÈN KIM LOẠI SIÊU BỀN
         </Text>
-        <Text style={{color: 'black', textAlign: 'justify', marginBottom: 10,}}>
+        <Text style={{color: 'black', textAlign: 'justify', marginBottom: 10}}>
           Mặt đèn màu trắng được thiết kế siêu mòng chỉ 1mm làm bằng chất liệu
           kim loại siêu bền. Khi lắm lên trần nhà sẽ tạo cảm giác liền lạc và
           sang trọng hơn

@@ -104,6 +104,9 @@ const Login = ({navigation}) => {
               <Pressable onPress={() => navigation.navigate('Register')}>
                 <Text style={styles.textRegister}>Đăng ký</Text>
               </Pressable>
+              <Pressable onPress={() => navigation.navigate('User')}>
+                <Text style={styles.textRegister}>-User</Text>
+              </Pressable>
             </View>
           </View>
         </View>

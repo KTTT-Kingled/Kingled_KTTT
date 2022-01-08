@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Image, SectionList, StatusBar, StyleSheet, Text, View } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const DATA = [
   {
@@ -69,27 +70,35 @@ const Item = ({ title }) => (
                 <Text style={styles.name}>{title.name}</Text>
                 <Text style={styles.cost}>{title.cost} VNĐ</Text>
                 <Text style={styles.codeText}>Mã SP: {title.code}</Text>
-                <Text style={styles.codeText}>Quy cách: {title.barrel} chiêc/thùng</Text>
-                <Text style={styles.codeText}>Tích lũy: {title.ones} / chiếc</Text>
+                <Text style={styles.codeText}>Quy cách: {title.barrel} chiếc / thùng</Text>
+                <Text style={styles.codeText}>Tích lũy: {title.ones} xu / chiếc</Text>
+                <View style={styles.amount}>
+                  <View style={styles.btnAmount}>
+                    <Icon
+                      name="remove-circle"
+                      color="#363636"
+                      size={24}
+                      //style={{right: 0}}
+                    />
+                    <View style={styles.inputView}>
+                      <Text style={{color:'#363636', fontSize: 12}}>{title.amount}</Text>
+                    </View>
+                      <Icon
+                        name="add-circle"
+                        color="#363636"
+                        size={24}
+                        //style={{right: 0}}
+                      />
+                  </View>
+                  <Icon
+                      name="trash"
+                      color="#363636"
+                      size={23}
+                      style={{right: 10}}
+                    />
+                </View>
             </View>
         </View>
-        <View style={styles.amount}>
-            <View style={{flex:4,justifyContent:'center'}}>
-                <Text style={styles.deleteProduct}>{title.deleteProduct}</Text>
-            </View>
-            <View style={{flex:7,flexDirection:'row'}}>
-                <View style={[styles.btnAmount,styles.btnSub]}>
-                    <Text style={styles.btnText}>-</Text>
-                </View>
-                <View style={styles.inputView}>
-                    <Text style={{color:'#000000'}}>{title.amount}</Text>
-                </View>
-                <View style={styles.btnAmount}>
-                    <Text style={styles.btnText}>+</Text>
-                </View>
-            </View>
-        </View>
-
   </View>
 );
 
@@ -158,17 +167,19 @@ const styles = StyleSheet.create({
   },
   name:{
     fontSize: 15,
-    color: '#425C59',
+    color: '#363636',
     fontWeight:'bold',
+    textAlign: 'justify',
   },
   cost:{
-    fontSize: 15,
-    color: '#FF792E',
+    fontSize: 17,
+    color: '#e7a703',
     fontWeight:'bold',
   },
   amount:{
-      flexDirection:'row',
-      padding:4,
+    flex: 1,
+    flexDirection:'row',
+    alignItems: 'center',
   },
   deleteProduct:{
     fontSize:15,
@@ -176,32 +187,34 @@ const styles = StyleSheet.create({
     color: '#FF4646',
   },
   btnAmount:{
-      padding:2,
-      paddingRight:8,
-      paddingLeft:8,
-      borderWidth:1,
-      borderColor: '#000000',
+    flex: 1,
+    flexDirection: 'row',
+    //justifyContent: 'center',
+    //alignItems: 'center',
+    marginTop: 10,
   },
   codeText:{
-      color:'#818181',
+    color:'#a1a1a1',
+    fontSize: 12,
   },
   btnSub:{
       paddingLeft:10,
       paddingRight:10,
   },
   btnText:{
-      fontSize:14,
+      fontSize:12,
       color: '#000000',
   },
   inputView:{
-      width:'60%',
-      height:28,
+      width:'30%',
+      height:23,
       justifyContent:'center',
       alignItems:'center',
-      marginLeft: 8,
-      marginRight:8,
+      marginLeft: 3,
+      marginRight:3,
       borderWidth:1,
-      borderColor: '#000000',
+      borderColor: '#363636',
+      borderRadius: 50,
   },
 });
 

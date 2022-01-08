@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
   circle:{
     width:25,
     height:25,
-    backgroundColor:"#ffba07",
+    backgroundColor:"#4cb71a",
     borderRadius:100,
-    borderColor:"#ffba07",
+    borderColor:"#4cb71a",
     borderWidth:2,
     alignItems: 'center',
     justifyContent: 'center',

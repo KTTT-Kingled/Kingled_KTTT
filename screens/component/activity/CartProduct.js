@@ -6,7 +6,6 @@ import Circle1 from './ProgressLine/Circle1';
 import Circle2Gr from './ProgressLine/Circle2Gr';
 import Circle3Gr from './ProgressLine/Circle3Gr';
 import Circle4Gr from './ProgressLine/Circle4Gr';
-import LineCart from './ProgressLine/LineCart.js';
 import LineGray from './ProgressLine/LineGray';
 import SectionListCard from './SectionList/SectionListCart.js';
 
@@ -25,11 +24,10 @@ const CartProduct = ({navigation}) => {
           Thông tin giỏ hàng
         </Text>
       </View>
-      <View style={styles.container}>
-        <View style={styles.progress}>
+      <View style={styles.progress}>
           <View style={styles.colProgress}>
             <Circle1 />
-            <Text style={{color:'#ffba07', fontSize: 12,textAlign:'center',}}>Giỏ hàng</Text>
+            <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Giỏ hàng</Text>
           </View>
           <LineGray />
           <View style={styles.colProgress}>
@@ -47,53 +45,21 @@ const CartProduct = ({navigation}) => {
             <Text style={{color:'#ddd', fontSize: 12,textAlign:'center',}}>Xác nhận</Text>
           </View>
         </View>
+      <View style={styles.container}>
         <View style={styles.containerList}>
           <SectionListCard />
-          <View
-            style={{
-              backgroundColor: '#425C59',
-              paddingTop: 12,
-              paddingBottom: 12,
-              width: '100%',
-              alignItems: 'center',
-              borderRadius: 2,
-              marginTop: 12,
-              marginBottom: 12,
-            }}
-            onStartShouldSetResponder={() => (
-              'OnPress', navigation.navigate('AddressCart')
-            )}>
-            <Text style={{color: '#FFFFFF', fontSize: 18}}>
-              CẬP NHẬP GIỎ HÀNG
-            </Text>
+        </View>
+        <View style={styles.payment}>
+          <View style={styles.total}>
+            <View style={styles.rowTotalText}>
+              <Text style={styles.totalText1}>Tổng tiền</Text>
+              <Text style={styles.totalText2}>4.078.000 VNĐ</Text>
+            </View>
           </View>
-
-          <LineCart />
-          <View style={{flexDirection: 'row', marginTop: 10}}>
-            <Text style={[styles.totalAmountText, styles.totalAmountFlex]}>
-              Tổng tiền tạm tính
-            </Text>
-            <Text style={styles.totalAmountText}>3,444,000</Text>
-            <Text style={styles.totalAmountText}> VNĐ</Text>
-          </View>
-
-          <View
-            style={{
-              backgroundColor: '#FF792E',
-              paddingTop: 12,
-              paddingBottom: 12,
-              width: '100%',
-              alignItems: 'center',
-              borderRadius: 2,
-              marginTop: 12,
-              marginBottom: 12,
-            }}
-            onStartShouldSetResponder={() => (
+          <View style={styles.paymentBTN}>
+            <View onStartShouldSetResponder={() => (
               'OnPress', navigation.navigate('AddressCart')
-            )}>
-            <Text style={{color: '#FFFFFF', fontSize: 18}}>
-              TIẾN HÀNH THANH TOÁN
-            </Text>
+            )}><Text style={styles.paymentText}>Thanh toán</Text></View>
           </View>
         </View>
       </View>
@@ -107,6 +73,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8f8f8',
     paddingBottom: 50,
     //paddingTop: 10,
+      // paddingLeft: 5,
+      // paddingRight: 5,
   },
   progress: {
     flex: 1,
@@ -116,7 +84,7 @@ const styles = StyleSheet.create({
     //width: 65,
     backgroundColor: 'white',
     padding: 30,
-    marginBottom: 5,
+    marginBottom: 4,
     borderRadius: 4,
   },
 
@@ -149,6 +117,53 @@ const styles = StyleSheet.create({
     marginBottom: 3,
     flex: 1,
     flexDirection: 'row',
+  },
+  payment:{
+    flex: 1,
+    flexDirection: 'row',
+    height: 70,
+    marginBottom: 14,
+  },
+  paymentBTN:{
+    flex: 4,
+    justifyContent: 'flex-end',
+    backgroundColor: '#417a76',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopWidth: 0.5,
+    borderColor: '#417a76',
+  },
+  paymentText:{
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  total:{
+    flex: 6,
+    backgroundColor: '#fff',
+    borderTopWidth: 0.5,
+    borderColor: '#417a76',
+    padding: 10,
+    justifyContent: 'center',
+  },
+  totalText1:{
+    fontSize: 12,
+    color: '#363636',
+    marginRight: 5,
+  },
+  totalText2:{
+    fontSize: 17,
+    color: '#e7a703',
+    fontWeight: 'bold',
+  },
+  rowTotalText:{
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    paddingBottom: 20,
   }
 });
 

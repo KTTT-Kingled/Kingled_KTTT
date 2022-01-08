@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar,Image,TextInput } from "react-native";
+import { Image, SectionList, StatusBar, StyleSheet, Text, View } from "react-native";
 
 const DATA = [
   {
@@ -60,11 +60,11 @@ const Item = ({ title }) => (
                 <Image source={{uri: title.uri}} style={styles.images}/>
             </View>
             <View style={styles.inforContainer}>
-                <Text style={styles.name}>{title.name}</Text>
+            <Text style={styles.name}>{title.name}</Text>
                 <Text style={styles.cost}>{title.cost} VNĐ</Text>
                 <Text style={styles.codeText}>Mã SP: {title.code}</Text>
-                <Text style={styles.codeText}>Quy cách: {title.barrel} chiêc/thùng</Text>
-                <Text style={styles.codeText}>Tích lũy: {title.ones} / chiếc</Text>
+                <Text style={styles.codeText}>Quy cách: {title.barrel} chiếc / thùng</Text>
+                <Text style={styles.codeText}>Tích lũy: {title.ones} xu / chiếc</Text>
             </View>
         </View>
 
@@ -96,12 +96,16 @@ const styles = StyleSheet.create({
     marginHorizontal: 16
   },
   item: {
-    // backgroundColor: "#f9c2ff",
-    marginVertical: 8,
-    borderColor:"#425C59",
-    borderWidth:1,
+    //backgroundColor: "#fff",
+    marginVertical: 3,
+    //borderColor:'#425C59',
+    //borderWidth:1,
     paddingTop:10,
-    paddingBottom:10
+    paddingBottom:10,
+    borderRadius: 4,
+    borderBottomWidth: 0.2,
+    borderBottomColor: "#c2c2c2",
+    //elevation: 3,
   },
   header: {
     fontSize: 32,
@@ -125,7 +129,7 @@ const styles = StyleSheet.create({
   },
   inforContainer:{
     flex: 7,
-    height:"100%"
+    height:'100%',
   },
   itemInformation:{
       flexDirection:"row"
@@ -136,14 +140,15 @@ const styles = StyleSheet.create({
     fontWeight:"bold"
   },
   cost:{
-    fontSize: 15,
-    color: "#FF792E",
-    fontWeight:"bold"
+    fontSize: 17,
+    color: '#e7a703',
+    fontWeight:'bold',
   },
 
 
   codeText:{
-      color:"#818181"
+    color:'#a1a1a1',
+    fontSize: 12,
   },
 
   btnText:{

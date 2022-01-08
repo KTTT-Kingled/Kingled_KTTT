@@ -23,17 +23,17 @@ const AbateCart = ({ navigation }) => {
         <View style={styles.progress}>
             <View style={styles.colProgress}>
                 <CircleBackground />
-                <Text style={{color:'#ffba07', fontSize: 12,textAlign:'center',}}>Giỏ hàng</Text>
+                <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Giỏ hàng</Text>
             </View>
             <Line />
             <View style={styles.colProgress}>
                 <CircleBackground />
-                <Text style={{color:'#ffba07', fontSize: 12,textAlign:'center',}}>Địa chỉ</Text>
+                <Text style={{color:'#4cb71a', fontSize: 12,textAlign:'center',}}>Địa chỉ</Text>
             </View>
             <Line />
             <View style={styles.colProgress}>
                 <Circle3 />
-                <Text style={{color:'#ffba07', textAlign:'center', fontSize: 12,}}>Thanh toán</Text>
+                <Text style={{color:'#4cb71a', textAlign:'center', fontSize: 12,}}>Thanh toán</Text>
             </View>
             <LineGray />
             <View style={styles.colProgress}>

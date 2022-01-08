@@ -1,13 +1,9 @@
-import React from "react";
-import { Text, View } from "react-native";
-import { Ionicons } from "react-native-vector-icons/Ionicons";
-const User = () => {
+import * as React from 'react';
+import UserStack from './Stack/UserStack';
+const UserScreen = () => {
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text style={{ color: "#006600", fontSize: 40 }}>User Screen!</Text>
-      <Ionicons name="md-person-circle-outline" size={80} color="#006600" />
-    </View>
+    <UserStack/>
   );
 };
-// user
-export default User;
+// productscreen
+export default UserScreen;

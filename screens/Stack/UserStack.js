@@ -1,22 +1,19 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import * as React from 'react';
-import Login from '../loginComponent/Login.js';
-import Register from '../Register.js';
+import React from 'react';
+import ChangePassword from '../loginComponent/ChangePassword';
 
 const Stack = createNativeStackNavigator();
-const LoginStack = () => {
+const UserStack = () => {
   return (
     <NavigationContainer independent={true}>
       <Stack.Navigator
         screenOptions={{
           headerShown: false,
         }}>
-        <Stack.Screen name="Home" component={Login} />
-        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="ChangePassword" component={ChangePassword} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
-
-export default LoginStack;
+export default UserStack;

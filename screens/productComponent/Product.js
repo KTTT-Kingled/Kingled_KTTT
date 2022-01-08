@@ -9,7 +9,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
-  View,
+  View
 } from 'react-native';
 import numberWithCommas from '../../utils/thousandSeperator.js';
 import LineCart from '../component/activity/ProgressLine/LineCart.js';

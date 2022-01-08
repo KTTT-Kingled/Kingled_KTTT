@@ -62,9 +62,9 @@ function TabNavigator() {
             );
           },
 
-          tabBarActiveTintColor: '#FFD461',
+          tabBarActiveTintColor: '#fff',
           tabBarInactiveTintColor: '#FFF',
-          tabBarActiveBackgroundColor: '#425C59',
+          tabBarActiveBackgroundColor: '#ffba07',
           tabBarInactiveBackgroundColor: '#425C59',
           headerShown: false,
         })}>

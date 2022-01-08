@@ -11,10 +11,10 @@ import HeaderComponent from '../screens/component/headerComponent.js';
 import Slider from '../screens/component/Slider.js';
 
 const images = [
-  'https://images.pexels.com/photos/189187/pexels-photo-189187.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-  'https://images.pexels.com/photos/4149262/pexels-photo-4149262.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-  'https://images.pexels.com/photos/160322/pexels-photo-160322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-  'https://images.pexels.com/photos/6787975/pexels-photo-6787975.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+  'https://images.kingled.vn/data/Product/498AB859-CAE9-4826-A60D-21B0FD09C9E7/hang-say-tich-luy-trung-qua-2-ti.png',
+  'https://images.kingled.vn/data/Site/2A2B7E24-CC23-49E4-B646-E1B03ECF7922/Ads/349FCA69-CD80-47BA-8F61-596F775C741F/CTKM%20thang%201%20PC.jpg?w=1350',
+  'https://kingled.vn/data/Product/64C7DE1D-416C-4DE2-9906-C9C1C75BC01E/am-tran-mat-kim-loai-sieu-ben-10w-15w.jpg',
+  'https://www.thietbidiendgp.vn/media/article/bg-kingled-2021.jpg',
 ];
 
 export default class HomeScreen extends Component {
@@ -32,7 +32,7 @@ export default class HomeScreen extends Component {
             <View style={styles.frames}>
               <View style={styles.frame1}>
                 <View style={styles.bar}>
-                  <Icon name="gift" color="#FFB128" size={18} />
+                  <Icon name="gift-sharp" color="#ffba07" size={18} />
                   <Text style={styles.texticon}>Đổi quà</Text>
                 </View>
                 <Text style={styles.textdesc}>Xem các phần quà</Text>
@@ -42,7 +42,7 @@ export default class HomeScreen extends Component {
               </View>
               <View style={styles.frame1}>
                 <View style={styles.bar}>
-                  <Icon name="logo-bitcoin" color="#FFB128" size={18} />
+                  <Icon name="server" color="#ffba07" size={18} />
                   <Text style={styles.texticon}>0 xu</Text>
                 </View>
                 <Text style={styles.textdesc}>Tích luỹ xu ngay bây giờ</Text>
@@ -52,7 +52,7 @@ export default class HomeScreen extends Component {
               </View>
               <View style={styles.frame1}>
                 <View style={styles.bar}>
-                  <Icon name="qr-code" color="#FFB128" size={18} />
+                  <Icon name="qr-code" color="#ffba07" size={18} />
                   <Text style={styles.texticon}>Bảo hành</Text>
                 </View>
                 <Text style={styles.textdesc}>Kích hoạt bảo hành</Text>
@@ -69,7 +69,10 @@ export default class HomeScreen extends Component {
                 <Text style={styles.noibat}>Tin nổi bật</Text>
               </View>
               <View style={styles.Text2}>
-                <Text style={styles.tatca}>Tất cả </Text>
+                <View style={styles.rowtitle}>
+                  <Text style={styles.tatca}>Xem thêm</Text>
+                  <Icon name="chevron-forward" color="#707070" size={16} />
+                </View>
               </View>
             </View>
             <View style={styles.bannerazone}>
@@ -261,7 +264,7 @@ const styles = StyleSheet.create({
   },
   session3: {
     flex: 1,
-    backgroundColor: '#FBFBFB',
+    backgroundColor: '#F8F8F8',
     alignItems: 'center',
   },
   header: {
@@ -370,7 +373,7 @@ const styles = StyleSheet.create({
   },
   verticleLine: {
     height: '60%',
-    width: 1,
+    width: 0.5,
     backgroundColor: '#425C59',
   },
   textsty: {
@@ -388,8 +391,8 @@ const styles = StyleSheet.create({
   },
   bannerzone: {
     width: '100%',
-    height: 160,
-    backgroundColor: '#425C59',
+    height: 180,
+    backgroundColor: '#ffba07',
     marginTop: 30,
     justifyContent: 'center',
     alignItems: 'center',
@@ -401,8 +404,9 @@ const styles = StyleSheet.create({
   },
   TextPRzone: {
     flex: 1,
-    padding: 20,
+    padding: 10,
     flexDirection: 'row',
+    backgroundColor: 'white',
   },
   Text1: {
     flex: 1,
@@ -412,14 +416,14 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
   },
   noibat: {
-    fontSize: 18,
+    fontSize: 15,
     fontWeight: 'bold',
-    color: '#425C59',
+    color: '#ffba07',
   },
   tatca: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#FF792E',
+    fontSize: 12,
+    //fontWeight: 'bold',
+    color: '#707070',
   },
   PRzone: {},
   NewsBanner: {
@@ -443,23 +447,25 @@ const styles = StyleSheet.create({
   },
   left: {
     flex: 1,
-    margin: 10,
+    marginLeft: 5,
+    marginTop: 5,
     height: "auto",
     width: 100,
     backgroundColor: 'white',
     flexDirection: 'column',
     borderRadius: 5,
-    elevation: 4,
+    //elevation: 4,
   },
   right: {
     flex: 1,
-    margin: 10,
+    marginLeft: 5,
+    marginTop: 5,
     height: "auto",
     width: 100,
     backgroundColor: 'white',
     flexDirection: 'column',
     borderRadius: 5,
-    elevation: 4,
+    //elevation: 4,
   },
   anh: {},
   sizeImg: {
@@ -468,11 +474,15 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
   },
   tieude: {
-    padding: 5,
+    padding: 7,
   },
   title: {
-    fontSize: 17,
+    fontSize: 12,
     fontWeight: 'bold',
     color: '#425C59',
   },
+  rowtitle:{
+    flex: 1,
+    flexDirection: 'row',
+  }
 });

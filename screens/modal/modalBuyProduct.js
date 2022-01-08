@@ -17,15 +17,14 @@ class ModalBuyProduct extends Component {
                
                <View style = {styles.modal}>
                   <View style = {styles.modalContainer}>
-                        
-                        <View style = {{width: "100%",marginBottom:10}}>
-                            <Icon
-                                name="times-circle"
-                                color="#FF792E"
-                                size={30}
-                                style={{left: "88%"}}
-                                />
-                        </View>
+                     <View style = {{width: "100%",marginBottom:10}}>
+                        <Icon
+                           name="times-circle"
+                           color="#FF792E"
+                           size={30}
+                           style={{left: "88%"}}
+                           />
+                     </View>
                         
                         <View style = {{padding:0,flexDirection:"row"}}>
                               <View style = {{flex: 1,padding:4}}>
@@ -70,25 +69,21 @@ class ModalBuyProduct extends Component {
                               </View>
                         </View>
 
-                        
                         <TouchableHighlight onPress = {() => {
-                            this.toggleModal(!this.state.modalVisible)}}  
-                            underlayColor="white"
-                            
-                            >
-                            
-                            <View style = {styles.btnUp}>
-                                <Text style = {styles.text}>ĐẶT HÀNG</Text>
-                            </View>
+                           this.toggleModal(!this.state.modalVisible)}}  
+                           underlayColor="white">
+                           <View style = {styles.btnUp}>
+                              <Text style = {styles.text}>ĐẶT HÀNG</Text>
+                           </View>
                         </TouchableHighlight>
                   </View>
                </View>
             </Modal>
             
             <TouchableHighlight onPress = {() => {this.toggleModal(true)}}>
-                    <View style={styles.btn}>
-                    <Text style={{fontSize:24,color: 'white'}}>ĐẶT HÀNG</Text>
-                    </View>
+               <View style={styles.btn}>
+               <Text style={{fontSize:24,color: 'white'}}>ĐẶT HÀNG</Text>
+               </View>
             </TouchableHighlight>
          </View>
       )
@@ -100,7 +95,6 @@ const styles = StyleSheet.create ({
    container: {
     //   alignItems: 'center',
       backgroundColor: 'transparent',
-    
     //   padding: 100
    },
    modal: {
@@ -117,8 +111,9 @@ const styles = StyleSheet.create ({
       borderRadius:4,
       paddingTop:10
    },
-   textUp:{
-       color: '#425C59',fontWeight:"bold"
+textUp:{
+   color: '#425C59',
+   fontWeight:"bold"
    },
    text: {
       color: 'white',
@@ -128,26 +123,26 @@ const styles = StyleSheet.create ({
       flexDirection:"row",
       padding:0,
       justifyContent:"center",
-  },
-   btnUp:{
-       backgroundColor: '#FF792E',
-       width:2000,
-       justifyContent:"center",
-       alignItems: 'center',
-       height: 52,
-       marginTop:12
+},
+btnUp:{
+   backgroundColor: '#FF792E',
+   width:2000,
+   justifyContent:"center",
+   alignItems: 'center',
+   height: 52,
+   marginTop:12
    },
-   btnProduct:{
-    backgroundColor:"#FF792E",
-    padding:0,
-    borderRadius:4,
-    paddingBottom:6,
-    paddingTop:6,
-    paddingLeft:18,
-    paddingRight:18,
-    overflow: 'hidden'
-  },
-  btnAmount:{
+btnProduct:{
+   backgroundColor:"#FF792E",
+   padding:0,
+   borderRadius:4,
+   paddingBottom:6,
+   paddingTop:6,
+   paddingLeft:18,
+   paddingRight:18,
+   overflow: 'hidden'
+},
+btnAmount:{
    padding:2,
    paddingRight:6,
    paddingLeft:6,

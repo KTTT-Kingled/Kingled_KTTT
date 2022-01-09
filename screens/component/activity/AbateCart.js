@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import {
-    Image,
-    Pressable,
-    ScrollView,
-    SectionList,
-    StyleSheet,
-    Text,
-    View,
+  Image,
+  Pressable,
+  ScrollView,
+  SectionList,
+  StyleSheet,
+  Text,
+  View
 } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { OrderContext } from '../../../contexts/orderContext.js';
 import { UserContext } from '../../../contexts/userContext.js';
 import numberWithCommas from '../../../utils/thousandSeperator.js';
@@ -16,7 +17,6 @@ import Circle3 from './ProgressLine/Circle3';
 import Circle4Gr from './ProgressLine/Circle4Gr';
 import CircleBackground from './ProgressLine/CircleBackground.js';
 import Line from './ProgressLine/Line.js';
-import LineCart from './ProgressLine/LineCart.js';
 import LineGray from './ProgressLine/LineGray';
 
 const ItemCard = ({title}) => (
@@ -60,12 +60,13 @@ const AbateCart = ({navigation, route}) => {
   return (
     <ScrollView>
       <HeaderComponent />
+      <View style={styles.titleTab}>
+        <Icon name="reader-outline" color="#f0ad00" size={22} style={{left: 0}} />
+        <Text style={{color: '#363636', fontSize: 16, marginLeft: 10}}>
+          Thông tin nhận hàng
+        </Text>
+      </View>
       <View style={styles.container}>
-        <View style={{alignItems: 'center', marginTop: 8, marginBottom: 8}}>
-          <Text style={{color: '#425C59', fontSize: 24}}>
-            THÔNG TIN NHẬN HÀNG
-          </Text>
-        </View>
         <View style={styles.progress}>
           <View style={styles.colProgress}>
             <CircleBackground />
@@ -96,42 +97,62 @@ const AbateCart = ({navigation, route}) => {
           </View>
         </View>
         <View style={styles.containerList}>
-          <LineCart />
-
-          <Text
-            style={{
-              color: '#425C59',
-              marginBottom: 12,
-              marginTop: 12,
-              fontSize: 18,
-              fontWeight: 'bold',
-            }}>
-            Chọn phương thức thanh toán
-          </Text>
-
-          <LineCart />
-          <Text style={{color: '#425C59', marginTop: 8, fontWeight: 'bold'}}>
-            Thanh toán khi nhận hàng
-          </Text>
-          <Pressable
-            style={{
-              backgroundColor: '#425C59',
-              paddingTop: 12,
-              paddingBottom: 12,
-              width: '100%',
-              alignItems: 'center',
-              borderRadius: 2,
-              marginTop: 12,
-              marginBottom: 12,
-            }}>
-            <Text style={{color: '#FFFFFF', fontSize: 18}}>
-              THANH TOÁN KHI NHẬN HÀNG
+          <View style={{width: '100%', marginBottom: 12, padding: 18}}>
+            <View style={styles.nameAndInput}>
+              <View style={styles.nameView}>
+                <Text style={styles.nameText}>Họ tên</Text>
+              </View>
+              <View style={styles.inputInfor}>
+                <Text style={styles.TextInput}>An</Text>
+              </View>
+            </View>
+            <View style={styles.nameAndInput}>
+              <View style={styles.nameView}>
+                <Text style={styles.nameText}>Email</Text>
+              </View>
+              <View style={styles.inputInfor}>
+                <Text style={styles.TextInput}>ANguyen@gamil.com</Text>
+              </View>
+            </View>
+            <View style={styles.nameAndInput}>
+              <View style={styles.nameView}>
+                <Text style={styles.nameText}>Điện thoại</Text>
+              </View>
+              <View style={styles.inputInfor}>
+                <Text style={styles.TextInput}>0111337767</Text>
+              </View>
+            </View>
+            <View style={styles.nameAndInput}>
+              <View style={styles.nameView}>
+                <Text style={styles.nameText}>Địa chỉ</Text>
+              </View>
+              <View style={styles.inputInfor}>
+                <Text style={styles.TextInput}>93A Tô Ngọc Vân</Text>
+              </View>
+            </View>
+            <View style={styles.nameAndInput}>
+              <View style={styles.nameView}>
+                <Text style={styles.nameText}>Ghi chú</Text>
+              </View>
+              <View style={styles.inputInfor}>
+                <Text style={styles.TextInput}>Hàng dễ hỏng, giao cẩn thận</Text>
+              </View>
+            </View>
+            
+          </View>
+          </View>
+        <View style={styles.myCart}>
+            <Icon
+              name="basket-outline"
+              color="#f0ad00"
+              size={22}
+              style={{left: 0}}
+            />
+            <Text style={{color: '#363636', fontSize: 16, marginLeft: 10}}>
+              Giỏ hàng của tôi
             </Text>
-          </Pressable>
-          <Text style={{color: '#FF792E', marginBottom: 12, fontSize: 18}}>
-            Sản phẩm của tôi
-          </Text>
-          <LineCart />
+          </View>
+        <View style={styles.containerList}>
           <View style={{marginTop: 12, marginBottom: 12}}>
             <SectionList
               sections={[
@@ -144,45 +165,18 @@ const AbateCart = ({navigation, route}) => {
               renderItem={({item}) => <ItemCard title={item} />}
             />
           </View>
-          <View style={{paddingTop: 20}} />
-          <LineCart />
-          <View style={{flexDirection: 'row', marginTop: 10}}>
-            <Text style={[styles.totalAmountText, styles.totalAmountFlex]}>
-              Tổng tiền tạm tính
-            </Text>
-            <Text style={styles.totalAmountText}>
-              {numberWithCommas(total)}
-            </Text>
-            <Text style={styles.totalAmountText}> VNĐ</Text>
+        </View>
+        <View style={styles.payment}>
+          <View style={styles.total}>
+            <View style={styles.rowTotalText}>
+              <Text style={styles.totalText1}>Tổng tiền: </Text>
+              <Text style={styles.totalText2}>{numberWithCommas(total)} VNĐ</Text>
+            </View>
           </View>
-          <View style={{flexDirection: 'row', marginTop: 10}}>
-          <Pressable
-            style={{
-              backgroundColor: '#FF792E',
-              paddingTop: 12,
-              paddingBottom: 12,
-              width: '100%',
-              alignItems: 'center',
-              borderRadius: 2,
-              marginTop: 12,
-              marginBottom: 12,
-            }}
-            onPress={() => {
-                console.log('Pressed confirm');
-                sendOrder({
-                    orderUser:{
-                        fullName: route.params.info.fullName,
-                        username: user.auth ? user.userLogged.username : '',
-                        email: route.params.info.email,
-                        phone: route.params.info.phone,
-                    },
-                    orderAddress: user.auth ? user.userLogged.address.address : route.params.info.address,
-                    orderProducts : order,
-                    totalPrice: total,
-                });
-            }}>
-            <Text style={{color: '#FFFFFF', fontSize: 18}}>XÁC NHẬN</Text>
-          </Pressable>
+          <View style={styles.paymentBTN}>
+            <Pressable onPress={() => navigation.navigate('AddressCart')}>
+              <Text style={styles.paymentText}>Xác nhận</Text>
+            </Pressable>
           </View>
         </View>
       </View>
@@ -198,11 +192,17 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   progress: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'flex-start',
-    width: 65,
+    //width: 65,
+    backgroundColor: 'white',
+    padding: 30,
+    marginBottom: 4,
+    borderRadius: 4,
+    borderBottomColor: '#f8f8f8',
+    borderBottomWidth: 7,
   },
   containerList: {
     width: '100%',
@@ -223,12 +223,14 @@ const styles = StyleSheet.create({
     //marginLeft: -10,
   },
   item: {
-    // backgroundColor: "#f9c2ff",
-    marginVertical: 8,
-    borderColor: '#425C59',
-    borderWidth: 1,
-    paddingTop: 10,
-    paddingBottom: 10,
+    backgroundColor: "#fbf3e7",
+    marginVertical: 3,
+    borderColor: '#ffba07',
+    borderRadius: 4,
+    borderBottomWidth: 1,
+    padding: 10,
+    paddingLeft: 5,
+    paddingRight: 5,
   },
   header: {
     fontSize: 32,
@@ -243,6 +245,7 @@ const styles = StyleSheet.create({
     width: 100,
     resizeMode: 'contain',
     marginLeft: '7%',
+    borderRadius: 4,
     // right:10
   },
   imageContainer: {
@@ -259,17 +262,118 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 15,
-    color: '#425C59',
+    color: '#363636',
     fontWeight: 'bold',
   },
   cost: {
-    fontSize: 15,
-    color: '#FF792E',
+    fontSize: 17,
+    color: '#e7a703',
     fontWeight: 'bold',
   },
 
   codeText: {
     color: '#818181',
+    fontSize: 12,
+  },
+  titleTab: {
+    backgroundColor: 'white',
+    padding: 15,
+    height: 55,
+    borderBottomWidth: 0.2,
+    borderBottomColor: '#b0b0b0',
+    borderRadius: 4,
+    marginBottom: 3,
+    flexDirection: 'row',
+  },
+  payment: {
+    // flex: 1,
+    flexDirection: 'row',
+    height: 70,
+    marginBottom: 14,
+  },
+  paymentBTN: {
+    flex: 4,
+    backgroundColor: '#417a76',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderTopWidth: 0.5,
+    borderColor: '#417a76',
+  },
+  paymentText: {
+    // alignItems: 'center',
+    // justifyContent: 'center',
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  total: {
+    flex: 6,
+    backgroundColor: '#fff',
+    borderTopWidth: 0.5,
+    borderColor: '#417a76',
+    padding: 10,
+    justifyContent: 'center',
+  },
+  totalText1: {
+    fontSize: 12,
+    color: '#363636',
+    marginRight: 5,
+  },
+  totalText2: {
+    fontSize: 17,
+    color: '#e7a703',
+    fontWeight: 'bold',
+  },
+  rowTotalText: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    paddingBottom: 20,
+  },
+  myCart: {
+    color: '#FF792E',
+    marginBottom: 12,
+    fontSize: 18,
+    //backgroundColor: 'black',
+    padding: 20,
+    flex: 1,
+    width: "100%",
+    flexDirection: 'row',
+    borderTopWidth: 7,
+    borderTopColor: '#f3f3f3',
+    borderBottomWidth: 3,
+    borderBottomColor: '#f3f3f3',
+    borderRadius: 4,
+  },
+  inputInfor: {
+    //borderColor:"black",
+    borderBottomWidth: 0.2,
+    flex: 2.7,
+    //height: 40,
+    borderRadius: 4,
+    //paddingLeft:10,
+    color: '#363636',
+    fontSize: 15,
+    padding: 15,
+    paddingLeft: 5,
+  },
+  nameAndInput: {
+    width: '100%',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginBottom: 4,
+  },
+  nameView: {
+    color: '#313131',
+    flex: 1,
+    justifyContent: 'center',
+  },
+  nameText: {
+    color: '#e7a703',
+    fontSize: 14,
+    marginTop: -4,
+    fontWeight: 'bold',
   },
 });
 export default AbateCart;

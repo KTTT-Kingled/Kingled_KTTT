@@ -4,7 +4,7 @@ import {
   Pressable,
   ScrollView,
   SectionList,
-  StyleSheet, Text, TextInput, View,
+  StyleSheet, Text, TextInput, View
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { OrderContext } from '../../../contexts/orderContext.js';
@@ -415,6 +415,39 @@ const styles = StyleSheet.create({
   inforContainer: {
     flex: 7,
     height: '100%',
+  },
+  TextInput: {
+    color: '#363636',
+    fontSize: 13,
+  },
+  nameAndInput: {
+    width: '100%',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginBottom: 4,
+  },
+  nameView: {
+    color: '#313131',
+    flex: 1,
+    justifyContent: 'center',
+  },
+  nameText: {
+    color: '#e7a703',
+    fontSize: 14,
+    marginTop: -4,
+    fontWeight: 'bold',
+  },
+  inputInfor: {
+    //borderColor:"black",
+    borderBottomWidth: 0.2,
+    flex: 2.7,
+    //height: 40,
+    borderRadius: 4,
+    //paddingLeft:10,
+    color: '#363636',
+    fontSize: 15,
+    padding: 15,
+    paddingLeft: 5,
   },
   TextInput: {
     color: '#363636',

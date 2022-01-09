@@ -1,9 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 
-
-
-
 const Line = ({ navigation }) => {
     return (
         <View style={styles.line}>

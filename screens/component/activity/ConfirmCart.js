@@ -59,7 +59,7 @@ const ConfirmCart = ({navigation, route}) => {
 
           <Text
             style={{
-              color: '#425C59',
+              color: '#417a76',
               marginBottom: 4,
               marginTop: 12,
               fontSize: 22,
@@ -77,12 +77,11 @@ const ConfirmCart = ({navigation, route}) => {
             Cảm ơn bạn đã quan tâm và mua hàng của chúng tôi
           </Text>
           {/* <Text style={{color:"#FF792E",marginBottom:12,fontSize:18,marginTop:12}}>Sản phẩm của tôi</Text> */}
-          <LineCart />
           {/* <SectionListAbate/> */}
 
           <Pressable
             style={{
-              backgroundColor: '#FF792E',
+              backgroundColor: '#417a76',
               paddingTop: 12,
               paddingBottom: 12,
               width: '100%',

@@ -6,6 +6,7 @@ export const UserProvider = ({children}) => {
   const [user, setUser] = useState({userLogged: {}, token: '', auth: false});
 
   const login = (userLogged, token) => {
+    Alert.alert('Đăng nhập thành công','Xin chào ' + userLogged.fullName);
     setUser({userLogged, token, auth: true});
   };
 

@@ -5,7 +5,8 @@ import {
   ScrollView,
   SectionList,
   StyleSheet,
-  Text, View
+
+  Text, View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { OrderContext } from '../../../contexts/orderContext.js';
@@ -158,7 +159,7 @@ const AddressCart = ({navigation}) => {
                 <Text style={styles.TextInput}>Hàng dễ hỏng, giao cẩn thận</Text>
               </View>
             </View>
-            
+
           </View>
 
           <View style={styles.myCart}>

@@ -1,14 +1,17 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
 import {
+  Pressable,
   SafeAreaView, StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { UserContext } from '../../contexts/userContext.js';
 import HeaderComponent from '../component/headerComponent.js';
 
 
 const User = ({navigation}) => {
+  const {user, logout} = useContext(UserContext);
   return (
     <SafeAreaView style={{flex: 1}}>
       <HeaderComponent />
@@ -21,18 +24,10 @@ const User = ({navigation}) => {
       <View style={styles.container}>
         <View style={styles.AreaInfo}>
           <View style={styles.AreaLeft}>
-            <Text style={styles.TextLeft}>Tên đại lý</Text>
-          </View>
-          <View style={styles.AreaRight}>
-            <Text style={styles.TextRight}>Đại lý ABC</Text>
-          </View>
-        </View>
-        <View style={styles.AreaInfo}>
-          <View style={styles.AreaLeft}>
             <Text style={styles.TextLeft}>Họ và tên</Text>
           </View>
           <View style={styles.AreaRight}>
-            <Text style={styles.TextRight}>Nguyễn Văn A</Text>
+            <Text style={styles.TextRight}>{user.userLogged.fullName}</Text>
           </View>
         </View>
         <View style={styles.AreaInfo}>
@@ -40,15 +35,7 @@ const User = ({navigation}) => {
             <Text style={styles.TextLeft}>Username</Text>
           </View>
           <View style={styles.AreaRight}>
-            <Text style={styles.TextRight}>ANguyen</Text>
-          </View>
-        </View>
-        <View style={styles.AreaInfo}>
-          <View style={styles.AreaLeft}>
-            <Text style={styles.TextLeft}>Số điện thoại</Text>
-          </View>
-          <View style={styles.AreaRight}>
-            <Text style={styles.TextRight}>0983 222 196</Text>
+            <Text style={styles.TextRight}>{user.userLogged.username}</Text>
           </View>
         </View>
         <View style={styles.AreaInfo}>
@@ -56,7 +43,7 @@ const User = ({navigation}) => {
             <Text style={styles.TextLeft}>Email</Text>
           </View>
           <View style={styles.AreaRight}>
-            <Text style={styles.TextRight}>anguyen@gmail.com</Text>
+            <Text style={styles.TextRight}>{user.userLogged.email}</Text>
           </View>
         </View>
         <View style={styles.AreaInfo}>
@@ -64,7 +51,7 @@ const User = ({navigation}) => {
             <Text style={styles.TextLeft}>Tỉnh/Thành phố</Text>
           </View>
           <View style={styles.AreaRight}>
-            <Text style={styles.TextRight}>Thái Nguyên</Text>
+            <Text style={styles.TextRight}>{user.userLogged.address.city}</Text>
           </View>
         </View>
         <View style={styles.AreaInfo}>
@@ -72,7 +59,15 @@ const User = ({navigation}) => {
             <Text style={styles.TextLeft}>Quận/Huyện</Text>
           </View>
           <View style={styles.AreaRight}>
-            <Text style={styles.TextRight}>Thái Nguyên</Text>
+            <Text style={styles.TextRight}>{user.userLogged.address.district}</Text>
+          </View>
+        </View>
+        <View style={styles.AreaInfo}>
+          <View style={styles.AreaLeft}>
+            <Text style={styles.TextLeft}>Xã/Phường</Text>
+          </View>
+          <View style={styles.AreaRight}>
+            <Text style={styles.TextRight}>{user.userLogged.address.ward}</Text>
           </View>
         </View>
         <View style={styles.AreaInfo}>
@@ -80,7 +75,7 @@ const User = ({navigation}) => {
             <Text style={styles.TextLeft}>Số điện thoại</Text>
           </View>
           <View style={styles.AreaRight}>
-            <Text style={styles.TextRight}>0983 222 196</Text>
+            <Text style={styles.TextRight}>{user.userLogged.phone}</Text>
           </View>
         </View>
         <View style={styles.AreaInfo}>
@@ -88,19 +83,19 @@ const User = ({navigation}) => {
             <Text style={styles.TextLeft}>Địa chỉ</Text>
           </View>
           <View style={styles.AreaRight}>
-            <Text style={styles.TextRight}>93A Tô Ngọc Vân</Text>
+            <Text style={styles.TextRight}>{user.userLogged.address.address.split(',')[0]}</Text>
           </View>
         </View>
         <View style={styles.buttonArea}>
-          <View style={styles.changePassword}>
+          <Pressable style={styles.changePassword} onPress={() => navigation.navigate('ChangePassword')}>
             <Text style={styles.textBtn}>Đổi mật khẩu</Text>
-          </View>
-          <View style={styles.logout}>
+          </Pressable>
+          <Pressable style={styles.logout} onPress={() => logout()}>
             <Text style={styles.textBtn}>Đăng xuất</Text>
-          </View>
+          </Pressable>
         </View>
       </View>
-      
+
     </SafeAreaView>
   );
 };
@@ -133,7 +128,7 @@ const styles = StyleSheet.create({
   },
   containerInline2:{
     flexDirection: 'row',
-    marginTop:6
+    marginTop:6,
   },
   AreaLeft:{
     flex: 1,
@@ -179,15 +174,15 @@ const styles = StyleSheet.create({
     marginLeft: 10,
   },
   textBtn:{
-    color: "white",
-    fontSize: 15
+    color: 'white',
+    fontSize: 15,
   },
   mt4:{
-    marginTop:66
+    marginTop:66,
   },
   btnLogout:{
     width:120,
-    marginLeft:20
+    marginLeft:20,
   },
   titleTab: {
     backgroundColor: 'white',

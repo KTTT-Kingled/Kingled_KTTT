@@ -12,7 +12,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import logo from '../../assets/images/logo.png';
 import { UserContext } from '../../contexts/userContext';
 
-const Login = ({navigation}) => {
+const ChangePassword = ({navigation}) => {
   const {logout} = useContext(UserContext);
   return (
     <ScrollView>
@@ -82,7 +82,7 @@ const Login = ({navigation}) => {
   );
 };
 
-export default Login;
+export default ChangePassword;
 const styles = StyleSheet.create({
   container: {
     flex: 1,

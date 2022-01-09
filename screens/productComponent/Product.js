@@ -172,6 +172,8 @@ const Product = ({navigation}) => {
                             onPress: () => {
                               addOrder({
                                 code: item.code,
+                                name: item.name,
+                                img: item.images[0],
                                 price: item.price,
                                 quantity: 1,
                               });

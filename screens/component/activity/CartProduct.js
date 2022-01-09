@@ -4,7 +4,7 @@ import {
   SectionList,
   StyleSheet,
   Text,
-  View,
+  View
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { OrderContext } from '../../../contexts/orderContext.js';
@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   titleTab: {
     backgroundColor: 'white',
     padding: 15,
-    height: 50,
+    height: 55,
     borderBottomWidth: 0.2,
     borderBottomColor: '#b0b0b0',
     borderRadius: 4,

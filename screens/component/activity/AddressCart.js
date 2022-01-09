@@ -7,7 +7,7 @@ import {
   StyleSheet,
   Text,
   TextInput,
-  View,
+  View
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { OrderContext } from '../../../contexts/orderContext.js';
@@ -308,6 +308,7 @@ const styles = StyleSheet.create({
     marginBottom: 3,
     flex: 1,
     flexDirection: 'row',
+    height: 55,
   },
   payment: {
     flex: 1,

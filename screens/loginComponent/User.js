@@ -1,19 +1,10 @@
 import * as React from 'react';
-import Icon from 'react-native-vector-icons/Ionicons';
-import { useEffect, useState } from 'react';
 import {
-  Alert,
-  Image,
-  Pressable,
-  SafeAreaView,
-  SectionList,
-  StatusBar,
-  StyleSheet,
+  SafeAreaView, StyleSheet,
   Text,
   View
 } from 'react-native';
-import numberWithCommas from '../../utils/thousandSeperator.js';
-import LineCart from '../component/activity/ProgressLine/LineCart.js';
+import Icon from 'react-native-vector-icons/Ionicons';
 import HeaderComponent from '../component/headerComponent.js';
 
 
@@ -21,51 +12,93 @@ const User = ({navigation}) => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <HeaderComponent />
+      <View style={styles.titleTab}>
+        <Icon name="business" color="#f0ad00" size={22} style={{left: 0}} />
+        <Text style={{color: '#363636', fontSize: 16, marginLeft: 10}}>
+          Thông tin đại lý
+        </Text>
+      </View>
       <View style={styles.container}>
-         <View style={styles.notFlex}>
-         <Text style={styles.infor}>THÔNG TIN ĐẠI LÝ</Text>
-          <View style={styles.containerInline}>
-              <Text style={styles.textLeft}>Tên đại lý       : </Text>
-              <Text style={styles.textRight}>NGUYEN VAN THANH</Text>
+        <View style={styles.AreaInfo}>
+          <View style={styles.AreaLeft}>
+            <Text style={styles.TextLeft}>Tên đại lý</Text>
           </View>
-          <View style={styles.containerInline}>
-              <Text style={styles.textLeft}>Họ và tên        : </Text>
-              <Text style={styles.textRight}>NGUYEN VAN THANH</Text>
+          <View style={styles.AreaRight}>
+            <Text style={styles.TextRight}>Đại lý ABC</Text>
           </View>
-          <View style={styles.containerInline}>
-              <Text style={styles.textLeft}>Số điện thoại : </Text>
-              <Text style={styles.textRight}>037-656-7321</Text>
+        </View>
+        <View style={styles.AreaInfo}>
+          <View style={styles.AreaLeft}>
+            <Text style={styles.TextLeft}>Họ và tên</Text>
           </View>
-          <View style={styles.containerInline}>
-              <Text style={styles.textLeft}>Email               : </Text>
-              <Text style={styles.textRight}>thanh2k1582@gmail.com</Text>
+          <View style={styles.AreaRight}>
+            <Text style={styles.TextRight}>Nguyễn Văn A</Text>
           </View>
-          <View style={styles.containerInline2}>
-              <Text style={styles.textLeft}>Địa chỉ             : </Text>
-              <Text style={styles.textRight}>Thôn Tây Thuận , xã Bình Trung , huyện Bình Sơn, tỉnh Quảng Ngãi</Text>
+        </View>
+        <View style={styles.AreaInfo}>
+          <View style={styles.AreaLeft}>
+            <Text style={styles.TextLeft}>Username</Text>
           </View>
-          <View style={[styles.containerInline2,styles.mt4]}>
-             <View style={styles.changePassword}>
-                  <Icon
-                        name="key"
-                        color="white"
-                        size={18}
-                        style={{right: 14,position:"absolute",left:10,top:10}}
-                  />
-                  <Text style={styles.textBtn}>Đổi mật khẩu</Text>
-             </View>
-             <View style={[styles.changePassword,styles.btnLogout]}>
-                  <Icon
-                        name="log-out"
-                        color="white"
-                        size={18}
-                        style={{right: 14,position:"absolute",left:10,top:10}}
-                  />
-                  <Text style={[styles.textBtn,styles.textLogout]}>Đăng xuất</Text>
-             </View>
+          <View style={styles.AreaRight}>
+            <Text style={styles.TextRight}>ANguyen</Text>
           </View>
-          
-         </View>
+        </View>
+        <View style={styles.AreaInfo}>
+          <View style={styles.AreaLeft}>
+            <Text style={styles.TextLeft}>Số điện thoại</Text>
+          </View>
+          <View style={styles.AreaRight}>
+            <Text style={styles.TextRight}>0983 222 196</Text>
+          </View>
+        </View>
+        <View style={styles.AreaInfo}>
+          <View style={styles.AreaLeft}>
+            <Text style={styles.TextLeft}>Email</Text>
+          </View>
+          <View style={styles.AreaRight}>
+            <Text style={styles.TextRight}>anguyen@gmail.com</Text>
+          </View>
+        </View>
+        <View style={styles.AreaInfo}>
+          <View style={styles.AreaLeft}>
+            <Text style={styles.TextLeft}>Tỉnh/Thành phố</Text>
+          </View>
+          <View style={styles.AreaRight}>
+            <Text style={styles.TextRight}>Thái Nguyên</Text>
+          </View>
+        </View>
+        <View style={styles.AreaInfo}>
+          <View style={styles.AreaLeft}>
+            <Text style={styles.TextLeft}>Quận/Huyện</Text>
+          </View>
+          <View style={styles.AreaRight}>
+            <Text style={styles.TextRight}>Thái Nguyên</Text>
+          </View>
+        </View>
+        <View style={styles.AreaInfo}>
+          <View style={styles.AreaLeft}>
+            <Text style={styles.TextLeft}>Số điện thoại</Text>
+          </View>
+          <View style={styles.AreaRight}>
+            <Text style={styles.TextRight}>0983 222 196</Text>
+          </View>
+        </View>
+        <View style={styles.AreaInfo}>
+          <View style={styles.AreaLeft}>
+            <Text style={styles.TextLeft}>Địa chỉ</Text>
+          </View>
+          <View style={styles.AreaRight}>
+            <Text style={styles.TextRight}>93A Tô Ngọc Vân</Text>
+          </View>
+        </View>
+        <View style={styles.buttonArea}>
+          <View style={styles.changePassword}>
+            <Text style={styles.textBtn}>Đổi mật khẩu</Text>
+          </View>
+          <View style={styles.logout}>
+            <Text style={styles.textBtn}>Đăng xuất</Text>
+          </View>
+        </View>
       </View>
       
     </SafeAreaView>
@@ -74,42 +107,80 @@ const User = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#F8F8F8',
+    //alignItems: 'center',
+    backgroundColor: '#fff',
     paddingBottom: 40,
+
   },
-  infor:{
-    color:"#425C59",fontSize:30,fontWeight:"bold",marginBottom:32,
+  AreaInfo:{
+    //flex: 1,
+    flexDirection: 'row',
+    padding: 19,
+    //alignItems: 'center',
+    justifyContent: 'center',
+    borderBottomWidth: 0.2,
+    paddingTop: 15,
+    paddingBottom: 15,
+    borderBottomColor: '#b0b0b0',
+    borderRadius: 20,
+
   },
   containerInline:{
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop:6
+    marginTop:6,
+    borderBottomWidth: 2,
   },
   containerInline2:{
     flexDirection: 'row',
     marginTop:6
   },
-  textLeft:{
-    color:"#425C59",fontSize:16,fontWeight:"bold"
+  AreaLeft:{
+    flex: 1,
+    //fontSize: 12,
+    //backgroundColor: 'orange',
+    //justifyContent: 'flex-start'
   },
-  textRight:{
-    color:"#425C59",width:220
+  AreaRight:{
+    flex: 1,
+    //fontSize: 12,
+    //backgroundColor: 'red',
+    alignItems: 'flex-end',
   },
-  notFlex:{
-    width: "90%",
-    marginTop: 40
-    // backgroundColor:"pink",
+
+  TextLeft:{
+    fontSize: 13,
+    color: '#363636',
+  },
+  TextRight: {
+    fontSize: 13,
+    color: '#888888',
+  },
+
+  buttonArea:{
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: 30,
   },
   changePassword:{
-    width:140,
-    height:40,
-    backgroundColor: "#425C59",
-    borderRadius: 20
+    backgroundColor: '#417a76',
+    padding: 15,
+    paddingLeft: 20,
+    paddingRight: 20,
+    borderRadius: 4,
+    marginRight: 10,
+  },
+  logout: {
+    backgroundColor: '#417a76',
+    padding: 15,
+    paddingLeft: 20,
+    paddingRight: 20,
+    borderRadius: 4,
+    marginLeft: 10,
   },
   textBtn:{
-    position: "absolute",
-    top:9,right:16,color: "white",
+    color: "white",
+    fontSize: 15
   },
   mt4:{
     marginTop:66
@@ -117,6 +188,16 @@ const styles = StyleSheet.create({
   btnLogout:{
     width:120,
     marginLeft:20
+  },
+  titleTab: {
+    backgroundColor: 'white',
+    padding: 15,
+    height: 55,
+    //borderBottomWidth: 0.2,
+    //borderBottomColor: '#b0b0b0',
+    borderRadius: 4,
+    marginBottom: 5,
+    flexDirection: 'row',
   },
 });
 

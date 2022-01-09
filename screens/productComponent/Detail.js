@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
-  Image,
+  Alert, Image,
   Pressable,
   ScrollView,
   StyleSheet,
-  Text,
-  View,
+  Text, TouchableHighlight, View,
 } from 'react-native';
 import { Col, Grid, Row } from 'react-native-easy-grid';
+import { OrderContext } from '../../contexts/orderContext';
 import numberWithCommas from '../../utils/thousandSeperator.js';
 import HeaderComponent from '../component/headerComponent.js';
-import ModalBuyProduct from '../modal/modalBuyProduct.js';
 
 const DetailProduct = ({navigation, route}) => {
   const {data} = route.params;
+  const {addOrder} = useContext(OrderContext);
 
   const [imgSelected, setImg] = useState(data.images[0]);
 
@@ -37,10 +37,7 @@ const DetailProduct = ({navigation, route}) => {
         <View style={styles.containerImg}>
           {data.images.map((item, index) => (
             <View style={styles.img} key={index}>
-              <Pressable
-                onPress={() =>
-                  setImg(item)
-                } key={index}>
+              <Pressable onPress={() => setImg(item)} key={index}>
                 <Image
                   key={index}
                   source={{uri: item}}
@@ -86,20 +83,39 @@ const DetailProduct = ({navigation, route}) => {
             })}
           </Col>
         </Grid>
-        <Text
-          style={{color: '#FF792E', padding: 8, paddingLeft: 0, fontSize: 16}}>
-          Mô tả sản phẩm
-        </Text>
-        <Text style={{color: 'black', fontSize: 18}}>
-          1. MẶT ĐÈN KIM LOẠI SIÊU BỀN
-        </Text>
-        <Text style={{color: 'black', textAlign: 'justify', marginBottom: 10}}>
-          Mặt đèn màu trắng được thiết kế siêu mòng chỉ 1mm làm bằng chất liệu
-          kim loại siêu bền. Khi lắm lên trần nhà sẽ tạo cảm giác liền lạc và
-          sang trọng hơn
-        </Text>
-
-        <ModalBuyProduct />
+        <View style={styles.container}>
+          <TouchableHighlight
+            onPress={() => {
+              Alert.alert(
+                'Bạn có muốn thêm sản phẩm vào giỏ hàng?',
+                `Item name: ${data.name}\nItem code: ${data.code}  `,
+                [
+                  {
+                    text: 'Cancel',
+                    onPress: () => console.log('Cancel Pressed'),
+                    style: 'cancel',
+                  },
+                  {
+                    text: 'OK',
+                    onPress: () => {
+                      addOrder({
+                        code: data.code,
+                        name: data.name,
+                        img: data.images[0],
+                        price: data.price,
+                        quantity: 1,
+                      });
+                      console.log('Added ' + data.code);
+                    },
+                  },
+                ]
+              );
+            }}>
+            <View style={styles.btn}>
+              <Text style={{fontSize: 24, color: 'white'}}>ĐẶT HÀNG</Text>
+            </View>
+          </TouchableHighlight>
+        </View>
       </View>
     </ScrollView>
   );
@@ -111,7 +127,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     padding: 16,
-    paddingBottom: 200,
+    paddingBottom: 35,
     backgroundColor: '#fff',
   },
   cell: {

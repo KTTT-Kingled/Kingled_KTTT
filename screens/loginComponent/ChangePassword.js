@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import {
-  Image,
+  Alert, Image,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -13,7 +13,47 @@ import logo from '../../assets/images/logo.png';
 import { UserContext } from '../../contexts/userContext';
 
 const ChangePassword = ({navigation}) => {
-  const {logout} = useContext(UserContext);
+  const {user} = useContext(UserContext);
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [currentPasswordVisible, setCurrentPasswordVisible] = useState(false);
+  const [newPasswordVisible, setNewPasswordVisible] = useState(false);
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+
+  async function handleChangePassword() {
+    if (currentPassword !== '' && newPassword !== '' && confirmPassword !== '') {
+      if (newPassword === confirmPassword) {
+        const response = await fetch(
+          'https://kingled-kttt.herokuapp.com/api/auth/changePassword',
+          {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              username: user.userLogged.username,
+              currentpassword: currentPassword,
+              newpassword: newPassword,
+            }),
+          }
+        );
+        const json = await response.json();
+        if (json.success) {
+          Alert.alert('Đổi mật khẩu thành công');
+        } else {
+          Alert.alert('Mật khẩu cũ không đúng');
+        }
+      } else {
+        Alert.alert('Mật khẩu mới và xác nhận mật khẩu không khớp');
+      }
+    } else {
+      Alert.alert('Vui lòng nhập đầy đủ thông tin');
+    }
+  }
+
+
   return (
     <ScrollView>
       {/* scrollView */}
@@ -28,12 +68,24 @@ const ChangePassword = ({navigation}) => {
           <View style={styles.login}>
             <View style={[styles.phone, styles.elevation]}>
               <Text style={styles.textPhone}>Mật khẩu hiện tại</Text>
-              <TextInput
-                style={styles.input}
-                autoCapitalize="none"
-                placeholder="Nhập mật khẩu hiện tại của bạn"
-                placeholderTextColor="#D7D7D7"
-              />
+              <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <TextInput
+                  style={styles.input}
+                  autoCapitalize="none"
+                  placeholder="Nhập mật khẩu hiện tại của bạn"
+                  placeholderTextColor="#D7D7D7"
+                  value={currentPassword}
+                  onChangeText={text => setCurrentPassword(text)}
+                  secureTextEntry={!currentPasswordVisible}
+                />
+                <Icon
+                  name={currentPasswordVisible ? 'md-eye' : 'md-eye-off'}
+                  color="#425C59"
+                  size={25}
+                  style={{right: 14}}
+                  onPress={() => setCurrentPasswordVisible(!currentPasswordVisible)}
+                />
+              </View>
             </View>
             <View style={[styles.phone, styles.elevation]}>
               <Text style={styles.textPhone}>Nhập mật khẩu mới</Text>
@@ -43,36 +95,44 @@ const ChangePassword = ({navigation}) => {
                   autoCapitalize="none"
                   placeholder="Nhập mật khẩu mới"
                   placeholderTextColor="#D7D7D7"
+                  value={newPassword}
+                  onChangeText={text => setNewPassword(text)}
+                  secureTextEntry={!newPasswordVisible}
                 />
                 <Icon
-                  name="eye-off"
+                  name={newPasswordVisible ? 'md-eye' : 'md-eye-off'}
                   color="#425C59"
                   size={25}
                   style={{right: 14}}
+                  onPress={() => setNewPasswordVisible(!newPasswordVisible)}
                 />
               </View>
             </View>
             <View style={[styles.phone, styles.elevation]}>
-              <Text style={styles.textPhone}>Nhập lại mật khẩu</Text>
+              <Text style={styles.textPhone}>Nhập lại mật khẩu mới</Text>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <TextInput
                   style={styles.input}
                   autoCapitalize="none"
-                  placeholder="Nhập lại mật khẩu"
+                  placeholder="Nhập lại mật khẩu mới"
                   placeholderTextColor="#D7D7D7"
+                  value={confirmPassword}
+                  onChangeText={text => setConfirmPassword(text)}
+                  secureTextEntry={!confirmPasswordVisible}
                 />
 
                 <Icon
-                  name="eye-off"
+                  name={confirmPasswordVisible ? 'md-eye' : 'md-eye-off'}
                   color="#425C59"
                   size={25}
                   style={{right: 14}}
+                  onPress={() => {
+                    setConfirmPasswordVisible(!confirmPasswordVisible);
+                  }}
                 />
               </View>
             </View>
-            <Pressable
-              style={styles.loginBtn}
-              onPress={() => logout()}>
+            <Pressable style={styles.loginBtn} onPress={() => handleChangePassword()}>
               <Text style={styles.loginBtnText}>Đổi mật khẩu</Text>
             </Pressable>
           </View>

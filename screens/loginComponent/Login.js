@@ -17,6 +17,7 @@ const Login = ({navigation}) => {
   const { login } = useContext(UserContext);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordVisible, setPasswordVisible] = useState(false);
 
   async function handleLogin(user, pass) {
     if (user !== '' && pass !== '') {
@@ -81,16 +82,17 @@ const Login = ({navigation}) => {
                   autoCapitalize="none"
                   placeholder="Nhập mật khẩu"
                   placeholderTextColor="#D7D7D7"
-                  secureTextEntry={true}
+                  secureTextEntry={!passwordVisible}
                   value={password}
                   onChangeText={text => setPassword(text)}
                 />
 
                 <Icon
-                  name="eye-off"
+                  name={passwordVisible ? 'md-eye' : 'md-eye-off'}
                   color="#425C59"
                   size={25}
                   style={{right: 14}}
+                  onPress={() => setPasswordVisible(!passwordVisible)}
                 />
               </View>
             </View>

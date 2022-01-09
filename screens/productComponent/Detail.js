@@ -4,7 +4,7 @@ import {
   Pressable,
   ScrollView,
   StyleSheet,
-  Text, TouchableHighlight, View,
+  Text, TouchableHighlight, View
 } from 'react-native';
 import { Col, Grid, Row } from 'react-native-easy-grid';
 import { OrderContext } from '../../contexts/orderContext';
@@ -30,9 +30,9 @@ const DetailProduct = ({navigation, route}) => {
             style={{width: '100%', height: '100%'}}
           />
         </View>
-        <Text style={{fontSize: 18, color: '#425C59'}}>{data.name}</Text>
-        <Text style={{fontSize: 22, color: '#FF792E'}}>
-          {numberWithCommas(data.price) + ' VND'}
+        <Text style={{fontSize: 16, color: '#425C59'}}>{data.name}</Text>
+        <Text style={{fontSize: 22, color: '#e7a703', fontWeight: 'bold'}}>
+          {numberWithCommas(data.price) + ' VNĐ'}
         </Text>
         <View style={styles.containerImg}>
           {data.images.map((item, index) => (
@@ -49,7 +49,7 @@ const DetailProduct = ({navigation, route}) => {
         </View>
 
         <Text
-          style={{color: '#FF792E', padding: 8, paddingLeft: 0, fontSize: 16}}>
+          style={{color: '#e7a703', padding: 8, paddingLeft: 0, fontSize: 16, fontWeight: 'bold'}}>
           Thông số kĩ thuật
         </Text>
         <Grid style={{height: 400}}>
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
   },
   cell: {
     borderWidth: 1,
-    borderColor: '#425C59',
+    borderColor: '#417a76',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -140,11 +140,11 @@ const styles = StyleSheet.create({
     borderRightWidth: 0,
   },
   textRow: {
-    color: '#425C59',
+    color: '#417a76',
   },
   borderBottom: {
     borderWidth: 1,
-    borderColor: '#425C59',
+    borderColor: '#417a76',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   },
   borderRight: {
     borderWidth: 1,
-    borderColor: '#425C59',
+    borderColor: '#417a76',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
   },
   borderBottom2: {
     borderWidth: 1,
-    borderColor: '#425C59',
+    borderColor: '#417a76',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
   containerImg: {
     width: '100%',
     height: 100,
-    borderColor: '#425C59',
+    borderColor: '#417a76',
     flexDirection: 'row',
     borderBottomWidth: 1,
     borderTopWidth: 1,
@@ -185,14 +185,14 @@ const styles = StyleSheet.create({
     height: '100%',
     width: '100%',
     // borderWidth: 1,
-    // borderColor: '#425C59',
+    // borderColor: '#417a76',
   },
   seen: {
     flexDirection: 'row-reverse',
     alignItems: 'center',
   },
   seenAll: {
-    color: '#FF792E',
+    color: '#e7a703',
     marginTop: 8,
     marginBottom: 8,
     fontSize: 18,
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     height: 50,
     // padding: 16,
     // paddingTop:0,
-    backgroundColor: '#FF792E',
+    backgroundColor: '#417a76',
     justifyContent: 'center',
     alignItems: 'center',
   },

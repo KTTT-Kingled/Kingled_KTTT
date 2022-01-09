@@ -4,9 +4,7 @@ import {
   Pressable,
   ScrollView,
   SectionList,
-  StyleSheet,
-
-  Text, View,
+  StyleSheet, Text, TextInput, View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { OrderContext } from '../../../contexts/orderContext.js';
@@ -123,43 +121,74 @@ const AddressCart = ({navigation}) => {
               <View style={styles.nameView}>
                 <Text style={styles.nameText}>Họ tên</Text>
               </View>
-              <View style={styles.inputInfor}>
-                <Text style={styles.TextInput}>An</Text>
-              </View>
+              <TextInput
+                style={styles.inputInfor}
+                placeholder="Điền họ và tên..."
+                placeholderTextColor="#dedede"
+                value={fullName}
+                onChangeText={text => setFullName(text)}
+                // keyboardType="numeric"
+              />
             </View>
             <View style={styles.nameAndInput}>
               <View style={styles.nameView}>
                 <Text style={styles.nameText}>Email</Text>
               </View>
-              <View style={styles.inputInfor}>
-                <Text style={styles.TextInput}>ANguyen@gamil.com</Text>
-              </View>
+              <TextInput
+                style={styles.inputInfor}
+                placeholder="Điền email..."
+                placeholderTextColor="#dedede"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                value={email}
+                onChangeText={text => setEmail(text)}
+              />
             </View>
             <View style={styles.nameAndInput}>
               <View style={styles.nameView}>
                 <Text style={styles.nameText}>Điện thoại</Text>
               </View>
-              <View style={styles.inputInfor}>
-                <Text style={styles.TextInput}>0111337767</Text>
-              </View>
+              <TextInput
+                style={styles.inputInfor}
+                placeholder="Điền số điện thoại..."
+                placeholderTextColor="#dedede"
+                keyboardType="numeric"
+                value={phone}
+                onChangeText={text => setPhone(text)}
+              />
             </View>
             <View style={styles.nameAndInput}>
               <View style={styles.nameView}>
                 <Text style={styles.nameText}>Địa chỉ</Text>
               </View>
-              <View style={styles.inputInfor}>
-                <Text style={styles.TextInput}>93A Tô Ngọc Vân</Text>
-              </View>
+              <TextInput
+                style={styles.inputInfor}
+                placeholder="Địa chỉ nhận hàng..."
+                placeholderTextColor="#dedede"
+                value={address}
+                onChangeText={text => setAddress(text)}
+                selection={{start:0}}
+              />
             </View>
-            <View style={styles.nameAndInput}>
-              <View style={styles.nameView}>
+            <View
+              style={{
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <View style={{flex: 1}}>
                 <Text style={styles.nameText}>Ghi chú</Text>
               </View>
-              <View style={styles.inputInfor}>
-                <Text style={styles.TextInput}>Hàng dễ hỏng, giao cẩn thận</Text>
-              </View>
+              <TextInput
+                multiline
+                numberOfLines={8}
+                style={styles.inputInfor}
+                placeholder="Ghi chú..."
+                placeholderTextColor="#dedede"
+                value={note}
+                onChangeText={text => setNote(text)}
+              />
             </View>
-
           </View>
 
           <View style={styles.myCart}>

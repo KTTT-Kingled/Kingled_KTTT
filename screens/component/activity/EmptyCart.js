@@ -1,13 +1,20 @@
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 import HeaderComponent from '../headerComponent.js';
 
 const EmptyProduct = ({navigation}) => {
   return (
     <View style={styles.container}>
       <HeaderComponent />
-      <View style={{alignItems: 'center', marginTop: 36, marginBottom: 8}}>
-        <Text style={{color: '#425C59', fontSize: 24}}>GIỎ HÀNG TRỐNG</Text>
+      <View style={styles.titleTab}>
+        <Icon name="cart-outline" color="#f0ad00" size={22} style={{left: 0}} />
+        <Text style={{color: '#363636', fontSize: 16, marginLeft: 10}}>
+          Giỏ hàng
+        </Text>
+      </View>
+      <View style={{alignItems: 'center', marginTop: 250}}>
+        <Text style={{color: '#363636', fontSize: 16,}}>Chưa có sản phẩm nào</Text>
       </View>
     </View>
   );
@@ -50,6 +57,17 @@ const styles = StyleSheet.create({
   },
   btnNext: {
     backgroundColor: 'red',
+  },
+  titleTab: {
+    backgroundColor: 'white',
+    padding: 15,
+    height: 55,
+    borderBottomWidth: 0.2,
+    borderBottomColor: '#b0b0b0',
+    borderRadius: 4,
+    marginBottom: 3,
+    flexDirection: 'row',
+    width: "100%",
   },
 });
 export default EmptyProduct;

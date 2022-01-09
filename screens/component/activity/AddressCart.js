@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   Alert, Image,
   Pressable,
@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { OrderContext } from '../../../contexts/orderContext.js';
+import { UserContext } from '../../../contexts/userContext.js';
 import numberWithCommas from '../../../utils/thousandSeperator.js';
 import Circle2 from '../activity/ProgressLine/Circle2';
 import HeaderComponent from '../headerComponent.js';
@@ -43,13 +44,21 @@ const AddressCart = ({navigation}) => {
   const [address, setAddress] = useState('');
   const [note, setNote] = useState('');
   const {order, total} = useContext(OrderContext);
+  const {user} = useContext(UserContext);
+
+  useEffect(() => {
+    if (user.auth) {
+      setFullName(user.userLogged.fullName);
+      setEmail(user.userLogged.email);
+      setPhone(user.userLogged.phone);
+      setAddress(user.userLogged.address.address);
+    }
+  }, [user]);
 
   function HandlePayment() {
     // check if fullName, email, phone, address is empty and alert
     if (fullName === '') {
       Alert.alert('Đã có lỗi phát sinh', 'Vui lòng nhập họ tên');
-    } else if (email === '') {
-      Alert.alert('Đã có lỗi phát sinh', 'Vui lòng nhập email');
     } else if (phone === '') {
       Alert.alert('Đã có lỗi phát sinh', 'Vui lòng nhập số điện thoại');
     } else if (address === '') {
@@ -161,6 +170,7 @@ const AddressCart = ({navigation}) => {
                 placeholderTextColor="#dedede"
                 value={address}
                 onChangeText={text => setAddress(text)}
+                selection={{start:0}}
               />
             </View>
             <View

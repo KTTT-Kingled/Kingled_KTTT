@@ -6,7 +6,7 @@ import {
   SectionList,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { OrderContext } from '../../../contexts/orderContext.js';
@@ -37,7 +37,7 @@ const ItemCard = ({title}) => (
 
 const AbateCart = ({navigation, route}) => {
   const {order, total} = useContext(OrderContext);
-    const {user} = useContext(UserContext);
+  const {user} = useContext(UserContext);
 
   async function sendOrder(ord) {
     const response = await fetch(
@@ -61,7 +61,12 @@ const AbateCart = ({navigation, route}) => {
     <ScrollView>
       <HeaderComponent />
       <View style={styles.titleTab}>
-        <Icon name="reader-outline" color="#f0ad00" size={22} style={{left: 0}} />
+        <Icon
+          name="reader-outline"
+          color="#f0ad00"
+          size={22}
+          style={{left: 0}}
+        />
         <Text style={{color: '#363636', fontSize: 16, marginLeft: 10}}>
           Thông tin nhận hàng
         </Text>
@@ -103,7 +108,9 @@ const AbateCart = ({navigation, route}) => {
                 <Text style={styles.nameText}>Họ tên</Text>
               </View>
               <View style={styles.inputInfor}>
-                <Text style={styles.TextInput}>An</Text>
+                <Text style={styles.TextInput}>
+                  {route.params.info.fullName}
+                </Text>
               </View>
             </View>
             <View style={styles.nameAndInput}>
@@ -111,7 +118,7 @@ const AbateCart = ({navigation, route}) => {
                 <Text style={styles.nameText}>Email</Text>
               </View>
               <View style={styles.inputInfor}>
-                <Text style={styles.TextInput}>ANguyen@gamil.com</Text>
+                <Text style={styles.TextInput}>{route.params.info.email}</Text>
               </View>
             </View>
             <View style={styles.nameAndInput}>
@@ -119,7 +126,7 @@ const AbateCart = ({navigation, route}) => {
                 <Text style={styles.nameText}>Điện thoại</Text>
               </View>
               <View style={styles.inputInfor}>
-                <Text style={styles.TextInput}>0111337767</Text>
+                <Text style={styles.TextInput}>{route.params.info.phone}</Text>
               </View>
             </View>
             <View style={styles.nameAndInput}>
@@ -127,7 +134,9 @@ const AbateCart = ({navigation, route}) => {
                 <Text style={styles.nameText}>Địa chỉ</Text>
               </View>
               <View style={styles.inputInfor}>
-                <Text style={styles.TextInput}>93A Tô Ngọc Vân</Text>
+                <Text style={styles.TextInput}>
+                  {route.params.info.address}
+                </Text>
               </View>
             </View>
             <View style={styles.nameAndInput}>
@@ -135,23 +144,22 @@ const AbateCart = ({navigation, route}) => {
                 <Text style={styles.nameText}>Ghi chú</Text>
               </View>
               <View style={styles.inputInfor}>
-                <Text style={styles.TextInput}>Hàng dễ hỏng, giao cẩn thận</Text>
+                <Text style={styles.TextInput}>{route.params.info.note}</Text>
               </View>
             </View>
-            
           </View>
-          </View>
+        </View>
         <View style={styles.myCart}>
-            <Icon
-              name="basket-outline"
-              color="#f0ad00"
-              size={22}
-              style={{left: 0}}
-            />
-            <Text style={{color: '#363636', fontSize: 16, marginLeft: 10}}>
-              Giỏ hàng của tôi
-            </Text>
-          </View>
+          <Icon
+            name="basket-outline"
+            color="#f0ad00"
+            size={22}
+            style={{left: 0}}
+          />
+          <Text style={{color: '#363636', fontSize: 16, marginLeft: 10}}>
+            Giỏ hàng của tôi
+          </Text>
+        </View>
         <View style={styles.containerList}>
           <View style={{marginTop: 12, marginBottom: 12}}>
             <SectionList
@@ -170,11 +178,28 @@ const AbateCart = ({navigation, route}) => {
           <View style={styles.total}>
             <View style={styles.rowTotalText}>
               <Text style={styles.totalText1}>Tổng tiền: </Text>
-              <Text style={styles.totalText2}>{numberWithCommas(total)} VNĐ</Text>
+              <Text style={styles.totalText2}>
+                {numberWithCommas(total)} VNĐ
+              </Text>
             </View>
           </View>
           <View style={styles.paymentBTN}>
-            <Pressable onPress={() => navigation.navigate('AddressCart')}>
+            <Pressable
+              onPress={() => {
+                sendOrder({
+                  orderUser: {
+                    fullName: route.params.info.fullName,
+                    username: user.auth ? user.userLogged.username : '',
+                    email: route.params.info.email,
+                    phone: route.params.info.phone,
+                  },
+                  orderAddress: user.auth
+                    ? user.userLogged.address.address
+                    : route.params.info.address,
+                  orderProducts: order,
+                  totalPrice: total,
+                });
+              }}>
               <Text style={styles.paymentText}>Xác nhận</Text>
             </Pressable>
           </View>
@@ -223,7 +248,7 @@ const styles = StyleSheet.create({
     //marginLeft: -10,
   },
   item: {
-    backgroundColor: "#fbf3e7",
+    backgroundColor: '#fbf3e7',
     marginVertical: 3,
     borderColor: '#ffba07',
     borderRadius: 4,
@@ -338,7 +363,7 @@ const styles = StyleSheet.create({
     //backgroundColor: 'black',
     padding: 20,
     flex: 1,
-    width: "100%",
+    width: '100%',
     flexDirection: 'row',
     borderTopWidth: 7,
     borderTopColor: '#f3f3f3',
@@ -374,6 +399,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     marginTop: -4,
     fontWeight: 'bold',
+  },
+  TextInput: {
+    color: '#363636',
   },
 });
 export default AbateCart;

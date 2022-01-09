@@ -27,29 +27,29 @@ const ChangePassword = ({navigation}) => {
         const response = await fetch(
           'https://kingled-kttt.herokuapp.com/api/auth/changePassword',
           {
-            method: 'POST',
+            method: 'PUT',
             headers: {
               Accept: 'application/json',
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
               username: user.userLogged.username,
-              currentpassword: currentPassword,
-              newpassword: newPassword,
+              password: newPassword,
             }),
           }
         );
         const json = await response.json();
         if (json.success) {
-          Alert.alert('Đổi mật khẩu thành công');
+          Alert.alert('Thông báo', 'Đổi mật khẩu thành công');
+          navigation.goBack();
         } else {
-          Alert.alert('Mật khẩu cũ không đúng');
+          Alert.alert('Thông báo', 'Mật khẩu cũ không đúng');
         }
       } else {
-        Alert.alert('Mật khẩu mới và xác nhận mật khẩu không khớp');
+        Alert.alert('Thông báo', 'Mật khẩu mới và xác nhận mật khẩu không khớp');
       }
     } else {
-      Alert.alert('Vui lòng nhập đầy đủ thông tin');
+      Alert.alert('Thông báo', 'Vui lòng nhập đầy đủ thông tin');
     }
   }
 

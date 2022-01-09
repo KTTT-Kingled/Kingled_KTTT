@@ -5,9 +5,7 @@ import {
   ScrollView,
   SectionList,
   StyleSheet,
-  Text,
-  TextInput,
-  View
+  Text, View
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { OrderContext } from '../../../contexts/orderContext.js';
@@ -124,74 +122,43 @@ const AddressCart = ({navigation}) => {
               <View style={styles.nameView}>
                 <Text style={styles.nameText}>Họ tên</Text>
               </View>
-              <TextInput
-                style={styles.inputInfor}
-                placeholder="Điền họ và tên..."
-                placeholderTextColor="#dedede"
-                value={fullName}
-                onChangeText={text => setFullName(text)}
-                // keyboardType="numeric"
-              />
+              <View style={styles.inputInfor}>
+                <Text style={styles.TextInput}>An</Text>
+              </View>
             </View>
             <View style={styles.nameAndInput}>
               <View style={styles.nameView}>
                 <Text style={styles.nameText}>Email</Text>
               </View>
-              <TextInput
-                style={styles.inputInfor}
-                placeholder="Điền email..."
-                placeholderTextColor="#dedede"
-                keyboardType="email-address"
-                autoCapitalize="none"
-                value={email}
-                onChangeText={text => setEmail(text)}
-              />
+              <View style={styles.inputInfor}>
+                <Text style={styles.TextInput}>ANguyen@gamil.com</Text>
+              </View>
             </View>
             <View style={styles.nameAndInput}>
               <View style={styles.nameView}>
                 <Text style={styles.nameText}>Điện thoại</Text>
               </View>
-              <TextInput
-                style={styles.inputInfor}
-                placeholder="Điền số điện thoại..."
-                placeholderTextColor="#dedede"
-                keyboardType="numeric"
-                value={phone}
-                onChangeText={text => setPhone(text)}
-              />
+              <View style={styles.inputInfor}>
+                <Text style={styles.TextInput}>0111337767</Text>
+              </View>
             </View>
             <View style={styles.nameAndInput}>
               <View style={styles.nameView}>
                 <Text style={styles.nameText}>Địa chỉ</Text>
               </View>
-              <TextInput
-                style={styles.inputInfor}
-                placeholder="Địa chỉ nhận hàng..."
-                placeholderTextColor="#dedede"
-                value={address}
-                onChangeText={text => setAddress(text)}
-                selection={{start:0}}
-              />
+              <View style={styles.inputInfor}>
+                <Text style={styles.TextInput}>93A Tô Ngọc Vân</Text>
+              </View>
             </View>
-            <View
-              style={{
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <View style={{flex: 1}}>
+            <View style={styles.nameAndInput}>
+              <View style={styles.nameView}>
                 <Text style={styles.nameText}>Ghi chú</Text>
               </View>
-              <TextInput
-                multiline
-                numberOfLines={8}
-                style={styles.inputInfor}
-                placeholder="Ghi chú..."
-                placeholderTextColor="#dedede"
-                value={note}
-                onChangeText={text => setNote(text)}
-              />
+              <View style={styles.inputInfor}>
+                <Text style={styles.TextInput}>Hàng dễ hỏng, giao cẩn thận</Text>
+              </View>
             </View>
+            
           </View>
 
           <View style={styles.myCart}>
@@ -269,7 +236,7 @@ const styles = StyleSheet.create({
     width: '100%',
     justifyContent: 'center',
     flexDirection: 'row',
-    marginBottom: 12,
+    marginBottom: 4,
   },
   nameView: {
     color: '#313131',
@@ -277,7 +244,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   nameText: {
-    color: '#417a76',
+    color: '#e7a703',
     fontSize: 14,
     marginTop: -4,
     fontWeight: 'bold',
@@ -285,12 +252,14 @@ const styles = StyleSheet.create({
   inputInfor: {
     //borderColor:"black",
     borderBottomWidth: 0.2,
-    flex: 2.3,
-    height: 40,
+    flex: 2.7,
+    //height: 40,
     borderRadius: 4,
     //paddingLeft:10,
-    color: '#313131',
+    color: '#363636',
     fontSize: 15,
+    padding: 15,
+    paddingLeft: 5,
   },
   colProgress: {
     flexDirection: 'column',
@@ -393,7 +362,7 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 15,
-    color: '#425C59',
+    color: '#363636',
     fontWeight: 'bold',
   },
   cost: {
@@ -416,6 +385,10 @@ const styles = StyleSheet.create({
   inforContainer: {
     flex: 7,
     height: '100%',
+  },
+  TextInput: {
+    color: '#363636',
+    fontSize: 13,
   },
 });
 export default AddressCart;
